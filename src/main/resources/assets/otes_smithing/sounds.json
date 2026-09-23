@@ -1,0 +1,171 @@
+{
+  "block.smiths_forge.ignite": {
+    "subtitle": "subtitles.otes_smithing.forge_ignite",
+    "sounds": [
+      {
+        "name": "minecraft:item.firecharge.use",
+        "type": "event",
+        "volume": 0.8
+      }
+    ]
+  },
+  "block.smiths_forge.roar": {
+    "subtitle": "subtitles.otes_smithing.forge_roar",
+    "sounds": [
+      {
+        "name": "minecraft:block.fire.ambient",
+        "type": "event",
+        "pitch": 0.6
+      }
+    ]
+  },
+  "block.smiths_forge.ready": {
+    "subtitle": "subtitles.otes_smithing.forge_ready",
+    "sounds": [
+      {
+        "name": "minecraft:block.lava.pop",
+        "type": "event",
+        "pitch": 0.7
+      },
+      {
+        "name": "minecraft:block.lava.ambient",
+        "type": "event",
+        "volume": 0.8,
+        "pitch": 1.2
+      }
+    ]
+  },
+  "block.smiths_forge.deposit": {
+    "subtitle": "subtitles.otes_smithing.forge_deposit",
+    "sounds": [
+      {
+        "name": "minecraft:block.chain.place",
+        "type": "event"
+      }
+    ]
+  },
+  "block.smiths_forge.fuel": {
+    "subtitle": "subtitles.otes_smithing.forge_fuel",
+    "sounds": [
+      {
+        "name": "minecraft:block.wood.hit",
+        "type": "event"
+      }
+    ]
+  },
+  "block.smiths_forge.work": {
+    "subtitle": "subtitles.otes_smithing.forge_work",
+    "sounds": [
+      {
+        "name": "minecraft:block.chain.hit",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.smithing_table.use",
+        "type": "event",
+        "volume": 0.6
+      }
+    ]
+  },
+  "item.smithing_tongs.grab": {
+    "subtitle": "subtitles.otes_smithing.tongs_grab",
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_chain",
+        "type": "event"
+      }
+    ]
+  },
+  "block.smiths_anvil.strike": {
+    "subtitle": "subtitles.otes_smithing.anvil_strike",
+    "sounds": [
+      {
+        "name": "minecraft:block.anvil.use",
+        "type": "event",
+        "volume": 0.7
+      }
+    ]
+  },
+  "block.smiths_anvil.strike_perfect": {
+    "subtitle": "subtitles.otes_smithing.anvil_strike_perfect",
+    "sounds": [
+      {
+        "name": "minecraft:block.anvil.use",
+        "type": "event",
+        "volume": 0.8,
+        "pitch": 1.3
+      }
+    ]
+  },
+  "block.smiths_anvil.miss": {
+    "subtitle": "subtitles.otes_smithing.anvil_miss",
+    "sounds": [
+      {
+        "name": "minecraft:block.metal.hit",
+        "type": "event",
+        "pitch": 0.7
+      }
+    ]
+  },
+  "block.smiths_anvil.finish": {
+    "subtitle": "subtitles.otes_smithing.anvil_finish",
+    "sounds": [
+      {
+        "name": "minecraft:block.anvil.place",
+        "type": "event",
+        "volume": 0.7
+      }
+    ]
+  },
+  "block.smiths_trough.quench": {
+    "subtitle": "subtitles.otes_smithing.quench",
+    "sounds": [
+      {
+        "name": "minecraft:block.fire.extinguish",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.generic.extinguish_fire",
+        "type": "event"
+      }
+    ]
+  },
+  "block.smiths_trough.fill": {
+    "subtitle": "subtitles.otes_smithing.trough_fill",
+    "sounds": [
+      {
+        "name": "minecraft:item.bucket.empty",
+        "type": "event"
+      }
+    ]
+  },
+  "block.smiths_grindstone.refine": {
+    "subtitle": "subtitles.otes_smithing.grindstone_refine",
+    "sounds": [
+      {
+        "name": "minecraft:block.grindstone.use",
+        "type": "event"
+      }
+    ]
+  },
+  "ui.smithing.fail": {
+    "subtitle": "subtitles.otes_smithing.fail",
+    "sounds": [
+      {
+        "name": "minecraft:block.dispenser.fail",
+        "type": "event",
+        "volume": 0.6
+      }
+    ]
+  },
+  "ui.smithing.timing_cue": {
+    "subtitle": "subtitles.otes_smithing.timing_cue",
+    "sounds": [
+      {
+        "name": "minecraft:block.note_block.hat",
+        "type": "event",
+        "volume": 0.8
+      }
+    ]
+  }
+}

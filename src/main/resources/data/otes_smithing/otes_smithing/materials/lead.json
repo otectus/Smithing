@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/lead"
+      }
+    }
+  ],
+  "family": "forge:lead",
+  "display_name": "material.forge.lead",
+  "sources": [
+    {
+      "tag": "forge:ingots/lead",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/lead",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/lead",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/lead",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_lead",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.7,
+  "requires_ignition": true,
+  "tint": "#E08A70"
+}

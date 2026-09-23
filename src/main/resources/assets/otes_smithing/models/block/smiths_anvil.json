@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_anvil",
+  "textures": {
+    "particle": "otes_smithing:block/smiths_anvil_body",
+    "body": "otes_smithing:block/smiths_anvil_body",
+    "top": "otes_smithing:block/smiths_anvil_top"
+  }
+}

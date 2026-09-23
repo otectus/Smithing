@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "dagger",
+        "silver"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/silver"
+      }
+    }
+  ],
+  "type": "otes_smithing:smithing",
+  "material": "forge:silver",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "spartanweaponry:handles"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:silver_dagger"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:dagger"
+}

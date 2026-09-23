@@ -1,0 +1,10 @@
+{
+  "type": "otes_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 72,
+  "result": {
+    "item": "minecraft:golden_chestplate"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:chestplate"
+}

@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longsword",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
+  ],
+  "type": "otes_smithing:smithing",
+  "material": "forge:constantan",
+  "metal_units": 36,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:constantan_longsword"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:longsword"
+}

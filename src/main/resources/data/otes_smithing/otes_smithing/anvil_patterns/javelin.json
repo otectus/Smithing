@@ -1,0 +1,38 @@
+{
+  "targets": [
+    [
+      0.66,
+      0.34
+    ],
+    [
+      0.727,
+      0.273
+    ],
+    [
+      0.793,
+      0.207
+    ],
+    [
+      0.86,
+      0.14
+    ],
+    [
+      0.4,
+      0.6
+    ],
+    [
+      0.24,
+      0.76
+    ]
+  ],
+  "strikes": 6,
+  "target_radius": 0.075,
+  "target_lifetime": 1.8,
+  "ideal_fraction": 0.6,
+  "gap": 0.25,
+  "jitter": 0.03,
+  "time_multiplier": 1.0,
+  "categories": [
+    "spartanweaponry:javelins"
+  ]
+}

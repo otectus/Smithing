@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "otes_smithing:item/netherite_smithing_hammer"
+  }
+}

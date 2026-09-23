@@ -1,0 +1,38 @@
+{
+  "targets": [
+    [
+      0.44,
+      0.56
+    ],
+    [
+      0.54,
+      0.46
+    ],
+    [
+      0.64,
+      0.36
+    ],
+    [
+      0.74,
+      0.26
+    ],
+    [
+      0.36,
+      0.52
+    ],
+    [
+      0.48,
+      0.64
+    ]
+  ],
+  "strikes": 6,
+  "target_radius": 0.075,
+  "target_lifetime": 1.8,
+  "ideal_fraction": 0.6,
+  "gap": 0.25,
+  "jitter": 0.03,
+  "time_multiplier": 1.0,
+  "categories": [
+    "spartanweaponry:daggers"
+  ]
+}

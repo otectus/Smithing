@@ -1,0 +1,74 @@
+{
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/aluminum"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:ingots/aluminium"
+          }
+        }
+      ]
+    }
+  ],
+  "family": "forge:aluminum",
+  "display_name": "material.forge.aluminum",
+  "sources": [
+    {
+      "tag": "forge:ingots/aluminum",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/aluminum",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/aluminum",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/aluminum",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_aluminum",
+      "units": 81
+    },
+    {
+      "tag": "forge:ingots/aluminium",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/aluminium",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/aluminium",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/aluminium",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_aluminium",
+      "units": 81
+    },
+    {
+      "tag": "spartanweaponry:ingots/aluminum",
+      "units": 9
+    }
+  ],
+  "melt_time_multiplier": 0.8,
+  "requires_ignition": true,
+  "tint": "#FFD0A8"
+}

@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/electrum"
+      }
+    }
+  ],
+  "family": "forge:electrum",
+  "display_name": "material.forge.electrum",
+  "sources": [
+    {
+      "tag": "forge:ingots/electrum",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/electrum",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/electrum",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/electrum",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_electrum",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.8,
+  "requires_ignition": true,
+  "tint": "#FFD260"
+}

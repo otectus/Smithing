@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/bronze"
+      }
+    }
+  ],
+  "family": "forge:bronze",
+  "display_name": "material.forge.bronze",
+  "sources": [
+    {
+      "tag": "forge:ingots/bronze",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/bronze",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/bronze",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/bronze",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_bronze",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.9,
+  "requires_ignition": true,
+  "tint": "#FF9A40"
+}

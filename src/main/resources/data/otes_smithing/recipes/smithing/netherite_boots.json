@@ -1,0 +1,10 @@
+{
+  "type": "otes_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 36,
+  "result": {
+    "item": "minecraft:netherite_boots"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:boots"
+}

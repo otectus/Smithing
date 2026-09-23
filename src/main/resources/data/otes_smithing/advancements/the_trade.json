@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "otes_smithing:iron_smithing_hammer"
+    },
+    "title": {
+      "translate": "advancements.otes_smithing.the_trade.title"
+    },
+    "description": {
+      "translate": "advancements.otes_smithing.the_trade.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/deepslate_bricks.png"
+  },
+  "criteria": {
+    "has_tongs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "otes_smithing:tongs"
+          }
+        ]
+      }
+    },
+    "has_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "otes_smithing:hammers"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tongs",
+      "has_hammer"
+    ]
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/nickel"
+      }
+    }
+  ],
+  "family": "forge:nickel",
+  "display_name": "material.forge.nickel",
+  "sources": [
+    {
+      "tag": "forge:ingots/nickel",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/nickel",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/nickel",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/nickel",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_nickel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.1,
+  "requires_ignition": true,
+  "tint": "#FFC890"
+}

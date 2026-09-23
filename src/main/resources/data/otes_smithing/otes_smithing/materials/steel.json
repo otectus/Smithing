@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/steel"
+      }
+    }
+  ],
+  "family": "forge:steel",
+  "display_name": "material.forge.steel",
+  "sources": [
+    {
+      "tag": "forge:ingots/steel",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/steel",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/steel",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/steel",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_steel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.3,
+  "requires_ignition": true,
+  "tint": "#FF9A5A"
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "otes_smithing:smiths_forge",
+    "otes_smithing:smiths_anvil",
+    "otes_smithing:smiths_grindstone"
+  ]
+}

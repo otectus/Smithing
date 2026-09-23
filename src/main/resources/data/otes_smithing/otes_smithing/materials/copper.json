@@ -1,0 +1,29 @@
+{
+  "family": "minecraft:copper",
+  "display_name": "material.otes_smithing.copper",
+  "sources": [
+    {
+      "tag": "forge:ingots/copper",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/copper",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/copper",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/copper",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_copper",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.9,
+  "requires_ignition": true,
+  "tint": "#FF7B4A"
+}

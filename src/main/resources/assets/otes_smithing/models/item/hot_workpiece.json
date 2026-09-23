@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "otes_smithing:item/hot_workpiece"
+  }
+}

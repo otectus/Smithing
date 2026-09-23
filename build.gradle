@@ -1,0 +1,123 @@
+buildscript {
+    repositories { maven { url = 'https://maven.minecraftforge.net/' }; mavenCentral() }
+    dependencies { classpath 'org.spongepowered:mixingradle:0.7.38' }
+}
+plugins {
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '6.0.54'
+}
+apply plugin: 'org.spongepowered.mixin'
+
+version = mod_version
+group = mod_group
+base { archivesName = mod_archive }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+    config "${mod_id}.mixins.json"
+}
+
+sourceSets {
+    gameTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+    // Test-only agent mod (otes_smithing_packtest): drives a client into a fresh world, checks smithing data, stages
+    // every station and screen for screenshots, writes packtest-result.json and quits. Used by runClient -PsmokeTest
+    // and, as the reobfuscated packTestJar, by tools/packtest against a full modpack. Never shipped.
+    packTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+    copyIdeResources = true
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'info'
+            property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            mods { otes_smithing { source sourceSets.main } }
+        }
+        client {
+            if (project.hasProperty('smokeTest')) {
+                property 'otes_smithing.packtest.output', file('run/packtest').absolutePath
+                mods { otes_smithing_packtest { source sourceSets.packTest } }
+            }
+        }
+        server { args '--nogui' }
+        gameTestServer {
+            workingDirectory project.file('run-gametest')
+            mods { otes_smithing { source sourceSets.gameTest } }
+        }
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.blamejared.com/' }
+    maven {
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    // Thrown-weapon quality reads Spartan's projectile type (compat/spartanweaponry, reached only when it is loaded).
+    compileOnly fg.deobf("maven.modrinth:spartan-weaponry:${spartan_weaponry_modrinth_id}")
+
+    // Real content mods for the auto-detection GameTests. Never part of a normal build.
+    if (project.hasProperty('compatMods')) {
+        runtimeOnly fg.deobf("maven.modrinth:spartan-weaponry:${spartan_weaponry_modrinth_id}")
+        runtimeOnly fg.deobf("maven.modrinth:spartan-shields:${spartan_shields_modrinth_id}")
+        runtimeOnly fg.deobf("maven.modrinth:immersive-armors:${immersive_armors_modrinth_id}")
+    }
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def properties = [mod_id: mod_id, mod_name: mod_name, mod_version: mod_version, mod_license: mod_license,
+                      mod_authors: mod_authors, minecraft_version_range: minecraft_version_range,
+                      forge_version_range: forge_version_range, loader_version_range: loader_version_range]
+    inputs.properties properties
+    filesMatching('META-INF/mods.toml') { expand properties }
+}
+
+tasks.named('processPackTestResources', ProcessResources).configure {
+    inputs.properties mod_version: mod_version, mod_license: mod_license
+    filesMatching('META-INF/mods.toml') { expand mod_version: mod_version, mod_license: mod_license }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.register('packTestJar', Jar) {
+    archiveClassifier = 'packtest'
+    from sourceSets.packTest.output
+    exclude "${mod_id}.refmap.json"
+    manifest.attributes('Implementation-Title': 'otes_smithing_packtest', 'Implementation-Version': mod_version)
+}
+
+reobf {
+    // The agent calls inherited Minecraft methods on Ote's Smithing types, so reobf must see the main classes.
+    packTestJar { libraries.from(sourceSets.packTest.compileClasspath) }
+}
+
+tasks.named('packTestJar') { finalizedBy 'reobfPackTestJar' }
+
+tasks.named('jar', Jar).configure {
+    manifest.attributes('Specification-Title': mod_id, 'Specification-Vendor': mod_authors,
+                        'Specification-Version': '1', 'Implementation-Title': project.name,
+                        'Implementation-Version': mod_version, 'Implementation-Vendor': mod_authors,
+                        'MixinConfigs': "${mod_id}.mixins.json")
+    finalizedBy 'reobfJar'
+}

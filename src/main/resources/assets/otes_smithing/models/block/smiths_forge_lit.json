@@ -1,0 +1,6 @@
+{
+  "parent": "otes_smithing:block/smiths_forge",
+  "textures": {
+    "back": "minecraft:block/magma"
+  }
+}

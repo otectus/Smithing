@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "otes_smithing:iron_smithing_hammer"
+    },
+    "title": {
+      "translate": "advancements.otes_smithing.hammer_and_steel.title"
+    },
+    "description": {
+      "translate": "advancements.otes_smithing.hammer_and_steel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "otes_smithing:into_shape"
+}

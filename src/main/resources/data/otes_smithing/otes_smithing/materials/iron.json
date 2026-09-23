@@ -1,0 +1,29 @@
+{
+  "family": "minecraft:iron",
+  "display_name": "material.otes_smithing.iron",
+  "sources": [
+    {
+      "tag": "forge:ingots/iron",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/iron",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/iron",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/iron",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_iron",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.0,
+  "requires_ignition": true,
+  "tint": "#FF8A3D"
+}

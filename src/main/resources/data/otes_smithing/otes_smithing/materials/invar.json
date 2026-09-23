@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/invar"
+      }
+    }
+  ],
+  "family": "forge:invar",
+  "display_name": "material.forge.invar",
+  "sources": [
+    {
+      "tag": "forge:ingots/invar",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/invar",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/invar",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/invar",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_invar",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.2,
+  "requires_ignition": true,
+  "tint": "#FFB488"
+}

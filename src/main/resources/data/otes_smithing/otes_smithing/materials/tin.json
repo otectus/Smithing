@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/tin"
+      }
+    }
+  ],
+  "family": "forge:tin",
+  "display_name": "material.forge.tin",
+  "sources": [
+    {
+      "tag": "forge:ingots/tin",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/tin",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/tin",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/tin",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_tin",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.7,
+  "requires_ignition": true,
+  "tint": "#FFB070"
+}

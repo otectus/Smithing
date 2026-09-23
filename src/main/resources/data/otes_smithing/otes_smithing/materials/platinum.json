@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/platinum"
+      }
+    }
+  ],
+  "family": "forge:platinum",
+  "display_name": "material.forge.platinum",
+  "sources": [
+    {
+      "tag": "forge:ingots/platinum",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/platinum",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/platinum",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/platinum",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_platinum",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.4,
+  "requires_ignition": true,
+  "tint": "#FFE0C8"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "otes_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_shovel"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:shovel"
+}

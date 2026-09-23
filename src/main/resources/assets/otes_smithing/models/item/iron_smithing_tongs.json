@@ -1,0 +1,14 @@
+{
+  "parent": "otes_smithing:item/tongs",
+  "textures": {
+    "layer0": "otes_smithing:item/iron_smithing_tongs"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "otes_smithing:loaded": 1
+      },
+      "model": "otes_smithing:item/iron_smithing_tongs_loaded"
+    }
+  ]
+}

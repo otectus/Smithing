@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "otes_smithing:stone_smithing_hammer",
+    "otes_smithing:iron_smithing_hammer",
+    "otes_smithing:diamond_smithing_hammer",
+    "otes_smithing:netherite_smithing_hammer"
+  ]
+}

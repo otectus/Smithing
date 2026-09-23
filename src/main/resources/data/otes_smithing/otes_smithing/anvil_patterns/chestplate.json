@@ -1,0 +1,54 @@
+{
+  "targets": [
+    [
+      0.28,
+      0.28
+    ],
+    [
+      0.72,
+      0.28
+    ],
+    [
+      0.4,
+      0.4
+    ],
+    [
+      0.6,
+      0.4
+    ],
+    [
+      0.5,
+      0.48
+    ],
+    [
+      0.42,
+      0.6
+    ],
+    [
+      0.58,
+      0.6
+    ],
+    [
+      0.5,
+      0.74
+    ],
+    [
+      0.22,
+      0.4
+    ],
+    [
+      0.78,
+      0.4
+    ]
+  ],
+  "strikes": 14,
+  "target_radius": 0.075,
+  "target_lifetime": 1.8,
+  "ideal_fraction": 0.6,
+  "gap": 0.25,
+  "jitter": 0.03,
+  "time_multiplier": 1.0,
+  "categories": [
+    "forge:armors/chestplates"
+  ]
+}

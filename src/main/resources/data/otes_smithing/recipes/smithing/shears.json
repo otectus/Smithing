@@ -1,0 +1,10 @@
+{
+  "type": "otes_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 18,
+  "result": {
+    "item": "minecraft:shears"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:generic_tool"
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:logs_that_burn",
+    "#minecraft:planks",
+    "#minecraft:wooden_slabs",
+    "#minecraft:coals",
+    "minecraft:coal_block",
+    "minecraft:stick",
+    "minecraft:lava_bucket"
+  ]
+}

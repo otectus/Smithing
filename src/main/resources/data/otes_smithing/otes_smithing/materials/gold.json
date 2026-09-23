@@ -1,0 +1,29 @@
+{
+  "family": "minecraft:gold",
+  "display_name": "material.otes_smithing.gold",
+  "sources": [
+    {
+      "tag": "forge:ingots/gold",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/gold",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/gold",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/gold",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_gold",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.8,
+  "requires_ignition": true,
+  "tint": "#FFC83A"
+}

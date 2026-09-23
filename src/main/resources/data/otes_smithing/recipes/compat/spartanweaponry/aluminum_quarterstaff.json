@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quarterstaff",
+        "aluminum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "spartanweaponry:ingots/aluminum"
+      }
+    }
+  ],
+  "type": "otes_smithing:smithing",
+  "material": "forge:aluminum",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:pole"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:aluminum_quarterstaff"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:quarterstaff"
+}

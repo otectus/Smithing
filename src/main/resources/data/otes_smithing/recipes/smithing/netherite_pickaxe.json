@@ -1,0 +1,18 @@
+{
+  "type": "otes_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "minecraft:netherite_pickaxe"
+  },
+  "forge_pattern": "otes_smithing:standard",
+  "anvil_pattern": "otes_smithing:pickaxe"
+}

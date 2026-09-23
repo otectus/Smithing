@@ -1,0 +1,19 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="${mod_license}"
+
+[[mods]]
+modId="otes_smithing_packtest"
+version="${mod_version}"
+displayName="Ote's Smithing Pack Test Agent"
+authors="Otectus"
+description='''
+Test-only agent. Inert unless -Dotes_smithing.packtest.output is set. Never ship this jar.
+'''
+
+[[dependencies.otes_smithing_packtest]]
+    modId="otes_smithing"
+    mandatory=true
+    versionRange="[${mod_version},)"
+    ordering="AFTER"
+    side="BOTH"

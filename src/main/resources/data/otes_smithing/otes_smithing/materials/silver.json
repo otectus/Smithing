@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/silver"
+      }
+    }
+  ],
+  "family": "forge:silver",
+  "display_name": "material.forge.silver",
+  "sources": [
+    {
+      "tag": "forge:ingots/silver",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/silver",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/silver",
+      "units": 81
+    },
+    {
+      "tag": "forge:raw_materials/silver",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/raw_silver",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 0.85,
+  "requires_ignition": true,
+  "tint": "#FFD8B0"
+}
