@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "pike",
+        "steel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/steel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:pole"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:steel_pike"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pike"
+}

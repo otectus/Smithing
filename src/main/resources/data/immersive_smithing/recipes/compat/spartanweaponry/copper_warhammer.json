@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "warhammer",
+        "copper"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/copper"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:copper",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:copper_warhammer"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:warhammer"
+}

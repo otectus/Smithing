@@ -1,7 +1,7 @@
-# Ote's Smithing - Datapack and Java API
+# Immersive Smithing - Datapack and Java API
 
-Ote's Smithing is configured almost entirely through datapacks. The Java API exists for items that datapacks
-cannot describe. Everything below is re-read on `/reload` (or `/otessmithing reload`).
+Immersive Smithing is configured almost entirely through datapacks. The Java API exists for items that datapacks
+cannot describe. Everything below is re-read on `/reload` (or `/immersivesmithing reload`).
 
 ## Material units
 
@@ -9,21 +9,21 @@ All metal accounting uses integers: nugget = 1, ingot or raw ore = 9, storage bl
 
 ## Smithing recipes
 
-Recipe type `otes_smithing:smithing`. Recipes are ordinary Minecraft recipes, so they live in
+Recipe type `immersive_smithing:smithing`. Recipes are ordinary Minecraft recipes, so they live in
 `data/<namespace>/recipes/` (any subfolder) and support Forge `conditions`, for example `forge:mod_loaded`.
 They are synced to clients and shown in JEI.
 
 ```json
 {
-  "type": "otes_smithing:smithing",
+  "type": "immersive_smithing:smithing",
   "material": "examplemod:steel",
   "metal_units": 27,
   "auxiliary": [
     { "ingredient": { "item": "minecraft:stick" }, "count": 2 }
   ],
   "result": { "item": "examplemod:steel_pickaxe" },
-  "forge_pattern": "otes_smithing:standard",
-  "anvil_pattern": "otes_smithing:pickaxe"
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pickaxe"
 }
 ```
 
@@ -33,15 +33,15 @@ They are synced to clients and shown in JEI.
 | `metal_units` | yes | Positive integer. |
 | `auxiliary` | no | Non-metal ingredients taken from the smith's inventory when forging starts. `count` defaults to 1. |
 | `result` | yes | Standard item-stack JSON; `nbt` is kept on the finished item. |
-| `forge_pattern` | no | Defaults to `otes_smithing:standard`. |
+| `forge_pattern` | no | Defaults to `immersive_smithing:standard`. |
 | `anvil_pattern` | no | Defaults to the closest pattern family for the result item. |
 
 An explicit recipe always wins over automatic detection for the same result item. Results tagged
-`otes_smithing:non_smithable_equipment` are ignored.
+`immersive_smithing:non_smithable_equipment` are ignored.
 
 ## Material families
 
-`data/<namespace>/otes_smithing/materials/<name>.json`
+`data/<namespace>/immersive_smithing/materials/<name>.json`
 
 ```json
 {
@@ -55,7 +55,7 @@ An explicit recipe always wins over automatic detection for the same result item
   ],
   "melt_time_multiplier": 1.0,
   "requires_ignition": true,
-  "required_fuel_tag": "otes_smithing:netherite_fuels",
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
   "tint": "#FF8A3D"
 }
 ```
@@ -78,7 +78,7 @@ taken from the matching `forge:` tags. Its display name uses the key `material.f
 
 ## Recycling overrides
 
-`data/<namespace>/otes_smithing/recycling/<name>.json`
+`data/<namespace>/immersive_smithing/recycling/<name>.json`
 
 ```json
 { "item": "examplemod:steel_greatsword", "family": "examplemod:steel", "units": 45 }
@@ -89,7 +89,7 @@ taken from the matching `forge:` tags. Its display name uses the key `material.f
 ```
 
 Use `item` or `tag`. With `"recyclable": false` the items can never be melted down. Items tagged
-`otes_smithing:non_recyclable` are excluded too.
+`immersive_smithing:non_recyclable` are excluded too.
 
 Recycling values are resolved in this order: exclusions, explicit smithing recipes, recycling overrides, analysis
 of the item's crafting recipe, then Java `IRecyclingValueProvider`s. The value returned is multiplied by
@@ -97,7 +97,7 @@ of the item's crafting recipe, then Java `IRecyclingValueProvider`s. The value r
 
 ## Anvil patterns
 
-`data/<namespace>/otes_smithing/anvil_patterns/<name>.json`. The pattern id is the file id.
+`data/<namespace>/immersive_smithing/anvil_patterns/<name>.json`. The pattern id is the file id.
 
 ```json
 {
@@ -126,16 +126,16 @@ of the item's crafting recipe, then Java `IRecyclingValueProvider`s. The value r
 | `categories` | none | Item tags; items in them use this pattern before class-based classification. |
 
 Built-in patterns: `sword`, `axe`, `pickaxe`, `shovel`, `hoe`, `generic_tool`, `helmet`, `chestplate`, `leggings`,
-`boots`, `shield`, `generic_weapon`, `generic_armor`, `generic_equipment` (all in the `otes_smithing` namespace).
-A missing pattern falls back to `otes_smithing:generic_equipment`.
+`boots`, `shield`, `generic_weapon`, `generic_armor`, `generic_equipment` (all in the `immersive_smithing` namespace).
+A missing pattern falls back to `immersive_smithing:generic_equipment`.
 
-The Spartan Weaponry patterns are named after its weapon types (`otes_smithing:longsword`, `otes_smithing:javelin`,
-`otes_smithing:heavy_crossbow`, ... plus `club` and `cestus`). Their `categories` are Spartan's per-type item tags
+The Spartan Weaponry patterns are named after its weapon types (`immersive_smithing:longsword`, `immersive_smithing:javelin`,
+`immersive_smithing:heavy_crossbow`, ... plus `club` and `cestus`). Their `categories` are Spartan's per-type item tags
 (`spartanweaponry:longswords`, ...), so add-ons that tag their weapons the same way get the matching pattern.
 
 ## Forge patterns
 
-`data/<namespace>/otes_smithing/forge_patterns/<name>.json`
+`data/<namespace>/immersive_smithing/forge_patterns/<name>.json`
 
 ```json
 {
@@ -158,21 +158,21 @@ track lengths per second; the marker speeds up by `acceleration` per second whil
 
 | Tag | Meaning |
 |---|---|
-| `otes_smithing:smithable_equipment` | Always a candidate for automatic detection. |
-| `otes_smithing:non_smithable_equipment` | Never detected, disabled or given a smithing recipe (explicit recipes included). |
-| `otes_smithing:smithable_shields` | Shields that may be detected even if not predominantly metal. |
-| `otes_smithing:non_smithable_shields` | Shields never redirected (contains `minecraft:shield`). |
-| `otes_smithing:non_recyclable` | Never melted down. |
-| `otes_smithing:forge_fuels` | Solid fuels the forge accepts (with a furnace burn time), plus `minecraft:lava_bucket`. |
-| `otes_smithing:forge_igniters` | Items that ignite the forge (flint and steel, fire charge). |
-| `otes_smithing:netherite_fuels` | Heat sources for netherite (lava only). |
-| `otes_smithing:tongs`, `otes_smithing:hammers` | The smithing tools. |
+| `immersive_smithing:smithable_equipment` | Always a candidate for automatic detection. |
+| `immersive_smithing:non_smithable_equipment` | Never detected, disabled or given a smithing recipe (explicit recipes included). |
+| `immersive_smithing:smithable_shields` | Shields that may be detected even if not predominantly metal. |
+| `immersive_smithing:non_smithable_shields` | Shields never redirected (contains `minecraft:shield`). |
+| `immersive_smithing:non_recyclable` | Never melted down. |
+| `immersive_smithing:forge_fuels` | Solid fuels the forge accepts (with a furnace burn time), plus `minecraft:lava_bucket`. |
+| `immersive_smithing:forge_igniters` | Items that ignite the forge (flint and steel, fire charge). |
+| `immersive_smithing:netherite_fuels` | Heat sources for netherite (lava only). |
+| `immersive_smithing:tongs`, `immersive_smithing:hammers` | The smithing tools. |
 
 ## Automatic detection
 
 With `autoDetectEquipment` on, each crafting recipe whose result is a single unstackable, damageable weapon, tool,
 armor piece or metal shield is analysed. It becomes an automatic smithing recipe
-(`otes_smithing:auto/<namespace>/<item>`) only if:
+(`immersive_smithing:auto/<namespace>/<item>`) only if:
 
 - every ingredient is entirely one metal family or entirely non-metal,
 - exactly one metal family is used,
@@ -182,19 +182,19 @@ armor piece or metal shield is analysed. It becomes an automatic smithing recipe
 
 An ingredient that is itself a shield is dismissed when the result is a shield: a metal shield built on a wooden base
 shield costs only its metal, and the base is not required. Everything else is skipped and listed by
-`/otessmithing report`. Bows, crossbows, fishing rods and tridents are not candidates unless tagged
-`otes_smithing:smithable_equipment`.
+`/immersivesmithing report`. Bows, crossbows, fishing rods and tridents are not candidates unless tagged
+`immersive_smithing:smithable_equipment`.
 
 Smithing-table upgrades (`minecraft:smithing_transform`) whose result is candidate equipment without a smithing
 recipe are redirected too, when the addition is a single metal family (for example netherite from any mod). The
 template is never required. The cost is the base item's shape in the addition's metal: the base's own smithing recipe
 if it has one (units scaled by the addition's unit value), otherwise its crafting recipe, where ingredients the base
 accepts as repair material (or `forge:gems`/`forge:ingots`) are the material slots, other components stay auxiliary
-and a base shield is dismissed. The recipe id is `otes_smithing:auto/<namespace>/<item>`.
+and a base shield is dismissed. The recipe id is `immersive_smithing:auto/<namespace>/<item>`.
 
 ## Built-in mod support
 
-Recipes for other mods live under `data/otes_smithing/recipes/compat/<modid>/` and start with a
+Recipes for other mods live under `data/immersive_smithing/recipes/compat/<modid>/` and start with a
 `forge:mod_loaded` condition, so they are inert without that mod.
 
 Spartan Weaponry: every metal weapon of all 24 types (melee, throwing weapons, longbows, heavy crossbows) in copper,
@@ -214,20 +214,20 @@ that produce a smithable item from recognised metal are removed at reload, as ar
 
 ## Item data
 
-Finished items keep quality in the `otes_smithing` compound of the stack's tag:
+Finished items keep quality in the `immersive_smithing` compound of the stack's tag:
 
 ```
-otes_smithing: { Version: 1, Forged: 1b, ForgeScore: 94, AnvilScore: 82, Faulty: 0b, Quality: "fine", DurabilityCarry: 0.4d }
+immersive_smithing: { Version: 1, Forged: 1b, ForgeScore: 94, AnvilScore: 82, Faulty: 0b, Quality: "fine", DurabilityCarry: 0.4d }
 ```
 
 A stack without this compound behaves exactly like Standard quality. Tongs and Hot Workpiece items carry
-`otes_smithing.HeldWorkpiece` with `Version`, `TargetStack`, `RecipeId`, `MaterialFamily`, `MetalUnits`,
+`immersive_smithing.HeldWorkpiece` with `Version`, `TargetStack`, `RecipeId`, `MaterialFamily`, `MetalUnits`,
 `ForgeScore`, `AnvilScore`, `Faulty`, `State` (`FORGED` or `SHAPED`) and `AnvilPattern`.
 
 ## Java API
 
-`com.otectus.otessmithing.api.OtesSmithingAPI`. Register during `FMLCommonSetupEvent`, or send an IMC message to
-`otes_smithing` whose payload is a `Supplier` of the interface.
+`com.otectus.immersivesmithing.api.ImmersiveSmithingAPI`. Register during `FMLCommonSetupEvent`, or send an IMC message to
+`immersive_smithing` whose payload is a `Supplier` of the interface.
 
 | Interface | IMC method | Purpose |
 |---|---|---|
@@ -240,17 +240,17 @@ A stack without this compound behaves exactly like Standard quality. Tongs and H
 | `Predicate<ItemStack>` | `exclusion` | Excludes items from detection, suppression, recycling and quality. |
 
 ```java
-InterModComms.sendTo("otes_smithing", OtesSmithingAPI.IMC_CLASSIFIER,
-        () -> (IEquipmentClassifier) stack -> stack.is(MY_GLAIVES) ? new ResourceLocation("otes_smithing", "generic_weapon") : null);
+InterModComms.sendTo("immersive_smithing", ImmersiveSmithingAPI.IMC_CLASSIFIER,
+        () -> (IEquipmentClassifier) stack -> stack.is(MY_GLAIVES) ? new ResourceLocation("immersive_smithing", "generic_weapon") : null);
 ```
 
 ## Commands
 
 Operators (permission level 2):
 
-- `/otessmithing reload` - full datapack reload.
-- `/otessmithing material <item>` - family, units and the rule that matched, or the recycling value.
-- `/otessmithing recipe <item>` - smithing recipes for the item and the conventional recipes they disabled.
-- `/otessmithing quality` - quality and multipliers of the held item.
-- `/otessmithing report` - writes `logs/otes_smithing_report.txt` with every detection decision.
-- `/otessmithing session` - active minigame sessions.
+- `/immersivesmithing reload` - full datapack reload.
+- `/immersivesmithing material <item>` - family, units and the rule that matched, or the recycling value.
+- `/immersivesmithing recipe <item>` - smithing recipes for the item and the conventional recipes they disabled.
+- `/immersivesmithing quality` - quality and multipliers of the held item.
+- `/immersivesmithing report` - writes `logs/immersive_smithing_report.txt` with every detection decision.
+- `/immersivesmithing session` - active minigame sessions.

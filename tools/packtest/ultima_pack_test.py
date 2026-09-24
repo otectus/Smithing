@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Full-modpack acceptance test for Ote's Smithing against the Ultima CurseForge instance.
+"""Full-modpack acceptance test for Immersive Smithing against the Ultima CurseForge instance.
 
 Launches an isolated copy of the pack offline, using the launcher's installed libraries (same approach as
 UltimaKingdoms/tools/client-test/production_client.py). The real instance is never modified: jars are hardlinked
@@ -7,7 +7,7 @@ read-only, everything else is copied into build/packtest/<label>/.
 
 While the client runs, the game window's real on-screen pixels are captured with grim (Hyprland), so a window that
 stops presenting (for example stuck on Forge's early loading screen) is detected even when the log shows the game
-reaching the title screen. The otes_smithing_packtest agent (build/libs/*-packtest.jar) then creates a flat world,
+reaching the title screen. The immersive_smithing_packtest agent (build/libs/*-packtest.jar) then creates a flat world,
 checks the smithing data, takes framebuffer screenshots and quits.
 
 Usage:
@@ -34,6 +34,8 @@ FORGE_VERSION = 'forge-47.4.23'
 HEAP = '10624M'  # the instance's allocatedMemory
 COPY_SKIP = {'mods', 'saves', 'logs', 'crash-reports', 'screenshots', 'downloads', 'modernfix', 'quickskin_cache'}
 MOJANG_RED = (239, 50, 61)
+# Installed builds of this mod are left out of the copy; otes- names are builds from before the rename.
+OWN_JAR_PREFIXES = ('immersive-smithing', 'immersive_smithing', 'otes-smithing', 'otes_smithing')
 
 
 def allowed(rules):
@@ -51,7 +53,7 @@ def build_instance(work, mod_jar, agent_jar, early_window_control):
     (work / 'mods').mkdir(parents=True)
     linked = 0
     for jar in sorted((PACK / 'mods').iterdir()):
-        if not jar.name.endswith('.jar') or jar.name.startswith('otes-smithing') or jar.name.startswith('otes_smithing'):
+        if not jar.name.endswith('.jar') or jar.name.startswith(OWN_JAR_PREFIXES):
             continue
         target = work / 'mods' / jar.name
         try:
@@ -118,7 +120,7 @@ def launch_command(work, props):
               'assets_root': str(INSTALL / 'assets'), 'assets_index_name': vanilla['assetIndex']['id'],
               'auth_uuid': uuid.uuid3(uuid.NAMESPACE_DNS, 'OfflinePlayer:PackTest').hex, 'auth_access_token': '0',
               'clientid': '', 'auth_xuid': '', 'user_type': 'legacy', 'version_type': 'release',
-              'natives_directory': str(work / 'natives'), 'launcher_name': 'OtesSmithingPackTest', 'launcher_version': '1',
+              'natives_directory': str(work / 'natives'), 'launcher_name': 'ImmersiveSmithingPackTest', 'launcher_version': '1',
               'classpath': ':'.join(cp), 'classpath_separator': ':', 'library_directory': str(INSTALL / 'libraries')}
 
     def expand(args):
@@ -187,9 +189,9 @@ def main():
     libs = ROOT / 'build' / 'libs'
     mod_jar = agent_jar = None
     if not args.without_mod:
-        mod_jar = args.mod_jar or max((p for p in libs.glob('otes-smithing-*.jar') if not p.stem.endswith('-packtest')),
+        mod_jar = args.mod_jar or max((p for p in libs.glob('immersive-smithing-*.jar') if not p.stem.endswith('-packtest')),
                                       key=lambda p: p.stat().st_mtime)
-        agent_jar = max(libs.glob('otes-smithing-*-packtest.jar'), key=lambda p: p.stat().st_mtime)
+        agent_jar = max(libs.glob('immersive-smithing-*-packtest.jar'), key=lambda p: p.stat().st_mtime)
     work = ROOT / 'build' / 'packtest' / args.label
     if work.exists():
         raise SystemExit(f'Refusing to reuse {work}')
@@ -197,8 +199,8 @@ def main():
     linked = build_instance(work, mod_jar, agent_jar, args.early_window_control)
     props = {}
     if agent_jar:
-        props = {'otes_smithing.packtest.output': str(work), 'otes_smithing.packtest.world': str(not args.no_world).lower(),
-                 'otes_smithing.packtest.expect': args.expect}
+        props = {'immersive_smithing.packtest.output': str(work), 'immersive_smithing.packtest.world': str(not args.no_world).lower(),
+                 'immersive_smithing.packtest.expect': args.expect}
     cmd = launch_command(work, props)
     artifacts = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in [mod_jar, agent_jar] if p}
     (work / 'launch.json').write_text(json.dumps({'command': cmd, 'artifacts': artifacts, 'pack_jars': linked,
@@ -260,15 +262,15 @@ def main():
     own_frames = sorted(set(own_traces(text)))
     crashes = sorted(p.name for p in (work / 'crash-reports').glob('*.txt')) if (work / 'crash-reports').is_dir() else []
     own_errors = [line for line in text.splitlines()
-                  if ('/ERROR]' in line or '/FATAL]' in line) and ('otes_smithing' in line or 'otessmithing' in line)]
+                  if ('/ERROR]' in line or '/FATAL]' in line) and ('immersive_smithing' in line or 'immersivesmithing' in line)]
     result = None
     if (work / 'packtest-result.json').exists():
         result = json.loads((work / 'packtest-result.json').read_text())
     passed = (freeze in ('OK', 'UNOBSERVED') and title_at is not None and not own_frames and not own_errors and not crashes
               and (agent_jar is None or args.no_world or (result is not None and result.get('pass'))))
     summary = {'pass': passed, 'freeze': freeze, 'title_seconds': title_at, 'elapsed_seconds': round(elapsed),
-               'exit_code': proc.returncode, 'agent_result': result, 'otes_stack_frames': own_frames[:20],
-               'otes_error_lines': own_errors[:20], 'crash_reports': crashes, 'frames': frames}
+               'exit_code': proc.returncode, 'agent_result': result, 'own_stack_frames': own_frames[:20],
+               'own_error_lines': own_errors[:20], 'crash_reports': crashes, 'frames': frames}
     (work / 'summary.json').write_text(json.dumps(summary, indent=2))
     print(f'[packtest] {"PASS" if passed else "FAIL"}: freeze={freeze}, title={title_at and round(title_at)}s, '
           f'agent={result and result.get("pass")}, own stack traces={len(own_frames)}, own errors={len(own_errors)}, '
@@ -284,7 +286,7 @@ PLATFORM_PACKAGES = ('java.', 'javax.', 'jdk.', 'sun.', 'net.minecraft.', 'com.m
 
 
 def own_traces(text):
-    """Innermost non-platform frame of every stack trace (and each Caused by) that belongs to Ote's Smithing.
+    """Innermost non-platform frame of every stack trace (and each Caused by) that belongs to Immersive Smithing.
 
     Our frames deeper in a stack do not count: the pack-test agent creating a world is on the stack whenever
     another mod's reload listener logs an exception, and that exception is not ours."""
@@ -296,7 +298,7 @@ def own_traces(text):
             continue
         if current:
             first = next((f for f in current if not f[3:].startswith(PLATFORM_PACKAGES)), None)
-            if first and first[3:].startswith('com.otectus.otessmithing'):
+            if first and first[3:].startswith('com.otectus.immersivesmithing'):
                 found.append(first)
             current = []
     return found

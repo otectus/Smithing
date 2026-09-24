@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "particle": "immersive_smithing:block/molten_metal",
+    "surface": "immersive_smithing:block/molten_metal"
+  },
+  "elements": [
+    {
+      "name": "hot_plate",
+      "from": [
+        3,
+        0,
+        3
+      ],
+      "to": [
+        13,
+        1,
+        13
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ],
+          "texture": "#surface"
+        },
+        "north": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            3,
+            15,
+            13,
+            16
+          ],
+          "texture": "#surface"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "pike",
+        "electrum"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/electrum"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:electrum",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:pole"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:electrum_pike"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:pike"
+}

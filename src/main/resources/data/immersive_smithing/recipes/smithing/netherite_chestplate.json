@@ -1,0 +1,10 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 72,
+  "result": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate"
+}

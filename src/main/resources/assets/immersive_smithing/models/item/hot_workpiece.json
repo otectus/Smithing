@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "immersive_smithing:item/hot_workpiece"
+  },
+  "loader": "forge:item_layers",
+  "forge_data": {
+    "layers": {
+      "0": {
+        "block_light": 15,
+        "sky_light": 15,
+        "ambient_occlusion": false
+      }
+    }
+  }
+}

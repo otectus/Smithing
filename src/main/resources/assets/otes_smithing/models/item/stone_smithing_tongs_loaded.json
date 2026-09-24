@@ -1,7 +1,0 @@
-{
-  "parent": "otes_smithing:item/tongs",
-  "textures": {
-    "layer0": "otes_smithing:item/stone_smithing_tongs",
-    "layer1": "otes_smithing:item/tongs_workpiece"
-  }
-}

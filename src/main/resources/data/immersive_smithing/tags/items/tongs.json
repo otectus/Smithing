@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_smithing:stone_smithing_tongs",
+    "immersive_smithing:iron_smithing_tongs",
+    "immersive_smithing:diamond_smithing_tongs",
+    "immersive_smithing:netherite_smithing_tongs"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_smithing:stone_smithing_hammer",
+    "immersive_smithing:iron_smithing_hammer",
+    "immersive_smithing:diamond_smithing_hammer",
+    "immersive_smithing:netherite_smithing_hammer"
+  ]
+}

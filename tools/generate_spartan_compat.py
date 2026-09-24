@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generates Ote's Smithing recipes for every Spartan Weaponry metal weapon from Spartan's own recipe JSONs.
+"""Generates Immersive Smithing recipes for every Spartan Weaponry metal weapon from Spartan's own recipe JSONs.
 
 Run from the project root (the jar defaults to the Gradle cache copy):
   python3 tools/generate_spartan_compat.py [path/to/spartanweaponry.jar]
 
-Output: src/main/resources/data/otes_smithing/recipes/compat/spartanweaponry/<metal>_<type>.json. The output is
+Output: src/main/resources/data/immersive_smithing/recipes/compat/spartanweaponry/<metal>_<type>.json. The output is
 deterministic and committed; re-run it when the pinned Spartan Weaponry version changes.
 
 Rules (mirroring Spartan's shapes exactly):
@@ -23,11 +23,11 @@ import sys
 import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = ROOT / 'src/main/resources/data/otes_smithing/recipes/compat/spartanweaponry'
+OUT = ROOT / 'src/main/resources/data/immersive_smithing/recipes/compat/spartanweaponry'
 TYPES = ['battle_hammer', 'battleaxe', 'boomerang', 'dagger', 'flanged_mace', 'glaive', 'greatsword', 'halberd',
          'heavy_crossbow', 'javelin', 'katana', 'lance', 'longbow', 'longsword', 'parrying_dagger', 'pike',
          'quarterstaff', 'rapier', 'saber', 'scythe', 'spear', 'throwing_knife', 'tomahawk', 'warhammer']
-METALS = {  # Spartan recipe prefix -> Ote's Smithing material family
+METALS = {  # Spartan recipe prefix -> Immersive Smithing material family
     'copper': 'minecraft:copper', 'golden': 'minecraft:gold', 'iron': 'minecraft:iron',
     'tin': 'forge:tin', 'bronze': 'forge:bronze', 'steel': 'forge:steel', 'silver': 'forge:silver',
     'electrum': 'forge:electrum', 'lead': 'forge:lead', 'nickel': 'forge:nickel', 'invar': 'forge:invar',
@@ -63,12 +63,12 @@ def conditions(recipe):
 
 
 def smithing(result, family, units, aux, pattern, conds):
-    obj = {'conditions': conds, 'type': 'otes_smithing:smithing', 'material': family, 'metal_units': units}
+    obj = {'conditions': conds, 'type': 'immersive_smithing:smithing', 'material': family, 'metal_units': units}
     if aux:
         obj['auxiliary'] = [{'ingredient': ing, 'count': count} for ing, count in aux]
     obj['result'] = {'item': result}
-    obj['forge_pattern'] = 'otes_smithing:standard'
-    obj['anvil_pattern'] = f'otes_smithing:{pattern}'
+    obj['forge_pattern'] = 'immersive_smithing:standard'
+    obj['anvil_pattern'] = f'immersive_smithing:{pattern}'
     return obj
 
 

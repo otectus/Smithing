@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "katana",
+        "copper"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/copper"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:copper",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:copper_katana"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:katana"
+}

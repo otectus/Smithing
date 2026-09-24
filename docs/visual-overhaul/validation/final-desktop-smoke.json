@@ -1,0 +1,76 @@
+{
+  "pass": true,
+  "reason": "all visual, data and runtime checks passed",
+  "title_ms": 2446,
+  "world_ms": 9369,
+  "checks": {
+    "pack_screens_settled_ticks": 40,
+    "summary": "4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped",
+    "smithing_data_built": true,
+    "vanilla_explicit_recipes": true,
+    "material_families": 4,
+    "iron_sword_crafting_disabled": true,
+    "mods_loaded": 5,
+    "empty_station_count": 32,
+    "gallery_station_count": 52,
+    "inventory_tool_variants": 12,
+    "gui_scale_1": {
+      "scale": 1,
+      "width": 944,
+      "height": 1145
+    },
+    "gui_scale_2": {
+      "scale": 2,
+      "width": 472,
+      "height": 573
+    },
+    "gui_scale_3": {
+      "scale": 3,
+      "width": 472,
+      "height": 573
+    },
+    "gui_minimum_320x240": true,
+    "gui_minimum_probe": {
+      "requested_framebuffer": "960x720",
+      "logical_width": 472,
+      "logical_height": 573,
+      "exact_320x240": false
+    },
+    "accessibility_mode": "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles",
+    "accessibility_settings_restored": true,
+    "jei_status": "smithing category opened",
+    "resource_reload": true,
+    "jei_runtime_available": true,
+    "quench_effect_source": "real SmithsTroughBlock.use server action",
+    "grind_effect_source": "real SmithsGrindstoneBlock.use confirmation action",
+    "anvil_effect_source": "server StationEffectPacket injection; minigame strike remains server-authoritative",
+    "frame_measurement_settings": {
+      "vsync": false,
+      "frame_limit": 260,
+      "render_distance": 6,
+      "camera": "fixed spectator"
+    },
+    "frame_times_empty": {
+      "label": "empty",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "sample_frames": 180,
+      "average_ms": 0.41,
+      "p50_ms": 0.23,
+      "p95_ms": 1.79,
+      "average_fps": 2449.55
+    },
+    "active_station_count": 32,
+    "frame_times_32_active": {
+      "label": "active",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "sample_frames": 180,
+      "average_ms": 0.78,
+      "p50_ms": 0.41,
+      "p95_ms": 3.55,
+      "average_fps": 1275.11
+    },
+    "frame_measurement_real_render_frames": true
+  }
+}

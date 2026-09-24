@@ -1,0 +1,11 @@
+{
+  "branch": "main",
+  "commit": "3840ff0",
+  "origin": "https://github.com/otectus/Smithing.git",
+  "working_tree_before_editing": "clean",
+  "command": "./gradlew runClient -PsmokeTest",
+  "result": "PASS",
+  "duration_seconds": 43,
+  "screenshots": 13,
+  "captured_before_source_edits": true
+}

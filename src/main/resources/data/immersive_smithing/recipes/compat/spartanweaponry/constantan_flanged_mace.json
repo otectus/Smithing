@@ -1,0 +1,44 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "flanged_mace",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:constantan",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:rods/wooden"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:constantan_flanged_mace"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:flanged_mace"
+}

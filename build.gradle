@@ -23,7 +23,7 @@ sourceSets {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
     }
-    // Test-only agent mod (otes_smithing_packtest): drives a client into a fresh world, checks smithing data, stages
+    // Test-only agent mod (immersive_smithing_packtest): drives a client into a fresh world, checks smithing data, stages
     // every station and screen for screenshots, writes packtest-result.json and quits. Used by runClient -PsmokeTest
     // and, as the reobfuscated packTestJar, by tools/packtest against a full modpack. Never shipped.
     packTest {
@@ -42,18 +42,18 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', mod_id
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            mods { otes_smithing { source sourceSets.main } }
+            mods { immersive_smithing { source sourceSets.main } }
         }
         client {
             if (project.hasProperty('smokeTest')) {
-                property 'otes_smithing.packtest.output', file('run/packtest').absolutePath
-                mods { otes_smithing_packtest { source sourceSets.packTest } }
+                property 'immersive_smithing.packtest.output', file('run/packtest').absolutePath
+                mods { immersive_smithing_packtest { source sourceSets.packTest } }
             }
         }
         server { args '--nogui' }
         gameTestServer {
             workingDirectory project.file('run-gametest')
-            mods { otes_smithing { source sourceSets.gameTest } }
+            mods { immersive_smithing { source sourceSets.gameTest } }
         }
     }
 }
@@ -104,11 +104,11 @@ tasks.register('packTestJar', Jar) {
     archiveClassifier = 'packtest'
     from sourceSets.packTest.output
     exclude "${mod_id}.refmap.json"
-    manifest.attributes('Implementation-Title': 'otes_smithing_packtest', 'Implementation-Version': mod_version)
+    manifest.attributes('Implementation-Title': 'immersive_smithing_packtest', 'Implementation-Version': mod_version)
 }
 
 reobf {
-    // The agent calls inherited Minecraft methods on Ote's Smithing types, so reobf must see the main classes.
+    // The agent calls inherited Minecraft methods on Immersive Smithing types, so reobf must see the main classes.
     packTestJar { libraries.from(sourceSets.packTest.compileClasspath) }
 }
 

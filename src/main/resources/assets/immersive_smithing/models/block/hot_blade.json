@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "particle": "immersive_smithing:block/molten_metal",
+    "surface": "immersive_smithing:block/molten_metal"
+  },
+  "elements": [
+    {
+      "name": "hot_blade",
+      "from": [
+        6,
+        0,
+        2
+      ],
+      "to": [
+        10,
+        1,
+        14
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            6,
+            2,
+            10,
+            14
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            6,
+            2,
+            10,
+            14
+          ],
+          "texture": "#surface"
+        },
+        "north": {
+          "uv": [
+            6,
+            15,
+            10,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            6,
+            15,
+            10,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            2,
+            15,
+            14,
+            16
+          ],
+          "texture": "#surface"
+        }
+      }
+    }
+  ]
+}

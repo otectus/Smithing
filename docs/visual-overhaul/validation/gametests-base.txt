@@ -1,0 +1,1462 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileGameTestJava UP-TO-DATE
+> Task :processGameTestResources UP-TO-DATE
+> Task :gameTestClasses UP-TO-DATE
+> Task :createSrgToMcp UP-TO-DATE
+> Task :downloadMCMeta UP-TO-DATE
+> Task :downloadAssets UP-TO-DATE
+> Task :extractNatives UP-TO-DATE
+> Task :makeSrcDirs
+> Task :prepareRuns
+> Task :prepareRunGameTestServer
+> Task :prepareRunGameTestServerCompile UP-TO-DATE
+
+> Task :runGameTestServer
+2026-09-23 18:17:17,844 main WARN Advanced terminal features are not available in this environment
+[18:17:17] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgegametestserveruserdev, --gameDir, ., --fml.forgeVersion, 47.4.23, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, otes_smithing.mixins.json]
+[18:17:17] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.19 by Arch Linux; OS Linux arch amd64 version 7.2.6-1-cachyos
+[18:17:18] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgegametestserveruserdev
+[18:17:18] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/otectus/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23116!/ Service=ModLauncher Env=SERVER
+[18:17:18] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.23/103ee0ecf6e5e4a971ee1ae68384e96fd73b097f/javafmllanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:17:18] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.23/2531b2da1460bc09c8ec3bf946e641de664b460d/lowcodelanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:17:18] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.23/eebf4eae01f6fde63717bb38b77f9b6b1b50f8/mclanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:17:18] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.23/ef56cfb608a4356c3f99dd6a4fa81ce33029bcde/fmlcore-1.20.1-47.4.23.jar is missing mods.toml file
+[18:17:18] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[18:17:19] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[18:17:19] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgegametestserveruserdev' with arguments [--gameDir, .]
+[18:17:19] [main/WARN] [mixin/]: Reference map 'otes_smithing.refmap.json' for otes_smithing.mixins.json could not be read. If this is a development environment you can ignore this message
+[18:17:22] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1 with MCP 20230612.114412
+[18:17:22] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.23 Initialized
+[18:17:23] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[18:17:23] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: AHEAD Current: 47.4.23 Target: null
+[18:17:23] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18:17:24] [main/WARN] [ne.mi.co.ForgeHooks/WP]: The following mods have version differences that were not resolved:
+immersive_armors (version 1.7.1+1.20.1 -> MISSING)
+mixinextras (version 0.3.5 -> MISSING)
+spartanshields (version 3.1.1 -> MISSING)
+spartanweaponry (version 3.2.1 -> MISSING)
+Things may not work well.
+[18:17:24] [main/WARN] [ne.mi.re.GameData/REGISTRIES]: Forge Mod Loader detected missing/unknown registrie(s).
+
+There are 2 missing registries in this save.
+If you continue the missing registries will get removed.
+This may cause issues, it is advised that you create a world backup before continuing.
+
+
+[18:17:24] [main/WARN] [ne.mi.re.GameData/REGISTRIES]: Missing Registries:
+spartanweaponry:oil_effects
+spartanweaponry:weapon_traits
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:block
+	spartanweaponry:blaze_head: 1007
+	spartanweaponry:blaze_wall_head: 1008
+	spartanweaponry:cave_spider_head: 1013
+	spartanweaponry:cave_spider_wall_head: 1014
+	spartanweaponry:drowned_head: 1021
+	spartanweaponry:drowned_wall_head: 1022
+	spartanweaponry:enderman_head: 1009
+	spartanweaponry:enderman_wall_head: 1010
+	spartanweaponry:husk_head: 1017
+	spartanweaponry:husk_wall_head: 1018
+	spartanweaponry:illager_head: 1023
+	spartanweaponry:illager_wall_head: 1024
+	spartanweaponry:spider_head: 1011
+	spartanweaponry:spider_wall_head: 1012
+	spartanweaponry:stray_skull: 1019
+	spartanweaponry:stray_wall_skull: 1020
+	spartanweaponry:witch_head: 1025
+	spartanweaponry:witch_wall_head: 1026
+	spartanweaponry:zombified_piglin_head: 1015
+	spartanweaponry:zombified_piglin_wall_head: 1016
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:enchantment
+	spartanshields:firebrand: 40
+	spartanshields:payback: 41
+	spartanshields:spikes: 39
+	spartanweaponry:collectorang: 50
+	spartanweaponry:expanse: 48
+	spartanweaponry:hydrodynamic: 46
+	spartanweaponry:incendiary: 44
+	spartanweaponry:lucky_throw: 45
+	spartanweaponry:propel: 42
+	spartanweaponry:razors_edge: 43
+	spartanweaponry:sharpshooter: 49
+	spartanweaponry:supercharge: 47
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:entity_type
+	spartanweaponry:arrow: 124
+	spartanweaponry:bolt: 126
+	spartanweaponry:boomerang: 132
+	spartanweaponry:dynamite: 133
+	spartanweaponry:explosive_arrow: 125
+	spartanweaponry:javelin: 131
+	spartanweaponry:spectral_bolt: 127
+	spartanweaponry:throwing_knife: 129
+	spartanweaponry:throwing_weapon: 128
+	spartanweaponry:tomahawk: 130
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:item
+	immersive_armors:bone_boots: 1272
+	immersive_armors:bone_chestplate: 1270
+	immersive_armors:bone_helmet: 1269
+	immersive_armors:bone_leggings: 1271
+	immersive_armors:divine_boots: 1296
+	immersive_armors:divine_chestplate: 1294
+	immersive_armors:divine_helmet: 1293
+	immersive_armors:divine_leggings: 1295
+	immersive_armors:heavy_boots: 1284
+	immersive_armors:heavy_chestplate: 1282
+	immersive_armors:heavy_helmet: 1281
+	immersive_armors:heavy_leggings: 1283
+	immersive_armors:prismarine_boots: 1300
+	immersive_armors:prismarine_chestplate: 1298
+	immersive_armors:prismarine_helmet: 1297
+	immersive_armors:prismarine_leggings: 1299
+	immersive_armors:robe_boots: 1288
+	immersive_armors:robe_chestplate: 1286
+	immersive_armors:robe_helmet: 1285
+	immersive_armors:robe_leggings: 1287
+	immersive_armors:slime_boots: 1292
+	immersive_armors:slime_chestplate: 1290
+	immersive_armors:slime_helmet: 1289
+	immersive_armors:slime_leggings: 1291
+	immersive_armors:steampunk_boots: 1308
+	immersive_armors:steampunk_chestplate: 1306
+	immersive_armors:steampunk_helmet: 1305
+	immersive_armors:steampunk_leggings: 1307
+	immersive_armors:warrior_boots: 1280
+	immersive_armors:warrior_chestplate: 1278
+	immersive_armors:warrior_helmet: 1277
+	immersive_armors:warrior_leggings: 1279
+	immersive_armors:wither_boots: 1276
+	immersive_armors:wither_chestplate: 1274
+	immersive_armors:wither_helmet: 1273
+	immersive_armors:wither_leggings: 1275
+	immersive_armors:wooden_boots: 1304
+	immersive_armors:wooden_chestplate: 1302
+	immersive_armors:wooden_helmet: 1301
+	immersive_armors:wooden_leggings: 1303
+	spartanshields:advanced_mekanists_basic_shield: 1359
+	spartanshields:advanced_mekanists_tower_shield: 1360
+	spartanshields:aluminum_basic_shield: 1345
+	spartanshields:aluminum_tower_shield: 1346
+	spartanshields:basic_mekanists_basic_shield: 1357
+	spartanshields:basic_mekanists_tower_shield: 1358
+	spartanshields:bronze_basic_shield: 1327
+	spartanshields:bronze_tower_shield: 1328
+	spartanshields:constantan_basic_shield: 1341
+	spartanshields:constantan_tower_shield: 1342
+	spartanshields:copper_basic_shield: 1313
+	spartanshields:copper_tower_shield: 1314
+	spartanshields:dark_steel_riot_basic_shield: 1365
+	spartanshields:dark_steel_riot_tower_shield: 1366
+	spartanshields:diamond_basic_shield: 1319
+	spartanshields:diamond_tower_shield: 1320
+	spartanshields:electrum_basic_shield: 1333
+	spartanshields:electrum_tower_shield: 1334
+	spartanshields:elementium_basic_shield: 1351
+	spartanshields:elementium_tower_shield: 1352
+	spartanshields:elite_mekanists_basic_shield: 1361
+	spartanshields:elite_mekanists_tower_shield: 1362
+	spartanshields:enderium_basic_shield: 1371
+	spartanshields:enderium_tower_shield: 1372
+	spartanshields:golden_basic_shield: 1317
+	spartanshields:golden_tower_shield: 1318
+	spartanshields:invar_basic_shield: 1339
+	spartanshields:invar_tower_shield: 1340
+	spartanshields:iron_basic_shield: 1315
+	spartanshields:iron_tower_shield: 1316
+	spartanshields:lapis_lazuli_basic_shield: 1354
+	spartanshields:lead_basic_shield: 1335
+	spartanshields:lead_tower_shield: 1336
+	spartanshields:lumium_basic_shield: 1369
+	spartanshields:lumium_tower_shield: 1370
+	spartanshields:manasteel_basic_shield: 1347
+	spartanshields:manasteel_tower_shield: 1348
+	spartanshields:netherite_basic_shield: 1321
+	spartanshields:netherite_tower_shield: 1322
+	spartanshields:nickel_basic_shield: 1337
+	spartanshields:nickel_tower_shield: 1338
+	spartanshields:obsidian_basic_shield: 1323
+	spartanshields:obsidian_tower_shield: 1324
+	spartanshields:osmium_basic_shield: 1353
+	spartanshields:platinum_basic_shield: 1343
+	spartanshields:platinum_tower_shield: 1344
+	spartanshields:refined_glowstone_basic_shield: 1355
+	spartanshields:refined_obsidian_basic_shield: 1356
+	spartanshields:signalum_basic_shield: 1367
+	spartanshields:signalum_tower_shield: 1368
+	spartanshields:silver_basic_shield: 1331
+	spartanshields:silver_tower_shield: 1332
+	spartanshields:steel_basic_shield: 1329
+	spartanshields:steel_tower_shield: 1330
+	spartanshields:stone_basic_shield: 1311
+	spartanshields:stone_tower_shield: 1312
+	spartanshields:terrasteel_basic_shield: 1349
+	spartanshields:terrasteel_tower_shield: 1350
+	spartanshields:tin_basic_shield: 1325
+	spartanshields:tin_tower_shield: 1326
+	spartanshields:ultimate_mekanists_basic_shield: 1363
+	spartanshields:ultimate_mekanists_tower_shield: 1364
+	spartanshields:wooden_basic_shield: 1309
+	spartanshields:wooden_tower_shield: 1310
+	spartanweaponry:aluminum_battle_hammer: 1526
+	spartanweaponry:aluminum_battleaxe: 1742
+	spartanweaponry:aluminum_boomerang: 1724
+	spartanweaponry:aluminum_dagger: 1396
+	spartanweaponry:aluminum_flanged_mace: 1760
+	spartanweaponry:aluminum_glaive: 1778
+	spartanweaponry:aluminum_greatsword: 1504
+	spartanweaponry:aluminum_halberd: 1580
+	spartanweaponry:aluminum_heavy_crossbow: 1652
+	spartanweaponry:aluminum_javelin: 1706
+	spartanweaponry:aluminum_katana: 1450
+	spartanweaponry:aluminum_lance: 1616
+	spartanweaponry:aluminum_longbow: 1634
+	spartanweaponry:aluminum_longsword: 1432
+	spartanweaponry:aluminum_parrying_dagger: 1414
+	spartanweaponry:aluminum_pike: 1598
+	spartanweaponry:aluminum_quarterstaff: 1796
+	spartanweaponry:aluminum_rapier: 1486
+	spartanweaponry:aluminum_saber: 1468
+	spartanweaponry:aluminum_scythe: 1814
+	spartanweaponry:aluminum_spear: 1562
+	spartanweaponry:aluminum_throwing_knife: 1670
+	spartanweaponry:aluminum_tomahawk: 1688
+	spartanweaponry:aluminum_warhammer: 1544
+	spartanweaponry:blaze_head: 1849
+	spartanweaponry:bolt: 1826
+	spartanweaponry:bronze_battle_hammer: 1517
+	spartanweaponry:bronze_battleaxe: 1733
+	spartanweaponry:bronze_boomerang: 1715
+	spartanweaponry:bronze_dagger: 1387
+	spartanweaponry:bronze_flanged_mace: 1751
+	spartanweaponry:bronze_glaive: 1769
+	spartanweaponry:bronze_greatsword: 1495
+	spartanweaponry:bronze_halberd: 1571
+	spartanweaponry:bronze_heavy_crossbow: 1643
+	spartanweaponry:bronze_javelin: 1697
+	spartanweaponry:bronze_katana: 1441
+	spartanweaponry:bronze_lance: 1607
+	spartanweaponry:bronze_longbow: 1625
+	spartanweaponry:bronze_longsword: 1423
+	spartanweaponry:bronze_parrying_dagger: 1405
+	spartanweaponry:bronze_pike: 1589
+	spartanweaponry:bronze_quarterstaff: 1787
+	spartanweaponry:bronze_rapier: 1477
+	spartanweaponry:bronze_saber: 1459
+	spartanweaponry:bronze_scythe: 1805
+	spartanweaponry:bronze_spear: 1553
+	spartanweaponry:bronze_throwing_knife: 1661
+	spartanweaponry:bronze_tomahawk: 1679
+	spartanweaponry:bronze_warhammer: 1535
+	spartanweaponry:cave_spider_head: 1852
+	spartanweaponry:cestus: 1507
+	spartanweaponry:constantan_battle_hammer: 1524
+	spartanweaponry:constantan_battleaxe: 1740
+	spartanweaponry:constantan_boomerang: 1722
+	spartanweaponry:constantan_dagger: 1394
+	spartanweaponry:constantan_flanged_mace: 1758
+	spartanweaponry:constantan_glaive: 1776
+	spartanweaponry:constantan_greatsword: 1502
+	spartanweaponry:constantan_halberd: 1578
+	spartanweaponry:constantan_heavy_crossbow: 1650
+	spartanweaponry:constantan_javelin: 1704
+	spartanweaponry:constantan_katana: 1448
+	spartanweaponry:constantan_lance: 1614
+	spartanweaponry:constantan_longbow: 1632
+	spartanweaponry:constantan_longsword: 1430
+	spartanweaponry:constantan_parrying_dagger: 1412
+	spartanweaponry:constantan_pike: 1596
+	spartanweaponry:constantan_quarterstaff: 1794
+	spartanweaponry:constantan_rapier: 1484
+	spartanweaponry:constantan_saber: 1466
+	spartanweaponry:constantan_scythe: 1812
+	spartanweaponry:constantan_spear: 1560
+	spartanweaponry:constantan_throwing_knife: 1668
+	spartanweaponry:constantan_tomahawk: 1686
+	spartanweaponry:constantan_warhammer: 1542
+	spartanweaponry:copper_arrow: 1817
+	spartanweaponry:copper_battle_hammer: 1511
+	spartanweaponry:copper_battleaxe: 1727
+	spartanweaponry:copper_bolt: 1829
+	spartanweaponry:copper_boomerang: 1709
+	spartanweaponry:copper_dagger: 1381
+	spartanweaponry:copper_flanged_mace: 1745
+	spartanweaponry:copper_glaive: 1763
+	spartanweaponry:copper_greatsword: 1489
+	spartanweaponry:copper_halberd: 1565
+	spartanweaponry:copper_heavy_crossbow: 1637
+	spartanweaponry:copper_javelin: 1691
+	spartanweaponry:copper_katana: 1435
+	spartanweaponry:copper_lance: 1601
+	spartanweaponry:copper_longbow: 1619
+	spartanweaponry:copper_longsword: 1417
+	spartanweaponry:copper_parrying_dagger: 1399
+	spartanweaponry:copper_pike: 1583
+	spartanweaponry:copper_quarterstaff: 1781
+	spartanweaponry:copper_rapier: 1471
+	spartanweaponry:copper_saber: 1453
+	spartanweaponry:copper_scythe: 1799
+	spartanweaponry:copper_spear: 1547
+	spartanweaponry:copper_throwing_knife: 1655
+	spartanweaponry:copper_tomahawk: 1673
+	spartanweaponry:copper_warhammer: 1529
+	spartanweaponry:diamond_arrow: 1821
+	spartanweaponry:diamond_battle_hammer: 1514
+	spartanweaponry:diamond_battleaxe: 1730
+	spartanweaponry:diamond_bolt: 1831
+	spartanweaponry:diamond_boomerang: 1712
+	spartanweaponry:diamond_dagger: 1384
+	spartanweaponry:diamond_flanged_mace: 1748
+	spartanweaponry:diamond_glaive: 1766
+	spartanweaponry:diamond_greatsword: 1492
+	spartanweaponry:diamond_halberd: 1568
+	spartanweaponry:diamond_heavy_crossbow: 1640
+	spartanweaponry:diamond_javelin: 1694
+	spartanweaponry:diamond_katana: 1438
+	spartanweaponry:diamond_lance: 1604
+	spartanweaponry:diamond_longbow: 1622
+	spartanweaponry:diamond_longsword: 1420
+	spartanweaponry:diamond_parrying_dagger: 1402
+	spartanweaponry:diamond_pike: 1586
+	spartanweaponry:diamond_quarterstaff: 1784
+	spartanweaponry:diamond_rapier: 1474
+	spartanweaponry:diamond_saber: 1456
+	spartanweaponry:diamond_scythe: 1802
+	spartanweaponry:diamond_spear: 1550
+	spartanweaponry:diamond_throwing_knife: 1658
+	spartanweaponry:diamond_tomahawk: 1676
+	spartanweaponry:diamond_warhammer: 1532
+	spartanweaponry:drowned_head: 1856
+	spartanweaponry:dynamite: 1847
+	spartanweaponry:electrum_battle_hammer: 1520
+	spartanweaponry:electrum_battleaxe: 1736
+	spartanweaponry:electrum_boomerang: 1718
+	spartanweaponry:electrum_dagger: 1390
+	spartanweaponry:electrum_flanged_mace: 1754
+	spartanweaponry:electrum_glaive: 1772
+	spartanweaponry:electrum_greatsword: 1498
+	spartanweaponry:electrum_halberd: 1574
+	spartanweaponry:electrum_heavy_crossbow: 1646
+	spartanweaponry:electrum_javelin: 1700
+	spartanweaponry:electrum_katana: 1444
+	spartanweaponry:electrum_lance: 1610
+	spartanweaponry:electrum_longbow: 1628
+	spartanweaponry:electrum_longsword: 1426
+	spartanweaponry:electrum_parrying_dagger: 1408
+	spartanweaponry:electrum_pike: 1592
+	spartanweaponry:electrum_quarterstaff: 1790
+	spartanweaponry:electrum_rapier: 1480
+	spartanweaponry:electrum_saber: 1462
+	spartanweaponry:electrum_scythe: 1808
+	spartanweaponry:electrum_spear: 1556
+	spartanweaponry:electrum_throwing_knife: 1664
+	spartanweaponry:electrum_tomahawk: 1682
+	spartanweaponry:electrum_warhammer: 1538
+	spartanweaponry:enderman_head: 1850
+	spartanweaponry:explosive_arrow: 1825
+	spartanweaponry:explosive_charge: 1377
+	spartanweaponry:golden_battle_hammer: 1513
+	spartanweaponry:golden_battleaxe: 1729
+	spartanweaponry:golden_boomerang: 1711
+	spartanweaponry:golden_dagger: 1383
+	spartanweaponry:golden_flanged_mace: 1747
+	spartanweaponry:golden_glaive: 1765
+	spartanweaponry:golden_greatsword: 1491
+	spartanweaponry:golden_halberd: 1567
+	spartanweaponry:golden_heavy_crossbow: 1639
+	spartanweaponry:golden_javelin: 1693
+	spartanweaponry:golden_katana: 1437
+	spartanweaponry:golden_lance: 1603
+	spartanweaponry:golden_longbow: 1621
+	spartanweaponry:golden_longsword: 1419
+	spartanweaponry:golden_parrying_dagger: 1401
+	spartanweaponry:golden_pike: 1585
+	spartanweaponry:golden_quarterstaff: 1783
+	spartanweaponry:golden_rapier: 1473
+	spartanweaponry:golden_saber: 1455
+	spartanweaponry:golden_scythe: 1801
+	spartanweaponry:golden_spear: 1549
+	spartanweaponry:golden_throwing_knife: 1657
+	spartanweaponry:golden_tomahawk: 1675
+	spartanweaponry:golden_warhammer: 1531
+	spartanweaponry:grease_ball: 1378
+	spartanweaponry:handle: 1374
+	spartanweaponry:huge_arrow_quiver: 1838
+	spartanweaponry:huge_bolt_quiver: 1842
+	spartanweaponry:huge_quiver_brace: 1846
+	spartanweaponry:husk_head: 1854
+	spartanweaponry:illager_head: 1857
+	spartanweaponry:invar_battle_hammer: 1523
+	spartanweaponry:invar_battleaxe: 1739
+	spartanweaponry:invar_boomerang: 1721
+	spartanweaponry:invar_dagger: 1393
+	spartanweaponry:invar_flanged_mace: 1757
+	spartanweaponry:invar_glaive: 1775
+	spartanweaponry:invar_greatsword: 1501
+	spartanweaponry:invar_halberd: 1577
+	spartanweaponry:invar_heavy_crossbow: 1649
+	spartanweaponry:invar_javelin: 1703
+	spartanweaponry:invar_katana: 1447
+	spartanweaponry:invar_lance: 1613
+	spartanweaponry:invar_longbow: 1631
+	spartanweaponry:invar_longsword: 1429
+	spartanweaponry:invar_parrying_dagger: 1411
+	spartanweaponry:invar_pike: 1595
+	spartanweaponry:invar_quarterstaff: 1793
+	spartanweaponry:invar_rapier: 1483
+	spartanweaponry:invar_saber: 1465
+	spartanweaponry:invar_scythe: 1811
+	spartanweaponry:invar_spear: 1559
+	spartanweaponry:invar_throwing_knife: 1667
+	spartanweaponry:invar_tomahawk: 1685
+	spartanweaponry:invar_warhammer: 1541
+	spartanweaponry:iron_arrow: 1819
+	spartanweaponry:iron_battle_hammer: 1512
+	spartanweaponry:iron_battleaxe: 1728
+	spartanweaponry:iron_boomerang: 1710
+	spartanweaponry:iron_dagger: 1382
+	spartanweaponry:iron_flanged_mace: 1746
+	spartanweaponry:iron_glaive: 1764
+	spartanweaponry:iron_greatsword: 1490
+	spartanweaponry:iron_halberd: 1566
+	spartanweaponry:iron_heavy_crossbow: 1638
+	spartanweaponry:iron_javelin: 1692
+	spartanweaponry:iron_katana: 1436
+	spartanweaponry:iron_lance: 1602
+	spartanweaponry:iron_longbow: 1620
+	spartanweaponry:iron_longsword: 1418
+	spartanweaponry:iron_parrying_dagger: 1400
+	spartanweaponry:iron_pike: 1584
+	spartanweaponry:iron_quarterstaff: 1782
+	spartanweaponry:iron_rapier: 1472
+	spartanweaponry:iron_saber: 1454
+	spartanweaponry:iron_scythe: 1800
+	spartanweaponry:iron_spear: 1548
+	spartanweaponry:iron_throwing_knife: 1656
+	spartanweaponry:iron_tomahawk: 1674
+	spartanweaponry:iron_warhammer: 1530
+	spartanweaponry:large_arrow_quiver: 1837
+	spartanweaponry:large_bolt_quiver: 1841
+	spartanweaponry:large_quiver_brace: 1845
+	spartanweaponry:lead_battle_hammer: 1521
+	spartanweaponry:lead_battleaxe: 1737
+	spartanweaponry:lead_boomerang: 1719
+	spartanweaponry:lead_dagger: 1391
+	spartanweaponry:lead_flanged_mace: 1755
+	spartanweaponry:lead_glaive: 1773
+	spartanweaponry:lead_greatsword: 1499
+	spartanweaponry:lead_halberd: 1575
+	spartanweaponry:lead_heavy_crossbow: 1647
+	spartanweaponry:lead_javelin: 1701
+	spartanweaponry:lead_katana: 1445
+	spartanweaponry:lead_lance: 1611
+	spartanweaponry:lead_longbow: 1629
+	spartanweaponry:lead_longsword: 1427
+	spartanweaponry:lead_parrying_dagger: 1409
+	spartanweaponry:lead_pike: 1593
+	spartanweaponry:lead_quarterstaff: 1791
+	spartanweaponry:lead_rapier: 1481
+	spartanweaponry:lead_saber: 1463
+	spartanweaponry:lead_scythe: 1809
+	spartanweaponry:lead_spear: 1557
+	spartanweaponry:lead_throwing_knife: 1665
+	spartanweaponry:lead_tomahawk: 1683
+	spartanweaponry:lead_warhammer: 1539
+	spartanweaponry:leather_heavy_crossbow: 1636
+	spartanweaponry:leather_longbow: 1618
+	spartanweaponry:medium_arrow_quiver: 1836
+	spartanweaponry:medium_bolt_quiver: 1840
+	spartanweaponry:medium_quiver_brace: 1844
+	spartanweaponry:netherite_arrow: 1823
+	spartanweaponry:netherite_battle_hammer: 1515
+	spartanweaponry:netherite_battleaxe: 1731
+	spartanweaponry:netherite_bolt: 1833
+	spartanweaponry:netherite_boomerang: 1713
+	spartanweaponry:netherite_dagger: 1385
+	spartanweaponry:netherite_flanged_mace: 1749
+	spartanweaponry:netherite_glaive: 1767
+	spartanweaponry:netherite_greatsword: 1493
+	spartanweaponry:netherite_halberd: 1569
+	spartanweaponry:netherite_heavy_crossbow: 1641
+	spartanweaponry:netherite_javelin: 1695
+	spartanweaponry:netherite_katana: 1439
+	spartanweaponry:netherite_lance: 1605
+	spartanweaponry:netherite_longbow: 1623
+	spartanweaponry:netherite_longsword: 1421
+	spartanweaponry:netherite_parrying_dagger: 1403
+	spartanweaponry:netherite_pike: 1587
+	spartanweaponry:netherite_quarterstaff: 1785
+	spartanweaponry:netherite_rapier: 1475
+	spartanweaponry:netherite_saber: 1457
+	spartanweaponry:netherite_scythe: 1803
+	spartanweaponry:netherite_spear: 1551
+	spartanweaponry:netherite_throwing_knife: 1659
+	spartanweaponry:netherite_tomahawk: 1677
+	spartanweaponry:netherite_warhammer: 1533
+	spartanweaponry:nickel_battle_hammer: 1522
+	spartanweaponry:nickel_battleaxe: 1738
+	spartanweaponry:nickel_boomerang: 1720
+	spartanweaponry:nickel_dagger: 1392
+	spartanweaponry:nickel_flanged_mace: 1756
+	spartanweaponry:nickel_glaive: 1774
+	spartanweaponry:nickel_greatsword: 1500
+	spartanweaponry:nickel_halberd: 1576
+	spartanweaponry:nickel_heavy_crossbow: 1648
+	spartanweaponry:nickel_javelin: 1702
+	spartanweaponry:nickel_katana: 1446
+	spartanweaponry:nickel_lance: 1612
+	spartanweaponry:nickel_longbow: 1630
+	spartanweaponry:nickel_longsword: 1428
+	spartanweaponry:nickel_parrying_dagger: 1410
+	spartanweaponry:nickel_pike: 1594
+	spartanweaponry:nickel_quarterstaff: 1792
+	spartanweaponry:nickel_rapier: 1482
+	spartanweaponry:nickel_saber: 1464
+	spartanweaponry:nickel_scythe: 1810
+	spartanweaponry:nickel_spear: 1558
+	spartanweaponry:nickel_throwing_knife: 1666
+	spartanweaponry:nickel_tomahawk: 1684
+	spartanweaponry:nickel_warhammer: 1540
+	spartanweaponry:platinum_battle_hammer: 1525
+	spartanweaponry:platinum_battleaxe: 1741
+	spartanweaponry:platinum_boomerang: 1723
+	spartanweaponry:platinum_dagger: 1395
+	spartanweaponry:platinum_flanged_mace: 1759
+	spartanweaponry:platinum_glaive: 1777
+	spartanweaponry:platinum_greatsword: 1503
+	spartanweaponry:platinum_halberd: 1579
+	spartanweaponry:platinum_heavy_crossbow: 1651
+	spartanweaponry:platinum_javelin: 1705
+	spartanweaponry:platinum_katana: 1449
+	spartanweaponry:platinum_lance: 1615
+	spartanweaponry:platinum_longbow: 1633
+	spartanweaponry:platinum_longsword: 1431
+	spartanweaponry:platinum_parrying_dagger: 1413
+	spartanweaponry:platinum_pike: 1597
+	spartanweaponry:platinum_quarterstaff: 1795
+	spartanweaponry:platinum_rapier: 1485
+	spartanweaponry:platinum_saber: 1467
+	spartanweaponry:platinum_scythe: 1813
+	spartanweaponry:platinum_spear: 1561
+	spartanweaponry:platinum_throwing_knife: 1669
+	spartanweaponry:platinum_tomahawk: 1687
+	spartanweaponry:platinum_warhammer: 1543
+	spartanweaponry:pole: 1376
+	spartanweaponry:quiver_compartment: 1843
+	spartanweaponry:silver_battle_hammer: 1519
+	spartanweaponry:silver_battleaxe: 1735
+	spartanweaponry:silver_boomerang: 1717
+	spartanweaponry:silver_dagger: 1389
+	spartanweaponry:silver_flanged_mace: 1753
+	spartanweaponry:silver_glaive: 1771
+	spartanweaponry:silver_greatsword: 1497
+	spartanweaponry:silver_halberd: 1573
+	spartanweaponry:silver_heavy_crossbow: 1645
+	spartanweaponry:silver_javelin: 1699
+	spartanweaponry:silver_katana: 1443
+	spartanweaponry:silver_lance: 1609
+	spartanweaponry:silver_longbow: 1627
+	spartanweaponry:silver_longsword: 1425
+	spartanweaponry:silver_parrying_dagger: 1407
+	spartanweaponry:silver_pike: 1591
+	spartanweaponry:silver_quarterstaff: 1789
+	spartanweaponry:silver_rapier: 1479
+	spartanweaponry:silver_saber: 1461
+	spartanweaponry:silver_scythe: 1807
+	spartanweaponry:silver_spear: 1555
+	spartanweaponry:silver_throwing_knife: 1663
+	spartanweaponry:silver_tomahawk: 1681
+	spartanweaponry:silver_warhammer: 1537
+	spartanweaponry:simple_handle: 1373
+	spartanweaponry:simple_pole: 1375
+	spartanweaponry:small_arrow_quiver: 1835
+	spartanweaponry:small_bolt_quiver: 1839
+	spartanweaponry:spectral_bolt: 1828
+	spartanweaponry:spider_head: 1851
+	spartanweaponry:steel_battle_hammer: 1518
+	spartanweaponry:steel_battleaxe: 1734
+	spartanweaponry:steel_boomerang: 1716
+	spartanweaponry:steel_dagger: 1388
+	spartanweaponry:steel_flanged_mace: 1752
+	spartanweaponry:steel_glaive: 1770
+	spartanweaponry:steel_greatsword: 1496
+	spartanweaponry:steel_halberd: 1572
+	spartanweaponry:steel_heavy_crossbow: 1644
+	spartanweaponry:steel_javelin: 1698
+	spartanweaponry:steel_katana: 1442
+	spartanweaponry:steel_lance: 1608
+	spartanweaponry:steel_longbow: 1626
+	spartanweaponry:steel_longsword: 1424
+	spartanweaponry:steel_parrying_dagger: 1406
+	spartanweaponry:steel_pike: 1590
+	spartanweaponry:steel_quarterstaff: 1788
+	spartanweaponry:steel_rapier: 1478
+	spartanweaponry:steel_saber: 1460
+	spartanweaponry:steel_scythe: 1806
+	spartanweaponry:steel_spear: 1554
+	spartanweaponry:steel_throwing_knife: 1662
+	spartanweaponry:steel_tomahawk: 1680
+	spartanweaponry:steel_warhammer: 1536
+	spartanweaponry:stone_battle_hammer: 1510
+	spartanweaponry:stone_battleaxe: 1726
+	spartanweaponry:stone_boomerang: 1708
+	spartanweaponry:stone_dagger: 1380
+	spartanweaponry:stone_flanged_mace: 1744
+	spartanweaponry:stone_glaive: 1762
+	spartanweaponry:stone_greatsword: 1488
+	spartanweaponry:stone_halberd: 1564
+	spartanweaponry:stone_javelin: 1690
+	spartanweaponry:stone_katana: 1434
+	spartanweaponry:stone_lance: 1600
+	spartanweaponry:stone_longsword: 1416
+	spartanweaponry:stone_parrying_dagger: 1398
+	spartanweaponry:stone_pike: 1582
+	spartanweaponry:stone_quarterstaff: 1780
+	spartanweaponry:stone_rapier: 1470
+	spartanweaponry:stone_saber: 1452
+	spartanweaponry:stone_scythe: 1798
+	spartanweaponry:stone_spear: 1546
+	spartanweaponry:stone_throwing_knife: 1654
+	spartanweaponry:stone_tomahawk: 1672
+	spartanweaponry:stone_warhammer: 1528
+	spartanweaponry:stray_skull: 1855
+	spartanweaponry:studded_cestus: 1508
+	spartanweaponry:studded_club: 1506
+	spartanweaponry:tin_battle_hammer: 1516
+	spartanweaponry:tin_battleaxe: 1732
+	spartanweaponry:tin_boomerang: 1714
+	spartanweaponry:tin_dagger: 1386
+	spartanweaponry:tin_flanged_mace: 1750
+	spartanweaponry:tin_glaive: 1768
+	spartanweaponry:tin_greatsword: 1494
+	spartanweaponry:tin_halberd: 1570
+	spartanweaponry:tin_heavy_crossbow: 1642
+	spartanweaponry:tin_javelin: 1696
+	spartanweaponry:tin_katana: 1440
+	spartanweaponry:tin_lance: 1606
+	spartanweaponry:tin_longbow: 1624
+	spartanweaponry:tin_longsword: 1422
+	spartanweaponry:tin_parrying_dagger: 1404
+	spartanweaponry:tin_pike: 1588
+	spartanweaponry:tin_quarterstaff: 1786
+	spartanweaponry:tin_rapier: 1476
+	spartanweaponry:tin_saber: 1458
+	spartanweaponry:tin_scythe: 1804
+	spartanweaponry:tin_spear: 1552
+	spartanweaponry:tin_throwing_knife: 1660
+	spartanweaponry:tin_tomahawk: 1678
+	spartanweaponry:tin_warhammer: 1534
+	spartanweaponry:tipped_bolt: 1827
+	spartanweaponry:tipped_copper_arrow: 1818
+	spartanweaponry:tipped_copper_bolt: 1830
+	spartanweaponry:tipped_diamond_arrow: 1822
+	spartanweaponry:tipped_diamond_bolt: 1832
+	spartanweaponry:tipped_iron_arrow: 1820
+	spartanweaponry:tipped_netherite_arrow: 1824
+	spartanweaponry:tipped_netherite_bolt: 1834
+	spartanweaponry:tipped_wooden_arrow: 1816
+	spartanweaponry:weapon_oil: 1848
+	spartanweaponry:witch_head: 1858
+	spartanweaponry:wooden_arrow: 1815
+	spartanweaponry:wooden_battle_hammer: 1509
+	spartanweaponry:wooden_battleaxe: 1725
+	spartanweaponry:wooden_boomerang: 1707
+	spartanweaponry:wooden_club: 1505
+	spartanweaponry:wooden_dagger: 1379
+	spartanweaponry:wooden_flanged_mace: 1743
+	spartanweaponry:wooden_glaive: 1761
+	spartanweaponry:wooden_greatsword: 1487
+	spartanweaponry:wooden_halberd: 1563
+	spartanweaponry:wooden_heavy_crossbow: 1635
+	spartanweaponry:wooden_javelin: 1689
+	spartanweaponry:wooden_katana: 1433
+	spartanweaponry:wooden_lance: 1599
+	spartanweaponry:wooden_longbow: 1617
+	spartanweaponry:wooden_longsword: 1415
+	spartanweaponry:wooden_parrying_dagger: 1397
+	spartanweaponry:wooden_pike: 1581
+	spartanweaponry:wooden_quarterstaff: 1779
+	spartanweaponry:wooden_rapier: 1469
+	spartanweaponry:wooden_saber: 1451
+	spartanweaponry:wooden_scythe: 1797
+	spartanweaponry:wooden_spear: 1545
+	spartanweaponry:wooden_throwing_knife: 1653
+	spartanweaponry:wooden_tomahawk: 1671
+	spartanweaponry:wooden_warhammer: 1527
+	spartanweaponry:zombified_piglin_head: 1853
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:mob_effect
+	spartanweaponry:ender_disruption: 0
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: Unidentified mapping from registry minecraft:sound_event
+	spartanshields:shield.bash.hit: 1490
+	spartanshields:shield.bash.miss: 1491
+	spartanshields:shield.payback.charge: 1492
+	spartanweaponry:boomerang_bounce: 1508
+	spartanweaponry:boomerang_fly: 1506
+	spartanweaponry:boomerang_hit_ground: 1509
+	spartanweaponry:boomerang_hit_mob: 1507
+	spartanweaponry:boomerang_throw: 1505
+	spartanweaponry:dagger_hit_ground: 1495
+	spartanweaponry:hammer_slams_into_ground: 1512
+	spartanweaponry:javelin_hit_ground: 1504
+	spartanweaponry:javelin_hit_mob: 1503
+	spartanweaponry:javelin_throw: 1502
+	spartanweaponry:oil_applied: 1511
+	spartanweaponry:throwing_knife_hit_ground: 1498
+	spartanweaponry:throwing_knife_hit_mob: 1497
+	spartanweaponry:throwing_knife_throw: 1496
+	spartanweaponry:throwing_weapon_hit_mob: 1494
+	spartanweaponry:throwing_weapon_loyalty_return: 1510
+	spartanweaponry:throwing_weapon_throw: 1493
+	spartanweaponry:tomahawk_hit_ground: 1501
+	spartanweaponry:tomahawk_hit_mob: 1500
+	spartanweaponry:tomahawk_throw: 1499
+
+[18:17:24] [main/WARN] [ne.mi.re.GameData/REGISTRIES]: Forge Mod Loader detected missing registry entries.
+
+There are 656 missing entries in this save.
+If you continue the missing entries will get removed.
+A world backup will be automatically created in your saves directory.
+
+
+[18:17:24] [main/WARN] [ne.mi.re.GameData/REGISTRIES]: Missing minecraft:sound_event:
+    spartanshields:shield.bash.hit
+    spartanshields:shield.bash.miss
+    spartanshields:shield.payback.charge
+    spartanweaponry:boomerang_bounce
+    spartanweaponry:boomerang_fly
+    spartanweaponry:boomerang_hit_ground
+    spartanweaponry:boomerang_hit_mob
+    spartanweaponry:boomerang_throw
+    spartanweaponry:dagger_hit_ground
+    spartanweaponry:hammer_slams_into_ground
+    spartanweaponry:javelin_hit_ground
+    spartanweaponry:javelin_hit_mob
+    spartanweaponry:javelin_throw
+    spartanweaponry:oil_applied
+    spartanweaponry:throwing_knife_hit_ground
+    spartanweaponry:throwing_knife_hit_mob
+    spartanweaponry:throwing_knife_throw
+    spartanweaponry:throwing_weapon_hit_mob
+    spartanweaponry:throwing_weapon_loyalty_return
+    spartanweaponry:throwing_weapon_throw
+    spartanweaponry:tomahawk_hit_ground
+    spartanweaponry:tomahawk_hit_mob
+    spartanweaponry:tomahawk_throw
+
+Missing minecraft:item:
+    immersive_armors:bone_boots
+    immersive_armors:bone_chestplate
+    immersive_armors:bone_helmet
+    immersive_armors:bone_leggings
+    immersive_armors:divine_boots
+    immersive_armors:divine_chestplate
+    immersive_armors:divine_helmet
+    immersive_armors:divine_leggings
+    immersive_armors:heavy_boots
+    immersive_armors:heavy_chestplate
+    immersive_armors:heavy_helmet
+    immersive_armors:heavy_leggings
+    immersive_armors:prismarine_boots
+    immersive_armors:prismarine_chestplate
+    immersive_armors:prismarine_helmet
+    immersive_armors:prismarine_leggings
+    immersive_armors:robe_boots
+    immersive_armors:robe_chestplate
+    immersive_armors:robe_helmet
+    immersive_armors:robe_leggings
+    immersive_armors:slime_boots
+    immersive_armors:slime_chestplate
+    immersive_armors:slime_helmet
+    immersive_armors:slime_leggings
+    immersive_armors:steampunk_boots
+    immersive_armors:steampunk_chestplate
+    immersive_armors:steampunk_helmet
+    immersive_armors:steampunk_leggings
+    immersive_armors:warrior_boots
+    immersive_armors:warrior_chestplate
+    immersive_armors:warrior_helmet
+    immersive_armors:warrior_leggings
+    immersive_armors:wither_boots
+    immersive_armors:wither_chestplate
+    immersive_armors:wither_helmet
+    immersive_armors:wither_leggings
+    immersive_armors:wooden_boots
+    immersive_armors:wooden_chestplate
+    immersive_armors:wooden_helmet
+    immersive_armors:wooden_leggings
+    spartanshields:advanced_mekanists_basic_shield
+    spartanshields:advanced_mekanists_tower_shield
+    spartanshields:aluminum_basic_shield
+    spartanshields:aluminum_tower_shield
+    spartanshields:basic_mekanists_basic_shield
+    spartanshields:basic_mekanists_tower_shield
+    spartanshields:bronze_basic_shield
+    spartanshields:bronze_tower_shield
+    spartanshields:constantan_basic_shield
+    spartanshields:constantan_tower_shield
+    spartanshields:copper_basic_shield
+    spartanshields:copper_tower_shield
+    spartanshields:dark_steel_riot_basic_shield
+    spartanshields:dark_steel_riot_tower_shield
+    spartanshields:diamond_basic_shield
+    spartanshields:diamond_tower_shield
+    spartanshields:electrum_basic_shield
+    spartanshields:electrum_tower_shield
+    spartanshields:elementium_basic_shield
+    spartanshields:elementium_tower_shield
+    spartanshields:elite_mekanists_basic_shield
+    spartanshields:elite_mekanists_tower_shield
+    spartanshields:enderium_basic_shield
+    spartanshields:enderium_tower_shield
+    spartanshields:golden_basic_shield
+    spartanshields:golden_tower_shield
+    spartanshields:invar_basic_shield
+    spartanshields:invar_tower_shield
+    spartanshields:iron_basic_shield
+    spartanshields:iron_tower_shield
+    spartanshields:lapis_lazuli_basic_shield
+    spartanshields:lead_basic_shield
+    spartanshields:lead_tower_shield
+    spartanshields:lumium_basic_shield
+    spartanshields:lumium_tower_shield
+    spartanshields:manasteel_basic_shield
+    spartanshields:manasteel_tower_shield
+    spartanshields:netherite_basic_shield
+    spartanshields:netherite_tower_shield
+    spartanshields:nickel_basic_shield
+    spartanshields:nickel_tower_shield
+    spartanshields:obsidian_basic_shield
+    spartanshields:obsidian_tower_shield
+    spartanshields:osmium_basic_shield
+    spartanshields:platinum_basic_shield
+    spartanshields:platinum_tower_shield
+    spartanshields:refined_glowstone_basic_shield
+    spartanshields:refined_obsidian_basic_shield
+    spartanshields:signalum_basic_shield
+    spartanshields:signalum_tower_shield
+    spartanshields:silver_basic_shield
+    spartanshields:silver_tower_shield
+    spartanshields:steel_basic_shield
+    spartanshields:steel_tower_shield
+    spartanshields:stone_basic_shield
+    spartanshields:stone_tower_shield
+    spartanshields:terrasteel_basic_shield
+    spartanshields:terrasteel_tower_shield
+    spartanshields:tin_basic_shield
+    spartanshields:tin_tower_shield
+    spartanshields:ultimate_mekanists_basic_shield
+    spartanshields:ultimate_mekanists_tower_shield
+    spartanshields:wooden_basic_shield
+    spartanshields:wooden_tower_shield
+    spartanweaponry:aluminum_battle_hammer
+    spartanweaponry:aluminum_battleaxe
+    spartanweaponry:aluminum_boomerang
+    spartanweaponry:aluminum_dagger
+    spartanweaponry:aluminum_flanged_mace
+    spartanweaponry:aluminum_glaive
+    spartanweaponry:aluminum_greatsword
+    spartanweaponry:aluminum_halberd
+    spartanweaponry:aluminum_heavy_crossbow
+    spartanweaponry:aluminum_javelin
+    spartanweaponry:aluminum_katana
+    spartanweaponry:aluminum_lance
+    spartanweaponry:aluminum_longbow
+    spartanweaponry:aluminum_longsword
+    spartanweaponry:aluminum_parrying_dagger
+    spartanweaponry:aluminum_pike
+    spartanweaponry:aluminum_quarterstaff
+    spartanweaponry:aluminum_rapier
+    spartanweaponry:aluminum_saber
+    spartanweaponry:aluminum_scythe
+    spartanweaponry:aluminum_spear
+    spartanweaponry:aluminum_throwing_knife
+    spartanweaponry:aluminum_tomahawk
+    spartanweaponry:aluminum_warhammer
+    spartanweaponry:blaze_head
+    spartanweaponry:bolt
+    spartanweaponry:bronze_battle_hammer
+    spartanweaponry:bronze_battleaxe
+    spartanweaponry:bronze_boomerang
+    spartanweaponry:bronze_dagger
+    spartanweaponry:bronze_flanged_mace
+    spartanweaponry:bronze_glaive
+    spartanweaponry:bronze_greatsword
+    spartanweaponry:bronze_halberd
+    spartanweaponry:bronze_heavy_crossbow
+    spartanweaponry:bronze_javelin
+    spartanweaponry:bronze_katana
+    spartanweaponry:bronze_lance
+    spartanweaponry:bronze_longbow
+    spartanweaponry:bronze_longsword
+    spartanweaponry:bronze_parrying_dagger
+    spartanweaponry:bronze_pike
+    spartanweaponry:bronze_quarterstaff
+    spartanweaponry:bronze_rapier
+    spartanweaponry:bronze_saber
+    spartanweaponry:bronze_scythe
+    spartanweaponry:bronze_spear
+    spartanweaponry:bronze_throwing_knife
+    spartanweaponry:bronze_tomahawk
+    spartanweaponry:bronze_warhammer
+    spartanweaponry:cave_spider_head
+    spartanweaponry:cestus
+    spartanweaponry:constantan_battle_hammer
+    spartanweaponry:constantan_battleaxe
+    spartanweaponry:constantan_boomerang
+    spartanweaponry:constantan_dagger
+    spartanweaponry:constantan_flanged_mace
+    spartanweaponry:constantan_glaive
+    spartanweaponry:constantan_greatsword
+    spartanweaponry:constantan_halberd
+    spartanweaponry:constantan_heavy_crossbow
+    spartanweaponry:constantan_javelin
+    spartanweaponry:constantan_katana
+    spartanweaponry:constantan_lance
+    spartanweaponry:constantan_longbow
+    spartanweaponry:constantan_longsword
+    spartanweaponry:constantan_parrying_dagger
+    spartanweaponry:constantan_pike
+    spartanweaponry:constantan_quarterstaff
+    spartanweaponry:constantan_rapier
+    spartanweaponry:constantan_saber
+    spartanweaponry:constantan_scythe
+    spartanweaponry:constantan_spear
+    spartanweaponry:constantan_throwing_knife
+    spartanweaponry:constantan_tomahawk
+    spartanweaponry:constantan_warhammer
+    spartanweaponry:copper_arrow
+    spartanweaponry:copper_battle_hammer
+    spartanweaponry:copper_battleaxe
+    spartanweaponry:copper_bolt
+    spartanweaponry:copper_boomerang
+    spartanweaponry:copper_dagger
+    spartanweaponry:copper_flanged_mace
+    spartanweaponry:copper_glaive
+    spartanweaponry:copper_greatsword
+    spartanweaponry:copper_halberd
+    spartanweaponry:copper_heavy_crossbow
+    spartanweaponry:copper_javelin
+    spartanweaponry:copper_katana
+    spartanweaponry:copper_lance
+    spartanweaponry:copper_longbow
+    spartanweaponry:copper_longsword
+    spartanweaponry:copper_parrying_dagger
+    spartanweaponry:copper_pike
+    spartanweaponry:copper_quarterstaff
+    spartanweaponry:copper_rapier
+    spartanweaponry:copper_saber
+    spartanweaponry:copper_scythe
+    spartanweaponry:copper_spear
+    spartanweaponry:copper_throwing_knife
+    spartanweaponry:copper_tomahawk
+    spartanweaponry:copper_warhammer
+    spartanweaponry:diamond_arrow
+    spartanweaponry:diamond_battle_hammer
+    spartanweaponry:diamond_battleaxe
+    spartanweaponry:diamond_bolt
+    spartanweaponry:diamond_boomerang
+    spartanweaponry:diamond_dagger
+    spartanweaponry:diamond_flanged_mace
+    spartanweaponry:diamond_glaive
+    spartanweaponry:diamond_greatsword
+    spartanweaponry:diamond_halberd
+    spartanweaponry:diamond_heavy_crossbow
+    spartanweaponry:diamond_javelin
+    spartanweaponry:diamond_katana
+    spartanweaponry:diamond_lance
+    spartanweaponry:diamond_longbow
+    spartanweaponry:diamond_longsword
+    spartanweaponry:diamond_parrying_dagger
+    spartanweaponry:diamond_pike
+    spartanweaponry:diamond_quarterstaff
+    spartanweaponry:diamond_rapier
+    spartanweaponry:diamond_saber
+    spartanweaponry:diamond_scythe
+    spartanweaponry:diamond_spear
+    spartanweaponry:diamond_throwing_knife
+    spartanweaponry:diamond_tomahawk
+    spartanweaponry:diamond_warhammer
+    spartanweaponry:drowned_head
+    spartanweaponry:dynamite
+    spartanweaponry:electrum_battle_hammer
+    spartanweaponry:electrum_battleaxe
+    spartanweaponry:electrum_boomerang
+    spartanweaponry:electrum_dagger
+    spartanweaponry:electrum_flanged_mace
+    spartanweaponry:electrum_glaive
+    spartanweaponry:electrum_greatsword
+    spartanweaponry:electrum_halberd
+    spartanweaponry:electrum_heavy_crossbow
+    spartanweaponry:electrum_javelin
+    spartanweaponry:electrum_katana
+    spartanweaponry:electrum_lance
+    spartanweaponry:electrum_longbow
+    spartanweaponry:electrum_longsword
+    spartanweaponry:electrum_parrying_dagger
+    spartanweaponry:electrum_pike
+    spartanweaponry:electrum_quarterstaff
+    spartanweaponry:electrum_rapier
+    spartanweaponry:electrum_saber
+    spartanweaponry:electrum_scythe
+    spartanweaponry:electrum_spear
+    spartanweaponry:electrum_throwing_knife
+    spartanweaponry:electrum_tomahawk
+    spartanweaponry:electrum_warhammer
+    spartanweaponry:enderman_head
+    spartanweaponry:explosive_arrow
+    spartanweaponry:explosive_charge
+    spartanweaponry:golden_battle_hammer
+    spartanweaponry:golden_battleaxe
+    spartanweaponry:golden_boomerang
+    spartanweaponry:golden_dagger
+    spartanweaponry:golden_flanged_mace
+    spartanweaponry:golden_glaive
+    spartanweaponry:golden_greatsword
+    spartanweaponry:golden_halberd
+    spartanweaponry:golden_heavy_crossbow
+    spartanweaponry:golden_javelin
+    spartanweaponry:golden_katana
+    spartanweaponry:golden_lance
+    spartanweaponry:golden_longbow
+    spartanweaponry:golden_longsword
+    spartanweaponry:golden_parrying_dagger
+    spartanweaponry:golden_pike
+    spartanweaponry:golden_quarterstaff
+    spartanweaponry:golden_rapier
+    spartanweaponry:golden_saber
+    spartanweaponry:golden_scythe
+    spartanweaponry:golden_spear
+    spartanweaponry:golden_throwing_knife
+    spartanweaponry:golden_tomahawk
+    spartanweaponry:golden_warhammer
+    spartanweaponry:grease_ball
+    spartanweaponry:handle
+    spartanweaponry:huge_arrow_quiver
+    spartanweaponry:huge_bolt_quiver
+    spartanweaponry:huge_quiver_brace
+    spartanweaponry:husk_head
+    spartanweaponry:illager_head
+    spartanweaponry:invar_battle_hammer
+    spartanweaponry:invar_battleaxe
+    spartanweaponry:invar_boomerang
+    spartanweaponry:invar_dagger
+    spartanweaponry:invar_flanged_mace
+    spartanweaponry:invar_glaive
+    spartanweaponry:invar_greatsword
+    spartanweaponry:invar_halberd
+    spartanweaponry:invar_heavy_crossbow
+    spartanweaponry:invar_javelin
+    spartanweaponry:invar_katana
+    spartanweaponry:invar_lance
+    spartanweaponry:invar_longbow
+    spartanweaponry:invar_longsword
+    spartanweaponry:invar_parrying_dagger
+    spartanweaponry:invar_pike
+    spartanweaponry:invar_quarterstaff
+    spartanweaponry:invar_rapier
+    spartanweaponry:invar_saber
+    spartanweaponry:invar_scythe
+    spartanweaponry:invar_spear
+    spartanweaponry:invar_throwing_knife
+    spartanweaponry:invar_tomahawk
+    spartanweaponry:invar_warhammer
+    spartanweaponry:iron_arrow
+    spartanweaponry:iron_battle_hammer
+    spartanweaponry:iron_battleaxe
+    spartanweaponry:iron_boomerang
+    spartanweaponry:iron_dagger
+    spartanweaponry:iron_flanged_mace
+    spartanweaponry:iron_glaive
+    spartanweaponry:iron_greatsword
+    spartanweaponry:iron_halberd
+    spartanweaponry:iron_heavy_crossbow
+    spartanweaponry:iron_javelin
+    spartanweaponry:iron_katana
+    spartanweaponry:iron_lance
+    spartanweaponry:iron_longbow
+    spartanweaponry:iron_longsword
+    spartanweaponry:iron_parrying_dagger
+    spartanweaponry:iron_pike
+    spartanweaponry:iron_quarterstaff
+    spartanweaponry:iron_rapier
+    spartanweaponry:iron_saber
+    spartanweaponry:iron_scythe
+    spartanweaponry:iron_spear
+    spartanweaponry:iron_throwing_knife
+    spartanweaponry:iron_tomahawk
+    spartanweaponry:iron_warhammer
+    spartanweaponry:large_arrow_quiver
+    spartanweaponry:large_bolt_quiver
+    spartanweaponry:large_quiver_brace
+    spartanweaponry:lead_battle_hammer
+    spartanweaponry:lead_battleaxe
+    spartanweaponry:lead_boomerang
+    spartanweaponry:lead_dagger
+    spartanweaponry:lead_flanged_mace
+    spartanweaponry:lead_glaive
+    spartanweaponry:lead_greatsword
+    spartanweaponry:lead_halberd
+    spartanweaponry:lead_heavy_crossbow
+    spartanweaponry:lead_javelin
+    spartanweaponry:lead_katana
+    spartanweaponry:lead_lance
+    spartanweaponry:lead_longbow
+    spartanweaponry:lead_longsword
+    spartanweaponry:lead_parrying_dagger
+    spartanweaponry:lead_pike
+    spartanweaponry:lead_quarterstaff
+    spartanweaponry:lead_rapier
+    spartanweaponry:lead_saber
+    spartanweaponry:lead_scythe
+    spartanweaponry:lead_spear
+    spartanweaponry:lead_throwing_knife
+    spartanweaponry:lead_tomahawk
+    spartanweaponry:lead_warhammer
+    spartanweaponry:leather_heavy_crossbow
+    spartanweaponry:leather_longbow
+    spartanweaponry:medium_arrow_quiver
+    spartanweaponry:medium_bolt_quiver
+    spartanweaponry:medium_quiver_brace
+    spartanweaponry:netherite_arrow
+    spartanweaponry:netherite_battle_hammer
+    spartanweaponry:netherite_battleaxe
+    spartanweaponry:netherite_bolt
+    spartanweaponry:netherite_boomerang
+    spartanweaponry:netherite_dagger
+    spartanweaponry:netherite_flanged_mace
+    spartanweaponry:netherite_glaive
+    spartanweaponry:netherite_greatsword
+    spartanweaponry:netherite_halberd
+    spartanweaponry:netherite_heavy_crossbow
+    spartanweaponry:netherite_javelin
+    spartanweaponry:netherite_katana
+    spartanweaponry:netherite_lance
+    spartanweaponry:netherite_longbow
+    spartanweaponry:netherite_longsword
+    spartanweaponry:netherite_parrying_dagger
+    spartanweaponry:netherite_pike
+    spartanweaponry:netherite_quarterstaff
+    spartanweaponry:netherite_rapier
+    spartanweaponry:netherite_saber
+    spartanweaponry:netherite_scythe
+    spartanweaponry:netherite_spear
+    spartanweaponry:netherite_throwing_knife
+    spartanweaponry:netherite_tomahawk
+    spartanweaponry:netherite_warhammer
+    spartanweaponry:nickel_battle_hammer
+    spartanweaponry:nickel_battleaxe
+    spartanweaponry:nickel_boomerang
+    spartanweaponry:nickel_dagger
+    spartanweaponry:nickel_flanged_mace
+    spartanweaponry:nickel_glaive
+    spartanweaponry:nickel_greatsword
+    spartanweaponry:nickel_halberd
+    spartanweaponry:nickel_heavy_crossbow
+    spartanweaponry:nickel_javelin
+    spartanweaponry:nickel_katana
+    spartanweaponry:nickel_lance
+    spartanweaponry:nickel_longbow
+    spartanweaponry:nickel_longsword
+    spartanweaponry:nickel_parrying_dagger
+    spartanweaponry:nickel_pike
+    spartanweaponry:nickel_quarterstaff
+    spartanweaponry:nickel_rapier
+    spartanweaponry:nickel_saber
+    spartanweaponry:nickel_scythe
+    spartanweaponry:nickel_spear
+    spartanweaponry:nickel_throwing_knife
+    spartanweaponry:nickel_tomahawk
+    spartanweaponry:nickel_warhammer
+    spartanweaponry:platinum_battle_hammer
+    spartanweaponry:platinum_battleaxe
+    spartanweaponry:platinum_boomerang
+    spartanweaponry:platinum_dagger
+    spartanweaponry:platinum_flanged_mace
+    spartanweaponry:platinum_glaive
+    spartanweaponry:platinum_greatsword
+    spartanweaponry:platinum_halberd
+    spartanweaponry:platinum_heavy_crossbow
+    spartanweaponry:platinum_javelin
+    spartanweaponry:platinum_katana
+    spartanweaponry:platinum_lance
+    spartanweaponry:platinum_longbow
+    spartanweaponry:platinum_longsword
+    spartanweaponry:platinum_parrying_dagger
+    spartanweaponry:platinum_pike
+    spartanweaponry:platinum_quarterstaff
+    spartanweaponry:platinum_rapier
+    spartanweaponry:platinum_saber
+    spartanweaponry:platinum_scythe
+    spartanweaponry:platinum_spear
+    spartanweaponry:platinum_throwing_knife
+    spartanweaponry:platinum_tomahawk
+    spartanweaponry:platinum_warhammer
+    spartanweaponry:pole
+    spartanweaponry:quiver_compartment
+    spartanweaponry:silver_battle_hammer
+    spartanweaponry:silver_battleaxe
+    spartanweaponry:silver_boomerang
+    spartanweaponry:silver_dagger
+    spartanweaponry:silver_flanged_mace
+    spartanweaponry:silver_glaive
+    spartanweaponry:silver_greatsword
+    spartanweaponry:silver_halberd
+    spartanweaponry:silver_heavy_crossbow
+    spartanweaponry:silver_javelin
+    spartanweaponry:silver_katana
+    spartanweaponry:silver_lance
+    spartanweaponry:silver_longbow
+    spartanweaponry:silver_longsword
+    spartanweaponry:silver_parrying_dagger
+    spartanweaponry:silver_pike
+    spartanweaponry:silver_quarterstaff
+    spartanweaponry:silver_rapier
+    spartanweaponry:silver_saber
+    spartanweaponry:silver_scythe
+    spartanweaponry:silver_spear
+    spartanweaponry:silver_throwing_knife
+    spartanweaponry:silver_tomahawk
+    spartanweaponry:silver_warhammer
+    spartanweaponry:simple_handle
+    spartanweaponry:simple_pole
+    spartanweaponry:small_arrow_quiver
+    spartanweaponry:small_bolt_quiver
+    spartanweaponry:spectral_bolt
+    spartanweaponry:spider_head
+    spartanweaponry:steel_battle_hammer
+    spartanweaponry:steel_battleaxe
+    spartanweaponry:steel_boomerang
+    spartanweaponry:steel_dagger
+    spartanweaponry:steel_flanged_mace
+    spartanweaponry:steel_glaive
+    spartanweaponry:steel_greatsword
+    spartanweaponry:steel_halberd
+    spartanweaponry:steel_heavy_crossbow
+    spartanweaponry:steel_javelin
+    spartanweaponry:steel_katana
+    spartanweaponry:steel_lance
+    spartanweaponry:steel_longbow
+    spartanweaponry:steel_longsword
+    spartanweaponry:steel_parrying_dagger
+    spartanweaponry:steel_pike
+    spartanweaponry:steel_quarterstaff
+    spartanweaponry:steel_rapier
+    spartanweaponry:steel_saber
+    spartanweaponry:steel_scythe
+    spartanweaponry:steel_spear
+    spartanweaponry:steel_throwing_knife
+    spartanweaponry:steel_tomahawk
+    spartanweaponry:steel_warhammer
+    spartanweaponry:stone_battle_hammer
+    spartanweaponry:stone_battleaxe
+    spartanweaponry:stone_boomerang
+    spartanweaponry:stone_dagger
+    spartanweaponry:stone_flanged_mace
+    spartanweaponry:stone_glaive
+    spartanweaponry:stone_greatsword
+    spartanweaponry:stone_halberd
+    spartanweaponry:stone_javelin
+    spartanweaponry:stone_katana
+    spartanweaponry:stone_lance
+    spartanweaponry:stone_longsword
+    spartanweaponry:stone_parrying_dagger
+    spartanweaponry:stone_pike
+    spartanweaponry:stone_quarterstaff
+    spartanweaponry:stone_rapier
+    spartanweaponry:stone_saber
+    spartanweaponry:stone_scythe
+    spartanweaponry:stone_spear
+    spartanweaponry:stone_throwing_knife
+    spartanweaponry:stone_tomahawk
+    spartanweaponry:stone_warhammer
+    spartanweaponry:stray_skull
+    spartanweaponry:studded_cestus
+    spartanweaponry:studded_club
+    spartanweaponry:tin_battle_hammer
+    spartanweaponry:tin_battleaxe
+    spartanweaponry:tin_boomerang
+    spartanweaponry:tin_dagger
+    spartanweaponry:tin_flanged_mace
+    spartanweaponry:tin_glaive
+    spartanweaponry:tin_greatsword
+    spartanweaponry:tin_halberd
+    spartanweaponry:tin_heavy_crossbow
+    spartanweaponry:tin_javelin
+    spartanweaponry:tin_katana
+    spartanweaponry:tin_lance
+    spartanweaponry:tin_longbow
+    spartanweaponry:tin_longsword
+    spartanweaponry:tin_parrying_dagger
+    spartanweaponry:tin_pike
+    spartanweaponry:tin_quarterstaff
+    spartanweaponry:tin_rapier
+    spartanweaponry:tin_saber
+    spartanweaponry:tin_scythe
+    spartanweaponry:tin_spear
+    spartanweaponry:tin_throwing_knife
+    spartanweaponry:tin_tomahawk
+    spartanweaponry:tin_warhammer
+    spartanweaponry:tipped_bolt
+    spartanweaponry:tipped_copper_arrow
+    spartanweaponry:tipped_copper_bolt
+    spartanweaponry:tipped_diamond_arrow
+    spartanweaponry:tipped_diamond_bolt
+    spartanweaponry:tipped_iron_arrow
+    spartanweaponry:tipped_netherite_arrow
+    spartanweaponry:tipped_netherite_bolt
+    spartanweaponry:tipped_wooden_arrow
+    spartanweaponry:weapon_oil
+    spartanweaponry:witch_head
+    spartanweaponry:wooden_arrow
+    spartanweaponry:wooden_battle_hammer
+    spartanweaponry:wooden_battleaxe
+    spartanweaponry:wooden_boomerang
+    spartanweaponry:wooden_club
+    spartanweaponry:wooden_dagger
+    spartanweaponry:wooden_flanged_mace
+    spartanweaponry:wooden_glaive
+    spartanweaponry:wooden_greatsword
+    spartanweaponry:wooden_halberd
+    spartanweaponry:wooden_heavy_crossbow
+    spartanweaponry:wooden_javelin
+    spartanweaponry:wooden_katana
+    spartanweaponry:wooden_lance
+    spartanweaponry:wooden_longbow
+    spartanweaponry:wooden_longsword
+    spartanweaponry:wooden_parrying_dagger
+    spartanweaponry:wooden_pike
+    spartanweaponry:wooden_quarterstaff
+    spartanweaponry:wooden_rapier
+    spartanweaponry:wooden_saber
+    spartanweaponry:wooden_scythe
+    spartanweaponry:wooden_spear
+    spartanweaponry:wooden_throwing_knife
+    spartanweaponry:wooden_tomahawk
+    spartanweaponry:wooden_warhammer
+    spartanweaponry:zombified_piglin_head
+
+Missing minecraft:block:
+    spartanweaponry:blaze_head
+    spartanweaponry:blaze_wall_head
+    spartanweaponry:cave_spider_head
+    spartanweaponry:cave_spider_wall_head
+    spartanweaponry:drowned_head
+    spartanweaponry:drowned_wall_head
+    spartanweaponry:enderman_head
+    spartanweaponry:enderman_wall_head
+    spartanweaponry:husk_head
+    spartanweaponry:husk_wall_head
+    spartanweaponry:illager_head
+    spartanweaponry:illager_wall_head
+    spartanweaponry:spider_head
+    spartanweaponry:spider_wall_head
+    spartanweaponry:stray_skull
+    spartanweaponry:stray_wall_skull
+    spartanweaponry:witch_head
+    spartanweaponry:witch_wall_head
+    spartanweaponry:zombified_piglin_head
+    spartanweaponry:zombified_piglin_wall_head
+
+Missing minecraft:mob_effect:
+    spartanweaponry:ender_disruption
+
+Missing minecraft:enchantment:
+    spartanshields:firebrand
+    spartanshields:payback
+    spartanshields:spikes
+    spartanweaponry:collectorang
+    spartanweaponry:expanse
+    spartanweaponry:hydrodynamic
+    spartanweaponry:incendiary
+    spartanweaponry:lucky_throw
+    spartanweaponry:propel
+    spartanweaponry:razors_edge
+    spartanweaponry:sharpshooter
+    spartanweaponry:supercharge
+
+Missing minecraft:entity_type:
+    spartanweaponry:arrow
+    spartanweaponry:bolt
+    spartanweaponry:boomerang
+    spartanweaponry:dynamite
+    spartanweaponry:explosive_arrow
+    spartanweaponry:javelin
+    spartanweaponry:spectral_bolt
+    spartanweaponry:throwing_knife
+    spartanweaponry:throwing_weapon
+    spartanweaponry:tomahawk
+
+
+[18:17:24] [main/ERROR] [ne.mi.re.GameData/REGISTRIES]: There are unidentified mappings in this world - we are going to attempt to process anyway
+[18:17:24] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/otectus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.23_mapped_official_1.20.1/forge-1.20.1-47.4.23_mapped_official_1.20.1.jar%23181!/assets/.mcassetsroot' uses unexpected schema
+[18:17:24] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/otectus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.23_mapped_official_1.20.1/forge-1.20.1-47.4.23_mapped_official_1.20.1.jar%23181!/data/.mcassetsroot' uses unexpected schema
+[18:17:24] [main/WARN] [minecraft/MinecraftServer]: Missing data pack mod:immersive_armors
+[18:17:24] [main/WARN] [minecraft/MinecraftServer]: Missing data pack mod:mixinextras
+[18:17:24] [main/WARN] [minecraft/MinecraftServer]: Missing data pack mod:spartanshields
+[18:17:24] [main/WARN] [minecraft/MinecraftServer]: Missing data pack mod:spartanweaponry
+[18:17:25] [main/INFO] [minecraft/RecipeManager]: Loaded 8 recipes
+[18:17:25] [main/INFO] [minecraft/AdvancementList]: Loaded 1293 advancements
+[18:17:25] [main/INFO] [ne.mi.ga.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [otes_smithing]
+[18:17:26] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[18:17:27] [Worker-Main-20/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:17:27] [Worker-Main-11/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:17:27] [Worker-Main-11/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:17:27] [Worker-Main-20/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 7%
+[18:17:28] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 1849 ms
+[18:17:28] [Server thread/INFO] [minecraft/GameTestServer]: Started game test server
+[18:17:28] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[18:17:28] [Server thread/INFO] [co.ot.ot.OtesSmithing/]: Ote's Smithing: 4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped (34 ms)
+[18:17:28] [Server thread/INFO] [minecraft/GameTestBatchRunner]: Running test batch 'defaultBatch:1' (23 tests)...
+[18:17:28] [Server thread/INFO] [minecraft/GameTestServer]: 23 tests are now running!
+[18:17:28] [Server thread/INFO] [co.ot.ot.OtesSmithing/]: Compat test: 0 automatic recipes; 4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped
+[18:17:28] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++++++++++]
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: ========= 23 GAME TESTS COMPLETE ======================
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: All 23 required tests passed :)
+[18:17:29] [Server thread/INFO] [minecraft/GameTestServer]: ====================================================
+[18:17:29] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[18:17:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[18:17:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[18:17:29] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:17:32] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:17:32] [Server thread/INFO] [minecraft/GameTestServer]: Game test server shutting down
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 21s
+13 actionable tasks: 3 executed, 10 up-to-date

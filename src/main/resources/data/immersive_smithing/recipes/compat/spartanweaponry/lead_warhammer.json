@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "warhammer",
+        "lead"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/lead"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:lead",
+  "metal_units": 27,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:lead_warhammer"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:warhammer"
+}

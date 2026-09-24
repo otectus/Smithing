@@ -1,0 +1,17 @@
+{
+  "parent": "immersive_smithing:item/tongs",
+  "textures": {
+    "layer0": "immersive_smithing:item/iron_smithing_tongs",
+    "layer1": "immersive_smithing:item/tongs_workpiece"
+  },
+  "loader": "forge:item_layers",
+  "forge_data": {
+    "layers": {
+      "1": {
+        "block_light": 15,
+        "sky_light": 15,
+        "ambient_occlusion": false
+      }
+    }
+  }
+}

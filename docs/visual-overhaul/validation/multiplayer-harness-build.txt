@@ -1,0 +1,42 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :addMixinsToPackTestJar
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+
+> Task :compilePackTestJava
+/home/otectus/Projects/OtesSmithing/src/packTest/java/com/otectus/otessmithing/packtest/ClientPackTest.java:388: warning: [removal] ResourceLocation(String,String) in ResourceLocation has been deprecated and marked for removal
+            checks.put("iron_sword_crafting_disabled", server.getRecipeManager().byKey(new ResourceLocation("minecraft", "iron_sword")).isEmpty());
+                                                                                       ^
+/home/otectus/Projects/OtesSmithing/src/packTest/java/com/otectus/otessmithing/packtest/ClientPackTest.java:411: warning: [removal] ResourceLocation(String) in ResourceLocation has been deprecated and marked for removal
+        return BuiltInRegistries.ITEM.get(new ResourceLocation(id));
+                                          ^
+/home/otectus/Projects/OtesSmithing/src/packTest/java/com/otectus/otessmithing/packtest/ClientPackTest.java:1062: warning: [removal] ResourceLocation(String,String) in ResourceLocation has been deprecated and marked for removal
+        return new WorkpieceData(new ItemStack(item), OtesSmithing.id("packtest"), new ResourceLocation("minecraft", "iron"), units,
+                                                                                   ^
+Note: /home/otectus/Projects/OtesSmithing/src/packTest/java/com/otectus/otessmithing/packtest/ClientPackTest.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+3 warnings
+
+> Task :processPackTestResources UP-TO-DATE
+> Task :packTestClasses
+> Task :packTestJar
+> Task :configureReobfTaskForReobfPackTestJar
+> Task :reobfPackTestJar
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 10s
+11 actionable tasks: 6 executed, 5 up-to-date

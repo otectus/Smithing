@@ -1,0 +1,42 @@
+{
+  "pass": true,
+  "results": {
+    "leader": {
+      "pass": true,
+      "reason": "leader produced real loaded-tongs and hammer multiplayer swings",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "leader_loaded_tongs": true,
+        "leader_first_person_hammer_captured": true,
+        "leader_remote_tongs_and_hammer_observed": true
+      }
+    },
+    "peer": {
+      "pass": true,
+      "reason": "remote loaded-tongs and hammer swings synchronized and rendered",
+      "title_ms": -1,
+      "world_ms": -1,
+      "checks": {
+        "remote_sky_light": 0,
+        "remote_block_light": 0,
+        "remote_loaded_tongs": true,
+        "remote_loaded_tongs_swing_observed": true,
+        "remote_tongs_capture_swing_tick": 3,
+        "remote_hammer_swing_observed": true,
+        "remote_hammer_capture_swing_tick": 3
+      }
+    }
+  },
+  "screenshots": [
+    "leader/screenshots/packtest_multiplayer_first_person_hammer.png",
+    "leader/screenshots/packtest_multiplayer_leader_loaded_tongs.png",
+    "peer/screenshots/packtest_multiplayer_remote_hammer_swing.png",
+    "peer/screenshots/packtest_multiplayer_remote_idle.png",
+    "peer/screenshots/packtest_multiplayer_remote_tongs_swing.png"
+  ],
+  "artifacts": {
+    "otes-smithing-1.1.0.jar": "e4fef44f461e95acfcb808b7506ba9cd87ea8374e2eb20f61eb07bafb0b9ed91",
+    "otes-smithing-1.1.0-packtest.jar": "a39bd5ab149302f75b567868001aee126e7dc62cd46ec99c0370f31ab5ed76f3"
+  }
+}

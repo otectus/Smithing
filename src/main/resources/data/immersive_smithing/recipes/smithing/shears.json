@@ -1,0 +1,10 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:iron",
+  "metal_units": 18,
+  "result": {
+    "item": "minecraft:shears"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:generic_tool"
+}

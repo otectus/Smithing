@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "particle": "immersive_smithing:block/molten_metal",
+    "surface": "immersive_smithing:block/molten_metal"
+  },
+  "elements": [
+    {
+      "name": "hot_billet",
+      "from": [
+        4,
+        0,
+        6
+      ],
+      "to": [
+        12,
+        2,
+        10
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            4,
+            6,
+            12,
+            10
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            4,
+            6,
+            12,
+            10
+          ],
+          "texture": "#surface"
+        },
+        "north": {
+          "uv": [
+            4,
+            14,
+            12,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            4,
+            14,
+            12,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            6,
+            14,
+            10,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            6,
+            14,
+            10,
+            16
+          ],
+          "texture": "#surface"
+        }
+      }
+    }
+  ]
+}

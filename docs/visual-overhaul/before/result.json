@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "reason": "all checks passed",
+  "title_ms": 2395,
+  "world_ms": 9162,
+  "checks": {
+    "pack_screens_settled_ticks": 40,
+    "summary": "4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped",
+    "smithing_data_built": true,
+    "vanilla_explicit_recipes": true,
+    "material_families": 4,
+    "iron_sword_crafting_disabled": true,
+    "mods_loaded": 5
+  }
+}

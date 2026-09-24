@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "immersive_smithing:item/stone_smithing_hammer"
+  }
+}

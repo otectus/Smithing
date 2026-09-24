@@ -1,0 +1,18 @@
+{
+  "family": "minecraft:netherite",
+  "display_name": "material.immersive_smithing.netherite",
+  "sources": [
+    {
+      "tag": "forge:ingots/netherite",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/netherite",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.5,
+  "requires_ignition": false,
+  "tint": "#D0502A",
+  "required_fuel_tag": "immersive_smithing:netherite_fuels"
+}

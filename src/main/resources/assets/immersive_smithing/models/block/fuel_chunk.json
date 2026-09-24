@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "particle": "immersive_smithing:block/forge_inner",
+    "surface": "immersive_smithing:block/forge_inner"
+  },
+  "elements": [
+    {
+      "name": "fuel_chunk",
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        11,
+        3,
+        11
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#surface"
+        },
+        "north": {
+          "uv": [
+            5,
+            13,
+            11,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            5,
+            13,
+            11,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            5,
+            13,
+            11,
+            16
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            5,
+            13,
+            11,
+            16
+          ],
+          "texture": "#surface"
+        }
+      }
+    }
+  ]
+}

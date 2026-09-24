@@ -1,0 +1,708 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "#stone",
+    "stone": "immersive_smithing:block/forge_masonry",
+    "iron": "immersive_smithing:block/iron_plate",
+    "strap": "immersive_smithing:block/iron_strap",
+    "inner": "immersive_smithing:block/forge_inner",
+    "coals": "immersive_smithing:block/forge_inner"
+  },
+  "elements": [
+    {
+      "name": "Foundation",
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        2,
+        16
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#stone",
+          "cullface": "down"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#coals"
+        },
+        "north": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#stone",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Left firebox pier",
+      "from": [
+        0,
+        2,
+        0
+      ],
+      "to": [
+        3,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            13,
+            8,
+            16,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            3,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            16,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            16,
+            14
+          ],
+          "texture": "#inner"
+        }
+      }
+    },
+    {
+      "name": "Right firebox pier",
+      "from": [
+        13,
+        2,
+        0
+      ],
+      "to": [
+        16,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            3,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            13,
+            8,
+            16,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            16,
+            14
+          ],
+          "texture": "#inner"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            16,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Firebox back",
+      "from": [
+        3,
+        2,
+        13
+      ],
+      "to": [
+        13,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            8,
+            13,
+            14
+          ],
+          "texture": "#coals"
+        },
+        "south": {
+          "uv": [
+            3,
+            8,
+            13,
+            14
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            13,
+            8,
+            16,
+            14
+          ],
+          "texture": "#stone"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            3,
+            14
+          ],
+          "texture": "#stone"
+        }
+      }
+    },
+    {
+      "name": "Hearth slab",
+      "from": [
+        0,
+        8,
+        0
+      ],
+      "to": [
+        16,
+        10,
+        16
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#inner"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#inner"
+        },
+        "north": {
+          "uv": [
+            0,
+            6,
+            16,
+            8
+          ],
+          "texture": "#strap",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            6,
+            16,
+            8
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            0,
+            6,
+            16,
+            8
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            6,
+            16,
+            8
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Front crucible wall",
+      "from": [
+        0,
+        10,
+        0
+      ],
+      "to": [
+        16,
+        13,
+        2
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            3,
+            16,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            3,
+            16,
+            6
+          ],
+          "texture": "#inner"
+        },
+        "west": {
+          "uv": [
+            0,
+            3,
+            2,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            14,
+            3,
+            16,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Back crucible wall",
+      "from": [
+        0,
+        10,
+        14
+      ],
+      "to": [
+        16,
+        13,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            3,
+            16,
+            6
+          ],
+          "texture": "#inner"
+        },
+        "south": {
+          "uv": [
+            0,
+            3,
+            16,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            14,
+            3,
+            16,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            3,
+            2,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Left crucible wall",
+      "from": [
+        0,
+        10,
+        2
+      ],
+      "to": [
+        2,
+        13,
+        14
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            2,
+            3,
+            14,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            2,
+            3,
+            14,
+            6
+          ],
+          "texture": "#inner"
+        }
+      }
+    },
+    {
+      "name": "Right crucible wall",
+      "from": [
+        14,
+        10,
+        2
+      ],
+      "to": [
+        16,
+        13,
+        14
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            2,
+            3,
+            14,
+            6
+          ],
+          "texture": "#inner"
+        },
+        "east": {
+          "uv": [
+            2,
+            3,
+            14,
+            6
+          ],
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Front iron lip",
+      "from": [
+        0,
+        13,
+        0
+      ],
+      "to": [
+        16,
+        14,
+        2
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            2
+          ],
+          "texture": "#iron"
+        },
+        "north": {
+          "uv": [
+            0,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron"
+        },
+        "west": {
+          "uv": [
+            0,
+            2,
+            2,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            14,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Back iron lip",
+      "from": [
+        0,
+        13,
+        14
+      ],
+      "to": [
+        16,
+        14,
+        16
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            0,
+            14,
+            16,
+            16
+          ],
+          "texture": "#iron"
+        },
+        "north": {
+          "uv": [
+            0,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "south"
+        },
+        "west": {
+          "uv": [
+            14,
+            2,
+            16,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "name": "Left iron lip",
+      "from": [
+        0,
+        13,
+        2
+      ],
+      "to": [
+        2,
+        14,
+        14
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            0,
+            2,
+            2,
+            14
+          ],
+          "texture": "#iron"
+        },
+        "west": {
+          "uv": [
+            2,
+            2,
+            14,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "west"
+        },
+        "east": {
+          "uv": [
+            2,
+            2,
+            14,
+            3
+          ],
+          "texture": "#iron"
+        }
+      }
+    },
+    {
+      "name": "Right iron lip",
+      "from": [
+        14,
+        13,
+        2
+      ],
+      "to": [
+        16,
+        14,
+        14
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            14,
+            2,
+            16,
+            14
+          ],
+          "texture": "#iron"
+        },
+        "west": {
+          "uv": [
+            2,
+            2,
+            14,
+            3
+          ],
+          "texture": "#iron"
+        },
+        "east": {
+          "uv": [
+            2,
+            2,
+            14,
+            3
+          ],
+          "texture": "#iron",
+          "cullface": "east"
+        }
+      }
+    }
+  ]
+}

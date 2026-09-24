@@ -1,0 +1,6 @@
+{
+  "parent": "immersive_smithing:block/smiths_forge",
+  "textures": {
+    "coals": "immersive_smithing:block/forge_coals"
+  }
+}

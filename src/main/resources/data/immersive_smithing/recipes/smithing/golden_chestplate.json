@@ -1,0 +1,10 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 72,
+  "result": {
+    "item": "minecraft:golden_chestplate"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:chestplate"
+}

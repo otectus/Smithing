@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "immersive_smithing:iron_smithing_tongs"
+    },
+    "title": {
+      "translate": "advancements.immersive_smithing.into_shape.title"
+    },
+    "description": {
+      "translate": "advancements.immersive_smithing.into_shape.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "immersive_smithing:stoke_the_forge"
+}

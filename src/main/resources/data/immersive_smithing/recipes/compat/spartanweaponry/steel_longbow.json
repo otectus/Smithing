@@ -1,0 +1,50 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longbow",
+        "steel"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/steel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:steel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:rods/wooden"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:string"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:steel_longbow"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:longbow"
+}

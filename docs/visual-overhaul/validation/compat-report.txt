@@ -1,0 +1,318 @@
+Ote's Smithing compatibility report - 2026-09-23T18:16:36.577885531
+4 material families, 126 explicit and 16 automatic smithing recipes, 140 crafting recipes disabled, 12 equipment recipes skipped
+
+== Material families (4)
+  minecraft:copper: 4 source items
+  minecraft:gold: 5 source items
+  minecraft:iron: 5 source items
+  minecraft:netherite: 2 source items
+
+== Skipped material families (0)
+
+== Ambiguous material items (claimed by several families, ignored) (0)
+
+== Explicit smithing recipes (126)
+  otes_smithing:compat/spartanweaponry/copper_battle_hammer -> spartanweaponry:copper_battle_hammer [minecraft:copper, 54 units]
+  otes_smithing:compat/spartanweaponry/copper_battleaxe -> spartanweaponry:copper_battleaxe [minecraft:copper, 45 units]
+  otes_smithing:compat/spartanweaponry/copper_boomerang -> spartanweaponry:copper_boomerang [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_dagger -> spartanweaponry:copper_dagger [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_flanged_mace -> spartanweaponry:copper_flanged_mace [minecraft:copper, 27 units]
+  otes_smithing:compat/spartanweaponry/copper_glaive -> spartanweaponry:copper_glaive [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_greatsword -> spartanweaponry:copper_greatsword [minecraft:copper, 54 units]
+  otes_smithing:compat/spartanweaponry/copper_halberd -> spartanweaponry:copper_halberd [minecraft:copper, 36 units]
+  otes_smithing:compat/spartanweaponry/copper_heavy_crossbow -> spartanweaponry:copper_heavy_crossbow [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_javelin -> spartanweaponry:copper_javelin [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_katana -> spartanweaponry:copper_katana [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_lance -> spartanweaponry:copper_lance [minecraft:copper, 27 units]
+  otes_smithing:compat/spartanweaponry/copper_longbow -> spartanweaponry:copper_longbow [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_longsword -> spartanweaponry:copper_longsword [minecraft:copper, 36 units]
+  otes_smithing:compat/spartanweaponry/copper_parrying_dagger -> spartanweaponry:copper_parrying_dagger [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_pike -> spartanweaponry:copper_pike [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_quarterstaff -> spartanweaponry:copper_quarterstaff [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_rapier -> spartanweaponry:copper_rapier [minecraft:copper, 36 units]
+  otes_smithing:compat/spartanweaponry/copper_saber -> spartanweaponry:copper_saber [minecraft:copper, 27 units]
+  otes_smithing:compat/spartanweaponry/copper_scythe -> spartanweaponry:copper_scythe [minecraft:copper, 27 units]
+  otes_smithing:compat/spartanweaponry/copper_spear -> spartanweaponry:copper_spear [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_throwing_knife -> spartanweaponry:copper_throwing_knife [minecraft:copper, 9 units]
+  otes_smithing:compat/spartanweaponry/copper_tomahawk -> spartanweaponry:copper_tomahawk [minecraft:copper, 18 units]
+  otes_smithing:compat/spartanweaponry/copper_warhammer -> spartanweaponry:copper_warhammer [minecraft:copper, 27 units]
+  otes_smithing:compat/spartanweaponry/golden_battle_hammer -> spartanweaponry:golden_battle_hammer [minecraft:gold, 54 units]
+  otes_smithing:compat/spartanweaponry/golden_battleaxe -> spartanweaponry:golden_battleaxe [minecraft:gold, 45 units]
+  otes_smithing:compat/spartanweaponry/golden_boomerang -> spartanweaponry:golden_boomerang [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_dagger -> spartanweaponry:golden_dagger [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_flanged_mace -> spartanweaponry:golden_flanged_mace [minecraft:gold, 27 units]
+  otes_smithing:compat/spartanweaponry/golden_glaive -> spartanweaponry:golden_glaive [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_greatsword -> spartanweaponry:golden_greatsword [minecraft:gold, 54 units]
+  otes_smithing:compat/spartanweaponry/golden_halberd -> spartanweaponry:golden_halberd [minecraft:gold, 36 units]
+  otes_smithing:compat/spartanweaponry/golden_heavy_crossbow -> spartanweaponry:golden_heavy_crossbow [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_javelin -> spartanweaponry:golden_javelin [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_katana -> spartanweaponry:golden_katana [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_lance -> spartanweaponry:golden_lance [minecraft:gold, 27 units]
+  otes_smithing:compat/spartanweaponry/golden_longbow -> spartanweaponry:golden_longbow [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_longsword -> spartanweaponry:golden_longsword [minecraft:gold, 36 units]
+  otes_smithing:compat/spartanweaponry/golden_parrying_dagger -> spartanweaponry:golden_parrying_dagger [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_pike -> spartanweaponry:golden_pike [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_quarterstaff -> spartanweaponry:golden_quarterstaff [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_rapier -> spartanweaponry:golden_rapier [minecraft:gold, 36 units]
+  otes_smithing:compat/spartanweaponry/golden_saber -> spartanweaponry:golden_saber [minecraft:gold, 27 units]
+  otes_smithing:compat/spartanweaponry/golden_scythe -> spartanweaponry:golden_scythe [minecraft:gold, 27 units]
+  otes_smithing:compat/spartanweaponry/golden_spear -> spartanweaponry:golden_spear [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_throwing_knife -> spartanweaponry:golden_throwing_knife [minecraft:gold, 9 units]
+  otes_smithing:compat/spartanweaponry/golden_tomahawk -> spartanweaponry:golden_tomahawk [minecraft:gold, 18 units]
+  otes_smithing:compat/spartanweaponry/golden_warhammer -> spartanweaponry:golden_warhammer [minecraft:gold, 27 units]
+  otes_smithing:compat/spartanweaponry/iron_battle_hammer -> spartanweaponry:iron_battle_hammer [minecraft:iron, 54 units]
+  otes_smithing:compat/spartanweaponry/iron_battleaxe -> spartanweaponry:iron_battleaxe [minecraft:iron, 45 units]
+  otes_smithing:compat/spartanweaponry/iron_boomerang -> spartanweaponry:iron_boomerang [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_dagger -> spartanweaponry:iron_dagger [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_flanged_mace -> spartanweaponry:iron_flanged_mace [minecraft:iron, 27 units]
+  otes_smithing:compat/spartanweaponry/iron_glaive -> spartanweaponry:iron_glaive [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_greatsword -> spartanweaponry:iron_greatsword [minecraft:iron, 54 units]
+  otes_smithing:compat/spartanweaponry/iron_halberd -> spartanweaponry:iron_halberd [minecraft:iron, 36 units]
+  otes_smithing:compat/spartanweaponry/iron_heavy_crossbow -> spartanweaponry:iron_heavy_crossbow [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_javelin -> spartanweaponry:iron_javelin [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_katana -> spartanweaponry:iron_katana [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_lance -> spartanweaponry:iron_lance [minecraft:iron, 27 units]
+  otes_smithing:compat/spartanweaponry/iron_longbow -> spartanweaponry:iron_longbow [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_longsword -> spartanweaponry:iron_longsword [minecraft:iron, 36 units]
+  otes_smithing:compat/spartanweaponry/iron_parrying_dagger -> spartanweaponry:iron_parrying_dagger [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_pike -> spartanweaponry:iron_pike [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_quarterstaff -> spartanweaponry:iron_quarterstaff [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_rapier -> spartanweaponry:iron_rapier [minecraft:iron, 36 units]
+  otes_smithing:compat/spartanweaponry/iron_saber -> spartanweaponry:iron_saber [minecraft:iron, 27 units]
+  otes_smithing:compat/spartanweaponry/iron_scythe -> spartanweaponry:iron_scythe [minecraft:iron, 27 units]
+  otes_smithing:compat/spartanweaponry/iron_spear -> spartanweaponry:iron_spear [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_throwing_knife -> spartanweaponry:iron_throwing_knife [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/iron_tomahawk -> spartanweaponry:iron_tomahawk [minecraft:iron, 18 units]
+  otes_smithing:compat/spartanweaponry/iron_warhammer -> spartanweaponry:iron_warhammer [minecraft:iron, 27 units]
+  otes_smithing:compat/spartanweaponry/netherite_battle_hammer -> spartanweaponry:netherite_battle_hammer [minecraft:netherite, 54 units]
+  otes_smithing:compat/spartanweaponry/netherite_battleaxe -> spartanweaponry:netherite_battleaxe [minecraft:netherite, 45 units]
+  otes_smithing:compat/spartanweaponry/netherite_boomerang -> spartanweaponry:netherite_boomerang [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_dagger -> spartanweaponry:netherite_dagger [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_flanged_mace -> spartanweaponry:netherite_flanged_mace [minecraft:netherite, 27 units]
+  otes_smithing:compat/spartanweaponry/netherite_glaive -> spartanweaponry:netherite_glaive [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_greatsword -> spartanweaponry:netherite_greatsword [minecraft:netherite, 54 units]
+  otes_smithing:compat/spartanweaponry/netherite_halberd -> spartanweaponry:netherite_halberd [minecraft:netherite, 36 units]
+  otes_smithing:compat/spartanweaponry/netherite_heavy_crossbow -> spartanweaponry:netherite_heavy_crossbow [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_javelin -> spartanweaponry:netherite_javelin [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_katana -> spartanweaponry:netherite_katana [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_lance -> spartanweaponry:netherite_lance [minecraft:netherite, 27 units]
+  otes_smithing:compat/spartanweaponry/netherite_longbow -> spartanweaponry:netherite_longbow [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_longsword -> spartanweaponry:netherite_longsword [minecraft:netherite, 36 units]
+  otes_smithing:compat/spartanweaponry/netherite_parrying_dagger -> spartanweaponry:netherite_parrying_dagger [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_pike -> spartanweaponry:netherite_pike [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_quarterstaff -> spartanweaponry:netherite_quarterstaff [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_rapier -> spartanweaponry:netherite_rapier [minecraft:netherite, 36 units]
+  otes_smithing:compat/spartanweaponry/netherite_saber -> spartanweaponry:netherite_saber [minecraft:netherite, 27 units]
+  otes_smithing:compat/spartanweaponry/netherite_scythe -> spartanweaponry:netherite_scythe [minecraft:netherite, 27 units]
+  otes_smithing:compat/spartanweaponry/netherite_spear -> spartanweaponry:netherite_spear [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_throwing_knife -> spartanweaponry:netherite_throwing_knife [minecraft:netherite, 9 units]
+  otes_smithing:compat/spartanweaponry/netherite_tomahawk -> spartanweaponry:netherite_tomahawk [minecraft:netherite, 18 units]
+  otes_smithing:compat/spartanweaponry/netherite_warhammer -> spartanweaponry:netherite_warhammer [minecraft:netherite, 27 units]
+  otes_smithing:compat/spartanweaponry/studded_cestus -> spartanweaponry:studded_cestus [minecraft:iron, 9 units]
+  otes_smithing:compat/spartanweaponry/studded_club -> spartanweaponry:studded_club [minecraft:iron, 9 units]
+  otes_smithing:smithing/golden_axe -> minecraft:golden_axe [minecraft:gold, 27 units]
+  otes_smithing:smithing/golden_boots -> minecraft:golden_boots [minecraft:gold, 36 units]
+  otes_smithing:smithing/golden_chestplate -> minecraft:golden_chestplate [minecraft:gold, 72 units]
+  otes_smithing:smithing/golden_helmet -> minecraft:golden_helmet [minecraft:gold, 45 units]
+  otes_smithing:smithing/golden_hoe -> minecraft:golden_hoe [minecraft:gold, 18 units]
+  otes_smithing:smithing/golden_leggings -> minecraft:golden_leggings [minecraft:gold, 63 units]
+  otes_smithing:smithing/golden_pickaxe -> minecraft:golden_pickaxe [minecraft:gold, 27 units]
+  otes_smithing:smithing/golden_shovel -> minecraft:golden_shovel [minecraft:gold, 9 units]
+  otes_smithing:smithing/golden_sword -> minecraft:golden_sword [minecraft:gold, 18 units]
+  otes_smithing:smithing/iron_axe -> minecraft:iron_axe [minecraft:iron, 27 units]
+  otes_smithing:smithing/iron_boots -> minecraft:iron_boots [minecraft:iron, 36 units]
+  otes_smithing:smithing/iron_chestplate -> minecraft:iron_chestplate [minecraft:iron, 72 units]
+  otes_smithing:smithing/iron_helmet -> minecraft:iron_helmet [minecraft:iron, 45 units]
+  otes_smithing:smithing/iron_hoe -> minecraft:iron_hoe [minecraft:iron, 18 units]
+  otes_smithing:smithing/iron_leggings -> minecraft:iron_leggings [minecraft:iron, 63 units]
+  otes_smithing:smithing/iron_pickaxe -> minecraft:iron_pickaxe [minecraft:iron, 27 units]
+  otes_smithing:smithing/iron_shovel -> minecraft:iron_shovel [minecraft:iron, 9 units]
+  otes_smithing:smithing/iron_sword -> minecraft:iron_sword [minecraft:iron, 18 units]
+  otes_smithing:smithing/netherite_axe -> minecraft:netherite_axe [minecraft:netherite, 27 units]
+  otes_smithing:smithing/netherite_boots -> minecraft:netherite_boots [minecraft:netherite, 36 units]
+  otes_smithing:smithing/netherite_chestplate -> minecraft:netherite_chestplate [minecraft:netherite, 72 units]
+  otes_smithing:smithing/netherite_helmet -> minecraft:netherite_helmet [minecraft:netherite, 45 units]
+  otes_smithing:smithing/netherite_hoe -> minecraft:netherite_hoe [minecraft:netherite, 18 units]
+  otes_smithing:smithing/netherite_leggings -> minecraft:netherite_leggings [minecraft:netherite, 63 units]
+  otes_smithing:smithing/netherite_pickaxe -> minecraft:netherite_pickaxe [minecraft:netherite, 27 units]
+  otes_smithing:smithing/netherite_shovel -> minecraft:netherite_shovel [minecraft:netherite, 9 units]
+  otes_smithing:smithing/netherite_sword -> minecraft:netherite_sword [minecraft:netherite, 18 units]
+  otes_smithing:smithing/shears -> minecraft:shears [minecraft:iron, 18 units]
+
+== Inactive smithing recipes (0)
+
+== Automatically detected equipment (16)
+  immersive_armors:heavy_boots from immersive_armors:heavy_boots [minecraft:iron, 180 units, 0 auxiliary]
+  immersive_armors:heavy_chestplate from immersive_armors:heavy_chestplate [minecraft:iron, 360 units, 0 auxiliary]
+  immersive_armors:heavy_helmet from immersive_armors:heavy_helmet [minecraft:iron, 261 units, 0 auxiliary]
+  immersive_armors:heavy_leggings from immersive_armors:heavy_leggings [minecraft:iron, 279 units, 0 auxiliary]
+  immersive_armors:steampunk_boots from immersive_armors:steampunk_boots [minecraft:gold, 18 units, 1 auxiliary]
+  immersive_armors:steampunk_chestplate from immersive_armors:steampunk_chestplate [minecraft:gold, 45 units, 3 auxiliary]
+  immersive_armors:steampunk_helmet from immersive_armors:steampunk_helmet [minecraft:gold, 9 units, 2 auxiliary]
+  immersive_armors:steampunk_leggings from immersive_armors:steampunk_leggings [minecraft:gold, 45 units, 1 auxiliary]
+  spartanshields:copper_basic_shield from spartanshields:copper_basic_shield [minecraft:copper, 36 units, 0 auxiliary]
+  spartanshields:copper_tower_shield from spartanshields:copper_tower_shield [minecraft:copper, 54 units, 0 auxiliary]
+  spartanshields:golden_basic_shield from spartanshields:golden_basic_shield [minecraft:gold, 36 units, 0 auxiliary]
+  spartanshields:golden_tower_shield from spartanshields:golden_tower_shield [minecraft:gold, 54 units, 0 auxiliary]
+  spartanshields:iron_basic_shield from spartanshields:iron_basic_shield [minecraft:iron, 36 units, 0 auxiliary]
+  spartanshields:iron_tower_shield from spartanshields:iron_tower_shield [minecraft:iron, 54 units, 0 auxiliary]
+  spartanshields:netherite_basic_shield from spartanshields:netherite_basic_shield_smithing [minecraft:netherite, 36 units, 0 auxiliary]
+  spartanshields:netherite_tower_shield from spartanshields:netherite_tower_shield_smithing [minecraft:netherite, 54 units, 0 auxiliary]
+
+== Skipped or unsupported equipment (12)
+  immersive_armors:divine_boots (immersive_armors:divine_boots): uses equipment as an ingredient
+  immersive_armors:divine_chestplate (immersive_armors:divine_chestplate): uses equipment as an ingredient
+  immersive_armors:divine_helmet (immersive_armors:divine_helmet): uses equipment as an ingredient
+  immersive_armors:divine_leggings (immersive_armors:divine_leggings): uses equipment as an ingredient
+  immersive_armors:warrior_boots (immersive_armors:warrior_boots): uses equipment as an ingredient
+  immersive_armors:warrior_chestplate (immersive_armors:warrior_chestplate): uses equipment as an ingredient
+  immersive_armors:warrior_helmet (immersive_armors:warrior_helmet): uses equipment as an ingredient
+  immersive_armors:warrior_leggings (immersive_armors:warrior_leggings): uses equipment as an ingredient
+  immersive_armors:wither_boots (immersive_armors:wither_boots): uses equipment as an ingredient
+  immersive_armors:wither_chestplate (immersive_armors:wither_chestplate): uses equipment as an ingredient
+  immersive_armors:wither_helmet (immersive_armors:wither_helmet): uses equipment as an ingredient
+  immersive_armors:wither_leggings (immersive_armors:wither_leggings): uses equipment as an ingredient
+
+== Disabled crafting recipes (140)
+  immersive_armors:heavy_boots -> immersive_armors:heavy_boots
+  immersive_armors:heavy_chestplate -> immersive_armors:heavy_chestplate
+  immersive_armors:heavy_helmet -> immersive_armors:heavy_helmet
+  immersive_armors:heavy_leggings -> immersive_armors:heavy_leggings
+  immersive_armors:steampunk_boots -> immersive_armors:steampunk_boots
+  immersive_armors:steampunk_chestplate -> immersive_armors:steampunk_chestplate
+  immersive_armors:steampunk_helmet -> immersive_armors:steampunk_helmet
+  immersive_armors:steampunk_leggings -> immersive_armors:steampunk_leggings
+  minecraft:golden_axe -> minecraft:golden_axe
+  minecraft:golden_boots -> minecraft:golden_boots
+  minecraft:golden_chestplate -> minecraft:golden_chestplate
+  minecraft:golden_helmet -> minecraft:golden_helmet
+  minecraft:golden_hoe -> minecraft:golden_hoe
+  minecraft:golden_leggings -> minecraft:golden_leggings
+  minecraft:golden_pickaxe -> minecraft:golden_pickaxe
+  minecraft:golden_shovel -> minecraft:golden_shovel
+  minecraft:golden_sword -> minecraft:golden_sword
+  minecraft:iron_axe -> minecraft:iron_axe
+  minecraft:iron_boots -> minecraft:iron_boots
+  minecraft:iron_chestplate -> minecraft:iron_chestplate
+  minecraft:iron_helmet -> minecraft:iron_helmet
+  minecraft:iron_hoe -> minecraft:iron_hoe
+  minecraft:iron_leggings -> minecraft:iron_leggings
+  minecraft:iron_pickaxe -> minecraft:iron_pickaxe
+  minecraft:iron_shovel -> minecraft:iron_shovel
+  minecraft:iron_sword -> minecraft:iron_sword
+  minecraft:netherite_axe_smithing -> minecraft:netherite_axe
+  minecraft:netherite_boots_smithing -> minecraft:netherite_boots
+  minecraft:netherite_chestplate_smithing -> minecraft:netherite_chestplate
+  minecraft:netherite_helmet_smithing -> minecraft:netherite_helmet
+  minecraft:netherite_hoe_smithing -> minecraft:netherite_hoe
+  minecraft:netherite_leggings_smithing -> minecraft:netherite_leggings
+  minecraft:netherite_pickaxe_smithing -> minecraft:netherite_pickaxe
+  minecraft:netherite_shovel_smithing -> minecraft:netherite_shovel
+  minecraft:netherite_sword_smithing -> minecraft:netherite_sword
+  minecraft:shears -> minecraft:shears
+  spartanshields:copper_basic_shield -> spartanshields:copper_basic_shield
+  spartanshields:copper_tower_shield -> spartanshields:copper_tower_shield
+  spartanshields:golden_basic_shield -> spartanshields:golden_basic_shield
+  spartanshields:golden_tower_shield -> spartanshields:golden_tower_shield
+  spartanshields:iron_basic_shield -> spartanshields:iron_basic_shield
+  spartanshields:iron_tower_shield -> spartanshields:iron_tower_shield
+  spartanshields:netherite_basic_shield_smithing -> spartanshields:netherite_basic_shield
+  spartanshields:netherite_tower_shield_smithing -> spartanshields:netherite_tower_shield
+  spartanweaponry:copper_battle_hammer -> spartanweaponry:copper_battle_hammer
+  spartanweaponry:copper_battleaxe -> spartanweaponry:copper_battleaxe
+  spartanweaponry:copper_boomerang -> spartanweaponry:copper_boomerang
+  spartanweaponry:copper_dagger -> spartanweaponry:copper_dagger
+  spartanweaponry:copper_flanged_mace -> spartanweaponry:copper_flanged_mace
+  spartanweaponry:copper_glaive -> spartanweaponry:copper_glaive
+  spartanweaponry:copper_greatsword -> spartanweaponry:copper_greatsword
+  spartanweaponry:copper_halberd -> spartanweaponry:copper_halberd
+  spartanweaponry:copper_heavy_crossbow -> spartanweaponry:copper_heavy_crossbow
+  spartanweaponry:copper_javelin -> spartanweaponry:copper_javelin
+  spartanweaponry:copper_katana -> spartanweaponry:copper_katana
+  spartanweaponry:copper_lance -> spartanweaponry:copper_lance
+  spartanweaponry:copper_longbow -> spartanweaponry:copper_longbow
+  spartanweaponry:copper_longsword -> spartanweaponry:copper_longsword
+  spartanweaponry:copper_parrying_dagger -> spartanweaponry:copper_parrying_dagger
+  spartanweaponry:copper_pike -> spartanweaponry:copper_pike
+  spartanweaponry:copper_quarterstaff -> spartanweaponry:copper_quarterstaff
+  spartanweaponry:copper_rapier -> spartanweaponry:copper_rapier
+  spartanweaponry:copper_saber -> spartanweaponry:copper_saber
+  spartanweaponry:copper_scythe -> spartanweaponry:copper_scythe
+  spartanweaponry:copper_spear -> spartanweaponry:copper_spear
+  spartanweaponry:copper_throwing_knife -> spartanweaponry:copper_throwing_knife
+  spartanweaponry:copper_tomahawk -> spartanweaponry:copper_tomahawk
+  spartanweaponry:copper_warhammer -> spartanweaponry:copper_warhammer
+  spartanweaponry:golden_battle_hammer -> spartanweaponry:golden_battle_hammer
+  spartanweaponry:golden_battleaxe -> spartanweaponry:golden_battleaxe
+  spartanweaponry:golden_boomerang -> spartanweaponry:golden_boomerang
+  spartanweaponry:golden_dagger -> spartanweaponry:golden_dagger
+  spartanweaponry:golden_flanged_mace -> spartanweaponry:golden_flanged_mace
+  spartanweaponry:golden_glaive -> spartanweaponry:golden_glaive
+  spartanweaponry:golden_greatsword -> spartanweaponry:golden_greatsword
+  spartanweaponry:golden_halberd -> spartanweaponry:golden_halberd
+  spartanweaponry:golden_heavy_crossbow -> spartanweaponry:golden_heavy_crossbow
+  spartanweaponry:golden_javelin -> spartanweaponry:golden_javelin
+  spartanweaponry:golden_katana -> spartanweaponry:golden_katana
+  spartanweaponry:golden_lance -> spartanweaponry:golden_lance
+  spartanweaponry:golden_longbow -> spartanweaponry:golden_longbow
+  spartanweaponry:golden_longsword -> spartanweaponry:golden_longsword
+  spartanweaponry:golden_parrying_dagger -> spartanweaponry:golden_parrying_dagger
+  spartanweaponry:golden_pike -> spartanweaponry:golden_pike
+  spartanweaponry:golden_quarterstaff -> spartanweaponry:golden_quarterstaff
+  spartanweaponry:golden_rapier -> spartanweaponry:golden_rapier
+  spartanweaponry:golden_saber -> spartanweaponry:golden_saber
+  spartanweaponry:golden_scythe -> spartanweaponry:golden_scythe
+  spartanweaponry:golden_spear -> spartanweaponry:golden_spear
+  spartanweaponry:golden_throwing_knife -> spartanweaponry:golden_throwing_knife
+  spartanweaponry:golden_tomahawk -> spartanweaponry:golden_tomahawk
+  spartanweaponry:golden_warhammer -> spartanweaponry:golden_warhammer
+  spartanweaponry:iron_battle_hammer -> spartanweaponry:iron_battle_hammer
+  spartanweaponry:iron_battleaxe -> spartanweaponry:iron_battleaxe
+  spartanweaponry:iron_boomerang -> spartanweaponry:iron_boomerang
+  spartanweaponry:iron_dagger -> spartanweaponry:iron_dagger
+  spartanweaponry:iron_flanged_mace -> spartanweaponry:iron_flanged_mace
+  spartanweaponry:iron_glaive -> spartanweaponry:iron_glaive
+  spartanweaponry:iron_greatsword -> spartanweaponry:iron_greatsword
+  spartanweaponry:iron_halberd -> spartanweaponry:iron_halberd
+  spartanweaponry:iron_heavy_crossbow -> spartanweaponry:iron_heavy_crossbow
+  spartanweaponry:iron_javelin -> spartanweaponry:iron_javelin
+  spartanweaponry:iron_katana -> spartanweaponry:iron_katana
+  spartanweaponry:iron_lance -> spartanweaponry:iron_lance
+  spartanweaponry:iron_longbow -> spartanweaponry:iron_longbow
+  spartanweaponry:iron_longsword -> spartanweaponry:iron_longsword
+  spartanweaponry:iron_parrying_dagger -> spartanweaponry:iron_parrying_dagger
+  spartanweaponry:iron_pike -> spartanweaponry:iron_pike
+  spartanweaponry:iron_quarterstaff -> spartanweaponry:iron_quarterstaff
+  spartanweaponry:iron_rapier -> spartanweaponry:iron_rapier
+  spartanweaponry:iron_saber -> spartanweaponry:iron_saber
+  spartanweaponry:iron_scythe -> spartanweaponry:iron_scythe
+  spartanweaponry:iron_spear -> spartanweaponry:iron_spear
+  spartanweaponry:iron_throwing_knife -> spartanweaponry:iron_throwing_knife
+  spartanweaponry:iron_tomahawk -> spartanweaponry:iron_tomahawk
+  spartanweaponry:iron_warhammer -> spartanweaponry:iron_warhammer
+  spartanweaponry:netherite_battle_hammer_smithing -> spartanweaponry:netherite_battle_hammer
+  spartanweaponry:netherite_battleaxe_smithing -> spartanweaponry:netherite_battleaxe
+  spartanweaponry:netherite_boomerang_smithing -> spartanweaponry:netherite_boomerang
+  spartanweaponry:netherite_dagger_smithing -> spartanweaponry:netherite_dagger
+  spartanweaponry:netherite_flanged_mace_smithing -> spartanweaponry:netherite_flanged_mace
+  spartanweaponry:netherite_glaive_smithing -> spartanweaponry:netherite_glaive
+  spartanweaponry:netherite_greatsword_smithing -> spartanweaponry:netherite_greatsword
+  spartanweaponry:netherite_halberd_smithing -> spartanweaponry:netherite_halberd
+  spartanweaponry:netherite_heavy_crossbow_smithing -> spartanweaponry:netherite_heavy_crossbow
+  spartanweaponry:netherite_javelin_smithing -> spartanweaponry:netherite_javelin
+  spartanweaponry:netherite_katana_smithing -> spartanweaponry:netherite_katana
+  spartanweaponry:netherite_lance_smithing -> spartanweaponry:netherite_lance
+  spartanweaponry:netherite_longbow_smithing -> spartanweaponry:netherite_longbow
+  spartanweaponry:netherite_longsword_smithing -> spartanweaponry:netherite_longsword
+  spartanweaponry:netherite_parrying_dagger_smithing -> spartanweaponry:netherite_parrying_dagger
+  spartanweaponry:netherite_pike_smithing -> spartanweaponry:netherite_pike
+  spartanweaponry:netherite_quarterstaff_smithing -> spartanweaponry:netherite_quarterstaff
+  spartanweaponry:netherite_rapier_smithing -> spartanweaponry:netherite_rapier
+  spartanweaponry:netherite_saber_smithing -> spartanweaponry:netherite_saber
+  spartanweaponry:netherite_scythe_smithing -> spartanweaponry:netherite_scythe
+  spartanweaponry:netherite_spear_smithing -> spartanweaponry:netherite_spear
+  spartanweaponry:netherite_throwing_knife_smithing -> spartanweaponry:netherite_throwing_knife
+  spartanweaponry:netherite_tomahawk_smithing -> spartanweaponry:netherite_tomahawk
+  spartanweaponry:netherite_warhammer_smithing -> spartanweaponry:netherite_warhammer
+
+== Notes (0)

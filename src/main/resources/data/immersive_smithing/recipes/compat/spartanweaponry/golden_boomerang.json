@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "boomerang"
+      ]
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "minecraft:planks"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:golden_boomerang"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:boomerang"
+}

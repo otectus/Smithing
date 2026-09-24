@@ -1,0 +1,38 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "parrying_dagger",
+        "constantan"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/constantan"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:constantan",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:constantan_parrying_dagger"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:parrying_dagger"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 63,
+  "result": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings"
+}

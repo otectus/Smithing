@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quarterstaff"
+      ]
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:netherite",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:pole"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:netherite_quarterstaff"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:quarterstaff"
+}

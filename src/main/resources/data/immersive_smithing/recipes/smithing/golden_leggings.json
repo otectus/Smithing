@@ -1,0 +1,10 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 63,
+  "result": {
+    "item": "minecraft:golden_leggings"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:leggings"
+}

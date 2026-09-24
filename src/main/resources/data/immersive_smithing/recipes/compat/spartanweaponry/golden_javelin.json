@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanweaponry"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "javelin"
+      ]
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanweaponry:pole"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanweaponry:golden_javelin"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:javelin"
+}

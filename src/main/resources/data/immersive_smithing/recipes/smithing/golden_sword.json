@@ -1,0 +1,18 @@
+{
+  "type": "immersive_smithing:smithing",
+  "material": "minecraft:gold",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "minecraft:stick"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "minecraft:golden_sword"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:sword"
+}

@@ -1,0 +1,142 @@
+2026-09-23 20:09:08,061 main WARN Advanced terminal features are not available in this environment
+[20:09:08] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserver, --fml.forgeVersion, 47.4.23, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, nogui]
+[20:09:08] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.19 by Arch Linux; OS Linux arch amd64 version 7.2.6-1-cachyos
+[20:09:08] [main/WARN] [ne.mi.fm.lo.FMLConfig/CORE]: Configuration file /tmp/otes-smithing-multiplayer-final-11/server/config/fml.toml is not correct. Correcting
+[20:09:08] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
+[20:09:08] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowLogHelpMessage] was corrected from null to true
+[20:09:08] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false
+[20:09:08] [main/INFO] [ne.mi.fm.lo.FMLConfig/CORE]: Incorrect key [earlyWindowShowCPU] was corrected from null to false
+[20:09:08] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgeserver
+[20:09:08] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/tmp/otes-smithing-multiplayer-final-11/server/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%2365!/ Service=ModLauncher Env=SERVER
+[20:09:08] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraftforge/fmlcore/1.20.1-47.4.23/fmlcore-1.20.1-47.4.23.jar is missing mods.toml file
+[20:09:08] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraftforge/javafmllanguage/1.20.1-47.4.23/javafmllanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[20:09:08] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraftforge/lowcodelanguage/1.20.1-47.4.23/lowcodelanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[20:09:08] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraftforge/mclanguage/1.20.1-47.4.23/mclanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[20:09:08] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[20:09:09] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[20:09:09] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserver' with arguments [nogui]
+[20:09:13] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1 with MCP 20230612.114412
+[20:09:13] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.23 Initialized
+[20:09:13] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[20:09:14] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: AHEAD Current: 47.4.23 Target: null
+[20:09:14] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[20:09:14] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23105!/assets/.mcassetsroot' uses unexpected schema
+[20:09:14] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/tmp/otes-smithing-multiplayer-final-11/server/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-srg.jar%23105!/data/.mcassetsroot' uses unexpected schema
+[20:09:15] [main/INFO] [minecraft/RecipeManager]: Loaded 8 recipes
+[20:09:15] [main/INFO] [minecraft/AdvancementList]: Loaded 1293 advancements
+[20:09:15] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 1.20.1
+[20:09:15] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[20:09:15] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[20:09:15] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[20:09:15] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:51025
+[20:09:15] [Server thread/INFO] [minecraft/ServerConnectionListener]: Using epoll channel type
+[20:09:15] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[20:09:15] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[20:09:15] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[20:09:15] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file ./world/serverconfig/otes_smithing-server.toml is not correct. Correcting
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.replaceMetalEquipmentRecipes was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.allowVanillaCraftingAlongsideSmithing was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.suppressSmithingTableUpgrades was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.autoDetectEquipment was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.autoDetectModdedMetals was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.autoMetalExclusions was corrected from null to its default, [brick, nether_brick]. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.recipeBlacklist was corrected from null to its default, []. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.materialFamilyBlacklist was corrected from null to its default, []. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.modBlacklist was corrected from null to its default, []. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recipes.debugLogging was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.baseMeltTimeTicks was corrected from null to its default, 160. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.forgeCapacityUnits was corrected from null to its default, 648. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.fuelConsumptionMultiplier was corrected from null to its default, 4.0. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.acceptAnyFurnaceFuel was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.lavaBucketHeatTicks was corrected from null to its default, 4000. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key forge.maxLavaBuckets was corrected from null to its default, 4. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.stoneForgeTimeSeconds was corrected from null to its default, 30. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.ironForgeTimeSeconds was corrected from null to its default, 35. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.diamondForgeTimeSeconds was corrected from null to its default, 40. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.netheriteForgeTimeSeconds was corrected from null to its default, 45. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.stoneAnvilTimeSeconds was corrected from null to its default, 30. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.ironAnvilTimeSeconds was corrected from null to its default, 35. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.diamondAnvilTimeSeconds was corrected from null to its default, 40. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.netheriteAnvilTimeSeconds was corrected from null to its default, 45. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.stoneToolDurability was corrected from null to its default, 512. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.ironToolDurability was corrected from null to its default, 1024. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.diamondToolDurability was corrected from null to its default, 2048. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key tools.netheriteToolDurability was corrected from null to its default, 4096. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key minigames was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key minigames.readyDelayMs was corrected from null to its default, 1500. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key minigames.timingToleranceMs was corrected from null to its default, 120. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key minigames.maxLatencyCompensationMs was corrected from null to its default, 400. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key minigames.maxStationDistance was corrected from null to its default, 6.0. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.minimumDurabilityMultiplier was corrected from null to its default, 0.75. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.maximumDurabilityMultiplier was corrected from null to its default, 1.25. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.faultyDurabilityMultiplier was corrected from null to its default, 0.5. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.minimumEfficacyMultiplier was corrected from null to its default, 0.85. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.maximumEfficacyMultiplier was corrected from null to its default, 1.15. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.faultyEfficacyMultiplier was corrected from null to its default, 0.7. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.toolAttackEfficacyFactor was corrected from null to its default, 0.5. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key quality.scaleArmorToughness was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recycling was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key recycling.recyclingEfficiency was corrected from null to its default, 1.0. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key trough was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key trough.troughQuenchesPerBucket was corrected from null to its default, 4. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key trough.troughCapacityBuckets was corrected from null to its default, 2. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key grindstone was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key grindstone.enableSmithGrindstone was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key grindstone.scorePerRefinement was corrected from null to its default, 5. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key grindstone.baseLevelCost was corrected from null to its default, 1. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key grindstone.scorePerExtraLevel was corrected from null to its default, 20. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key villagers was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key villagers.enableVillagerTrades was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key villagers.allowFaultyVillagerItems was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key automation was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key automation.enableAutomation was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key automation.forgeMetalFaces was corrected from null to its default, [up, east, west]. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key automation.forgeFuelFaces was corrected from null to its default, [down, south]. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key automation.troughFluidInput was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key guide was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key guide.grantGuideBookAutomatically was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key integrations was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key integrations.spartanWeaponry was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Configuration file ./world/serverconfig/forge-server.toml is not correct. Correcting
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[20:09:15] [Server thread/WARN] [ne.mi.co.ForgeConfigSpec/CORE]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
+[20:09:15] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[20:09:16] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[20:09:16] [Worker-Main-4/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[20:09:16] [Worker-Main-14/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[20:09:17] [Worker-Main-12/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 52%
+[20:09:17] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 1257 ms
+[20:09:17] [Server thread/INFO] [minecraft/DedicatedServer]: Done (1.706s)! For help, type "help"
+[20:09:17] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[20:09:17] [Server thread/INFO] [co.ot.ot.OtesSmithing/]: Ote's Smithing: 4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped (28 ms)
+[20:09:33] [Server thread/INFO] [minecraft/PlayerList]: VisualLeader[/127.0.0.1:48780] logged in with entity id 1 at (-0.5, -60.0, -5.5)
+[20:09:33] [Server thread/INFO] [minecraft/MinecraftServer]: VisualLeader joined the game
+[20:09:37] [Server thread/INFO] [minecraft/PlayerList]: VisualPeer[/127.0.0.1:48792] logged in with entity id 2 at (-4.5, -60.0, -2.5)
+[20:09:37] [Server thread/INFO] [minecraft/MinecraftServer]: VisualPeer joined the game
+[20:10:01] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: VisualPeer lost connection: Disconnected
+[20:10:01] [Server thread/INFO] [minecraft/MinecraftServer]: VisualPeer left the game
+[20:10:01] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: VisualLeader lost connection: Disconnected
+[20:10:01] [Server thread/INFO] [minecraft/MinecraftServer]: VisualLeader left the game
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[20:10:02] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved

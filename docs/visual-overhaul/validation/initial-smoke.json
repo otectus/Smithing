@@ -1,0 +1,59 @@
+{
+  "pass": true,
+  "reason": "all visual, data and runtime checks passed",
+  "title_ms": 2532,
+  "world_ms": 9121,
+  "checks": {
+    "pack_screens_settled_ticks": 40,
+    "summary": "4 material families, 28 explicit and 0 automatic smithing recipes, 28 crafting recipes disabled, 0 equipment recipes skipped",
+    "smithing_data_built": true,
+    "vanilla_explicit_recipes": true,
+    "material_families": 4,
+    "iron_sword_crafting_disabled": true,
+    "mods_loaded": 5,
+    "empty_station_count": 32,
+    "gallery_station_count": 52,
+    "inventory_tool_variants": 12,
+    "gui_scale_1": {
+      "scale": 1,
+      "width": 1900,
+      "height": 1025
+    },
+    "gui_scale_2": {
+      "scale": 2,
+      "width": 950,
+      "height": 513
+    },
+    "gui_scale_3": {
+      "scale": 3,
+      "width": 634,
+      "height": 342
+    },
+    "gui_minimum_320x240": true,
+    "jei_status": "smithing category opened",
+    "resource_reload": true,
+    "jei_runtime_available": true,
+    "frame_times_empty": {
+      "label": "empty",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "sample_frames": 180,
+      "average_ms": 8.43,
+      "p50_ms": 8.44,
+      "p95_ms": 9.31,
+      "average_fps": 118.57
+    },
+    "active_station_count": 32,
+    "frame_times_32_active": {
+      "label": "active",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "sample_frames": 180,
+      "average_ms": 8.43,
+      "p50_ms": 8.44,
+      "p95_ms": 9.35,
+      "average_fps": 118.63
+    },
+    "frame_measurement_real_render_frames": true
+  }
+}

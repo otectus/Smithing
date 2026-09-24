@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "immersive_smithing:smiths_forge"
+    },
+    "title": {
+      "translate": "advancements.immersive_smithing.again.title"
+    },
+    "description": {
+      "translate": "advancements.immersive_smithing.again.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "immersive_smithing:hiss"
+}

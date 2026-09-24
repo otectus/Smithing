@@ -1,0 +1,95 @@
+{
+  "pass": true,
+  "reason": "all visual, data and runtime checks passed",
+  "title_ms": 33480,
+  "world_ms": 98221,
+  "checks": {
+    "pack_screens_settled_ticks": 65,
+    "summary": "27 material families, 174 explicit and 181 automatic smithing recipes, 358 crafting recipes disabled, 189 equipment recipes skipped",
+    "smithing_data_built": true,
+    "vanilla_explicit_recipes": true,
+    "material_families": 27,
+    "iron_sword_crafting_disabled": true,
+    "spartan_iron_longsword": true,
+    "spartan_netherite_longsword": true,
+    "spartan_iron_javelin": true,
+    "spartan_shields_iron_basic": true,
+    "spartan_shields_netherite_upgrade": true,
+    "mods_loaded": 422,
+    "empty_station_count": 32,
+    "gallery_station_count": 52,
+    "inventory_tool_variants": 12,
+    "gui_scale_1": {
+      "scale": 1,
+      "width": 1918,
+      "height": 1043
+    },
+    "gui_scale_2": {
+      "scale": 2,
+      "width": 959,
+      "height": 522
+    },
+    "gui_scale_3": {
+      "scale": 3,
+      "width": 640,
+      "height": 348
+    },
+    "gui_minimum_320x240": true,
+    "gui_minimum_probe": {
+      "requested_framebuffer": "960x720",
+      "logical_width": 640,
+      "logical_height": 348,
+      "exact_320x240": false
+    },
+    "inventory_quality_tooltip_rendered": true,
+    "accessibility_mode": "high contrast, colorblind-safe, large targets, reduced flash/shake, minimal particles",
+    "accessibility_settings_restored": true,
+    "jei_status": "smithing category opened",
+    "resource_reload": true,
+    "jei_runtime_available": true,
+    "quench_effect_source": "real SmithsTroughBlock.use server action",
+    "grind_effect_source": "real SmithsGrindstoneBlock.use confirmation action",
+    "anvil_effect_source": "server StationEffectPacket injection; minigame strike remains server-authoritative",
+    "frame_measurement_settings": {
+      "vsync": false,
+      "frame_limit": "260 (vanilla maximum/unlimited)",
+      "render_distance": 6,
+      "camera": "fixed spectator",
+      "gl_vendor": "NVIDIA Corporation",
+      "gl_renderer": "NVIDIA GeForce RTX 4050 Laptop GPU/PCIe/SSE2",
+      "gl_version": "3.3.0 NVIDIA 615.71.09"
+    },
+    "frame_times_empty": {
+      "label": "empty",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "minimum_sample_frames": 180,
+      "sample_frames": 1796,
+      "elapsed_sample_ms": 3001.17,
+      "average_interval_ms": 1.67,
+      "p50_interval_ms": 1.51,
+      "p95_interval_ms": 2.34,
+      "average_render_tick_ms": 1.36,
+      "p50_render_tick_ms": 1.3,
+      "p95_render_tick_ms": 1.75,
+      "average_fps": 598.38
+    },
+    "active_station_count": 32,
+    "frame_times_32_active": {
+      "label": "active",
+      "station_count": 32,
+      "warmup_frames": 60,
+      "minimum_sample_frames": 180,
+      "sample_frames": 2003,
+      "elapsed_sample_ms": 3012.56,
+      "average_interval_ms": 1.5,
+      "p50_interval_ms": 1.37,
+      "p95_interval_ms": 1.9,
+      "average_render_tick_ms": 1.19,
+      "p50_render_tick_ms": 1.16,
+      "p95_render_tick_ms": 1.46,
+      "average_fps": 664.88
+    },
+    "frame_measurement_real_render_frames": true
+  }
+}

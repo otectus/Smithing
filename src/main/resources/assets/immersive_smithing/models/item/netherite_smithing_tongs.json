@@ -1,0 +1,14 @@
+{
+  "parent": "immersive_smithing:item/tongs",
+  "textures": {
+    "layer0": "immersive_smithing:item/netherite_smithing_tongs"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "immersive_smithing:loaded": 1
+      },
+      "model": "immersive_smithing:item/netherite_smithing_tongs_loaded"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :downloadMcpConfig
+> Task :extractSrg UP-TO-DATE
+> Task :createMcpToSrg UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileGameTestJava UP-TO-DATE
+> Task :processGameTestResources UP-TO-DATE
+> Task :gameTestClasses UP-TO-DATE
+> Task :createSrgToMcp UP-TO-DATE
+> Task :downloadMCMeta UP-TO-DATE
+> Task :downloadAssets UP-TO-DATE
+> Task :extractNatives UP-TO-DATE
+> Task :makeSrcDirs
+> Task :prepareRuns
+> Task :prepareRunGameTestServer
+> Task :prepareRunGameTestServerCompile UP-TO-DATE
+
+> Task :runGameTestServer
+2026-09-23 18:16:24,138 main WARN Advanced terminal features are not available in this environment
+[18:16:24] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgegametestserveruserdev, --gameDir, ., --fml.forgeVersion, 47.4.23, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, otes_smithing.mixins.json]
+[18:16:24] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.19 by Arch Linux; OS Linux arch amd64 version 7.2.6-1-cachyos
+[18:16:24] [main/INFO] [ne.mi.fm.lo.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgegametestserveruserdev
+[18:16:24] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/otectus/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23116!/ Service=ModLauncher Env=SERVER
+[18:16:24] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.23/103ee0ecf6e5e4a971ee1ae68384e96fd73b097f/javafmllanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:16:24] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.4.23/2531b2da1460bc09c8ec3bf946e641de664b460d/lowcodelanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:16:24] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.4.23/eebf4eae01f6fde63717bb38b77f9b6b1b50f8/mclanguage-1.20.1-47.4.23.jar is missing mods.toml file
+[18:16:24] [main/WARN] [ne.mi.fm.lo.mo.ModFileParser/LOADING]: Mod file /home/otectus/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.4.23/ef56cfb608a4356c3f99dd6a4fa81ce33029bcde/fmlcore-1.20.1-47.4.23.jar is missing mods.toml file
+[18:16:24] [main/INFO] [ne.mi.fm.lo.mo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[18:16:25] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[18:16:25] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgegametestserveruserdev' with arguments [--gameDir, .]
+[18:16:25] [main/WARN] [mixin/]: Reference map 'otes_smithing.refmap.json' for otes_smithing.mixins.json could not be read. If this is a development environment you can ignore this message
+[18:16:26] [main/INFO] [mixin/]: Remapping refMap immersive_armors-common-refmap.json using /home/otectus/Projects/OtesSmithing/build/createSrgToMcp/output.srg
+[18:16:26] [main/INFO] [mixin/]: Remapping refMap spartanweaponry.mixins.refmap.json using /home/otectus/Projects/OtesSmithing/build/createSrgToMcp/output.srg
+[18:16:27] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[18:16:30] [modloading-worker-0/INFO] [Spartan Shields/]: Constructing Mod: Spartan Shields
+[18:16:30] [modloading-worker-0/INFO] [Spartan Weaponry/]: Constructing Mod: Spartan Weaponry
+[18:16:30] [modloading-worker-0/INFO] [Spartan Weaponry/]: Initialising API! Version: 12
+[18:16:30] [modloading-worker-0/INFO] [Spartan Weaponry/]: Spartan Weaponry API version 12 has been initalized!
+[18:16:30] [modloading-worker-0/INFO] [ne.mi.co.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.23, for MC 1.20.1 with MCP 20230612.114412
+[18:16:30] [modloading-worker-0/INFO] [ne.mi.co.MinecraftForge/FORGE]: MinecraftForge v47.4.23 Initialized
+[18:16:30] [main/INFO] [Spartan Shields/]: Loading config spartanshields-common.toml
+[18:16:30] [Thread-1/INFO] [Spartan Shields/]: Loading config spartanshields-common.toml
+[18:16:30] [Thread-1/INFO] [Spartan Shields/]: Loading config spartanshields-common.toml
+[18:16:30] [main/INFO] [Spartan Weaponry/]: Updating config settings!
+[18:16:30] [Thread-1/INFO] [Spartan Weaponry/]: Updating config settings!
+[18:16:30] [Thread-1/INFO] [Spartan Weaponry/]: Updating config settings!
+[18:16:30] [modloading-worker-0/INFO] [Spartan Shields/]: Setting up Spartan Shields!
+[18:16:30] [modloading-worker-0/INFO] [Spartan Weaponry/]: Setting up Spartan Weaponry!
+[18:16:30] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[18:16:31] [Forge Version Check/INFO] [ne.mi.fm.VersionChecker/]: [forge] Found status: AHEAD Current: 47.4.23 Target: null
+[18:16:31] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18:16:31] [main/WARN] [ne.mi.co.ForgeHooks/WP]: The following mods have version differences that were not resolved:
+otes_smithing (version 1.0.0 -> 1.1.0)
+Things may not work well.
+[18:16:31] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/otectus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.23_mapped_official_1.20.1/forge-1.20.1-47.4.23_mapped_official_1.20.1.jar%23181!/assets/.mcassetsroot' uses unexpected schema
+[18:16:31] [main/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/home/otectus/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.23_mapped_official_1.20.1/forge-1.20.1-47.4.23_mapped_official_1.20.1.jar%23181!/data/.mcassetsroot' uses unexpected schema
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Finished registering commands for Spartan Weaponry!
+[18:16:32] [Worker-Main-5/INFO] [Spartan Weaponry/]: Adding Longbow and Heavy Crossbow related loot to the Village Fletcher Loot Table!
+[18:16:32] [Worker-Main-5/INFO] [Spartan Weaponry/]: Adding Diamond Weapons to the End City Treasure Loot Table!
+[18:16:32] [Worker-Main-5/INFO] [Spartan Weaponry/]: Adding Iron Weapons to the Village Weaponsmith Loot Table!
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/electrum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:electrum_nugget_from_blasting_electrum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/platinum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:platinum_nugget_from_smelting_platinum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/lead" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:lead_nugget_from_blasting_lead_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/bronze" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:bronze_nugget_from_smelting_bronze_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/copper" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:copper_nugget_from_smelting_copper_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/aluminum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:aluminum_nugget_from_blasting_aluminum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/tin" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:tin_nugget_from_smelting_tin_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/bronze" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:bronze_nugget_from_blasting_bronze_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/steel" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:steel_nugget_from_blasting_steel_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/invar" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:invar_nugget_from_smelting_invar_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/constantan" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:constantan_nugget_from_smelting_constantan_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/nickel" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:nickel_nugget_from_smelting_nickel_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/electrum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:electrum_nugget_from_smelting_electrum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/nickel" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:nickel_nugget_from_blasting_nickel_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/lead" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:lead_nugget_from_smelting_lead_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/invar" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:invar_nugget_from_blasting_invar_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/steel" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:steel_nugget_from_smelting_steel_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/tin" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:tin_nugget_from_blasting_tin_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/silver" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:silver_nugget_from_smelting_silver_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/aluminum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:aluminum_nugget_from_smelting_aluminum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/silver" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:silver_nugget_from_blasting_silver_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/copper" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:copper_nugget_from_blasting_copper_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/platinum" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:platinum_nugget_from_blasting_platinum_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Empty result tag:"forge:nuggets/constantan" Skipping...
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Skipping loading recipe spartanweaponry:constantan_nugget_from_blasting_constantan_weapons as it's serializer returned null
+[18:16:32] [main/INFO] [minecraft/RecipeManager]: Loaded 8 recipes
+[18:16:32] [main/ERROR] [minecraft/ServerAdvancementManager]: Parsing error loading custom advancement spartanshields:recipes/basic_mekanists_tower_shield: Unknown item id 'mekanism:energy_tablet'
+[18:16:32] [main/ERROR] [minecraft/ServerAdvancementManager]: Parsing error loading custom advancement spartanshields:recipes/dark_steel_riot_basic_shield: Unknown item id 'enderio:octadic_capacitor'
+[18:16:32] [main/ERROR] [minecraft/ServerAdvancementManager]: Parsing error loading custom advancement spartanshields:recipes/dark_steel_riot_tower_shield: Unknown item id 'enderio:octadic_capacitor'
+[18:16:32] [main/ERROR] [minecraft/ServerAdvancementManager]: Parsing error loading custom advancement spartanshields:recipes/basic_mekanists_basic_shield: Unknown item id 'mekanism:energy_tablet'
+[18:16:32] [main/INFO] [minecraft/AdvancementList]: Loaded 1900 advancements
+[18:16:32] [main/INFO] [Spartan Weaponry/]: Finished initialising Weapon Traits & Attributes! Took 5.375654ms
+[18:16:33] [main/INFO] [ne.mi.ga.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [otes_smithing]
+[18:16:33] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[18:16:35] [Worker-Main-5/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:16:35] [Worker-Main-10/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:16:35] [Worker-Main-8/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:16:35] [Worker-Main-10/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[18:16:35] [Worker-Main-3/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 64%
+[18:16:35] [Server thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 2148 ms
+[18:16:35] [Server thread/INFO] [minecraft/GameTestServer]: Started game test server
+[18:16:35] [Server thread/INFO] [ne.mi.se.pe.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[18:16:36] [Server thread/INFO] [co.ot.ot.OtesSmithing/]: Ote's Smithing: 4 material families, 126 explicit and 16 automatic smithing recipes, 140 crafting recipes disabled, 12 equipment recipes skipped (46 ms)
+[18:16:36] [Server thread/INFO] [minecraft/GameTestBatchRunner]: Running test batch 'defaultBatch:1' (23 tests)...
+[18:16:36] [Server thread/INFO] [minecraft/GameTestServer]: 23 tests are now running!
+[18:16:36] [Server thread/INFO] [co.ot.ot.OtesSmithing/]: Compat test: 16 automatic recipes; 4 material families, 126 explicit and 16 automatic smithing recipes, 140 crafting recipes disabled, 12 equipment recipes skipped
+[18:16:36] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:36] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++_+++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++_+++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++++++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: [+++++++++++++++++++++++]
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: ========= 23 GAME TESTS COMPLETE ======================
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: All 23 required tests passed :)
+[18:16:37] [Server thread/INFO] [minecraft/GameTestServer]: ====================================================
+[18:16:37] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[18:16:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[18:16:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[18:16:38] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:16:40] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:16:40] [Server thread/INFO] [minecraft/GameTestServer]: Game test server shutting down
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 24s
+13 actionable tasks: 3 executed, 10 up-to-date
