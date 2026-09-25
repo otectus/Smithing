@@ -1,0 +1,33 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "family": "forge:fire_dragonsteel",
+  "display_name": "material.forge.fire_dragonsteel",
+  "sources": [
+    {
+      "item": "iceandfire:dragonsteel_fire_ingot",
+      "units": 9
+    },
+    {
+      "item": "iceandfire:dragonsteel_fire_block",
+      "units": 81
+    },
+    {
+      "tag": "forge:ingots/fire_dragonsteel",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/fire_dragonsteel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#B0929A",
+  "upgrade_policy": "shape"
+}

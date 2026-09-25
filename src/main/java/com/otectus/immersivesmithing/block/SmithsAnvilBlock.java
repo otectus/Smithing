@@ -5,6 +5,7 @@ import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.item.SmithingHammerItem;
 import com.otectus.immersivesmithing.item.SmithingTongsItem;
 import com.otectus.immersivesmithing.minigame.SessionManager;
+import com.otectus.immersivesmithing.quality.SigningService;
 import com.otectus.immersivesmithing.registry.ModItems;
 import com.otectus.immersivesmithing.registry.ModSounds;
 import com.otectus.immersivesmithing.util.Feedback;
@@ -50,9 +51,33 @@ public class SmithsAnvilBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(2, 0, 2, 14, 5, 14), Block.box(3, 5, 3, 13, 7, 13),
-            Block.box(5, 7, 5, 11, 12, 12), Block.box(4, 12, 3, 12, 14, 14),
-            Block.box(4, 14, 3, 12, 16, 15), Block.box(6, 13, 0, 10, 15, 3)));
+            Block.box(4, 0, 2, 12, 9, 4),
+            Block.box(2, 0, 4, 14, 9, 12),
+            Block.box(4, 0, 12, 12, 9, 14),
+            Block.box(4, 2, 1.75, 12, 3, 2),
+            Block.box(1.75, 2, 4, 2, 3, 12),
+            Block.box(14, 2, 4, 14.25, 3, 12),
+            Block.box(4, 2, 14, 12, 3, 14.25),
+            Block.box(2, 2, 3.75, 4, 3, 4),
+            Block.box(12, 2, 3.75, 14, 3, 4),
+            Block.box(2, 2, 12, 4, 3, 12.25),
+            Block.box(12, 2, 12, 14, 3, 12.25),
+            Block.box(4, 7, 1.75, 12, 8, 2),
+            Block.box(1.75, 7, 4, 2, 8, 12),
+            Block.box(14, 7, 4, 14.25, 8, 12),
+            Block.box(4, 7, 14, 12, 8, 14.25),
+            Block.box(2, 7, 3.75, 4, 8, 4),
+            Block.box(12, 7, 3.75, 14, 8, 4),
+            Block.box(2, 7, 12, 4, 8, 12.25),
+            Block.box(12, 7, 12, 14, 8, 12.25),
+            Block.box(4, 9, 5, 12, 10, 13),
+            Block.box(5, 10, 6, 11, 11, 12),
+            Block.box(6, 11, 6, 10, 13, 12),
+            Block.box(5, 13, 4, 11, 14, 14),
+            Block.box(4, 14, 4, 12, 16, 15),
+            Block.box(5, 14, 2, 11, 15.5, 4),
+            Block.box(6, 14, 1, 10, 15, 2),
+            Block.box(7, 14, 0, 9, 14.5, 1)));
 
     public SmithsAnvilBlock(Properties properties) {
         super(properties);
@@ -126,6 +151,11 @@ public class SmithsAnvilBlock extends BaseEntityBlock {
             return;
         }
         WorkpieceData onAnvil = anvil.workpiece();
+        // A finished piece brought back to the anvil by its smith: sign it, or change the signature.
+        if (player.isSecondaryUseActive() && SigningService.canSign(held, player)) {
+            SigningService.open(player, player.getInventory().selected);
+            return;
+        }
         if (held.getItem() instanceof SmithingTongsItem) {
             Optional<WorkpieceData> carried = WorkpieceCodec.getHeld(held);
             if (carried.isPresent()) {

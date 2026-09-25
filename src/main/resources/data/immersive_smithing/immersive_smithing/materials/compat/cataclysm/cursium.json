@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "family": "cataclysm:cursium",
+  "display_name": "material.cataclysm.cursium",
+  "sources": [
+    {
+      "item": "cataclysm:cursium_ingot",
+      "units": 9
+    },
+    {
+      "item": "cataclysm:cursium_block",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#34C6A8",
+  "upgrade_policy": "addition"
+}

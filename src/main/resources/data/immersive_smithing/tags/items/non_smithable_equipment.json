@@ -2,6 +2,266 @@
   "replace": false,
   "values": [
     "#immersive_smithing:tongs",
-    "#immersive_smithing:hammers"
+    "#immersive_smithing:hammers",
+    {
+      "id": "irons_spellbooks:wizard_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wizard_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wizard_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wizard_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:archevoker_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:archevoker_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:archevoker_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:archevoker_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cryomancer_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cryomancer_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cryomancer_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cryomancer_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cultist_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cultist_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cultist_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:cultist_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:electromancer_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:electromancer_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:electromancer_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:electromancer_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:plagued_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:plagued_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:plagued_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:plagued_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:priest_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:priest_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:priest_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:priest_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:pyromancer_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:pyromancer_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:pyromancer_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:pyromancer_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:shadowwalker_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:shadowwalker_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:shadowwalker_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:shadowwalker_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:infernal_sorcerer_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:paladin_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:pumpkin_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:speed_boots",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:arcanist_hood",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:arcanist_robes",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:arcanist_leggings",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:arcanist_boots",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:battlemage_hood",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:battlemage_robes",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:battlemage_leggings",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:battlemage_boots",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:sorcerer_hood",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:sorcerer_robes",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:sorcerer_leggings",
+      "required": false
+    },
+    {
+      "id": "ars_nouveau:sorcerer_boots",
+      "required": false
+    },
+    {
+      "id": "iceandfire:sheep_helmet",
+      "required": false
+    },
+    {
+      "id": "iceandfire:sheep_chestplate",
+      "required": false
+    },
+    {
+      "id": "iceandfire:sheep_leggings",
+      "required": false
+    },
+    {
+      "id": "iceandfire:sheep_boots",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:frontier_cap",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:roadrunner_boots",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:spiked_turtle_shell",
+      "required": false
+    },
+    {
+      "id": "alexsmobs:tarantula_hawk_elytra",
+      "required": false
+    },
+    {
+      "id": "tameablebeasts:bug_elytra",
+      "required": false
+    }
   ]
 }

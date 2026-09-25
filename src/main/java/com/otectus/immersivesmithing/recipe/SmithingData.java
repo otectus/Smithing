@@ -169,7 +169,11 @@ public final class SmithingData {
             active.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
             auto.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
             AutoRecipeDetector.UpgradeContext upgrades = new AutoRecipeDetector.UpgradeContext(manager, access, materials, smithable);
-            auto.addAll(AutoRecipeDetector.generateUpgrades(manager, upgrades, report));
+            List<SmithingRecipe> redirected = AutoRecipeDetector.generateUpgrades(manager, upgrades, report);
+            redirected.forEach(r -> smithable.putIfAbsent(r.resultItem(), r));
+            auto.addAll(redirected);
+            // Crafting recipes that rework a finished piece with more metal, priced from the base's own recipe.
+            auto.addAll(AutoRecipeDetector.generateChains(analyses.values(), upgrades, report));
         }
         active.addAll(auto);
 
@@ -260,9 +264,13 @@ public final class SmithingData {
         ImmersiveSmithing.LOGGER.info("Immersive Smithing: {} ({} ms)", report.summary(), (System.nanoTime() - start) / 1_000_000);
     }
 
-    /** Built-in Spartan Weaponry recipes live under immersive_smithing:compat/spartanweaponry/ and follow its config toggle. */
+    /**
+     * Built-in Spartan Weaponry recipes live under immersive_smithing:compat/spartanweaponry/ (and the Spartan Fire
+     * dragonsteel weapons under compat/spartanfire/) and follow the Spartan Weaponry config toggle.
+     */
     private static boolean isSpartanCompat(SmithingRecipe r) {
-        return r.getId().getNamespace().equals(ImmersiveSmithing.MOD_ID) && r.getId().getPath().startsWith("compat/spartanweaponry/");
+        return r.getId().getNamespace().equals(ImmersiveSmithing.MOD_ID)
+                && (r.getId().getPath().startsWith("compat/spartanweaponry/") || r.getId().getPath().startsWith("compat/spartanfire/"));
     }
 
     private static List<Item> itemsOf(RecyclingOverride o) {

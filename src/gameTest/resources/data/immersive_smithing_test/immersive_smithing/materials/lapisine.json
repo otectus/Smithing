@@ -1,0 +1,10 @@
+{
+  "family": "immersive_smithing_test:lapisine",
+  "display_name": "Lapisine",
+  "sources": [
+    { "item": "minecraft:lapis_lazuli", "units": 9 },
+    { "item": "minecraft:lapis_block", "units": 81 }
+  ],
+  "upgrade_policy": "shape",
+  "tint": "#2F4FD4"
+}

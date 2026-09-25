@@ -18,6 +18,7 @@ public final class ModAdvancements {
     public static final String MASTER_SMITH = "master_smith";
     public static final String THATLL_BUFF_OUT = "thatll_buff_out";
     public static final String AGAIN = "again";
+    public static final String MAKERS_MARK = "makers_mark";
 
     public static void award(ServerPlayer player, String name) {
         if (player.getServer() == null) return;

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:iron_chestplate" },
+    { "item": "minecraft:emerald" },
+    { "item": "minecraft:emerald" },
+    { "item": "minecraft:stick" }
+  ],
+  "result": { "item": "minecraft:chainmail_chestplate" }
+}

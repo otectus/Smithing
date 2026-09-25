@@ -1,0 +1,33 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "family": "forge:lightning_dragonsteel",
+  "display_name": "material.forge.lightning_dragonsteel",
+  "sources": [
+    {
+      "item": "iceandfire:dragonsteel_lightning_ingot",
+      "units": 9
+    },
+    {
+      "item": "iceandfire:dragonsteel_lightning_block",
+      "units": 81
+    },
+    {
+      "tag": "forge:ingots/lightning_dragonsteel",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/lightning_dragonsteel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#846EA9",
+  "upgrade_policy": "shape"
+}

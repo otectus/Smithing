@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": { "item": "minecraft:paper" },
+  "base": { "item": "minecraft:chainmail_helmet" },
+  "addition": { "item": "minecraft:emerald" },
+  "result": { "item": "minecraft:turtle_helmet" }
+}

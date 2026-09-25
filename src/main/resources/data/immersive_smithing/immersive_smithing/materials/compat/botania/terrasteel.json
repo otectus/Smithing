@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botania"
+    }
+  ],
+  "family": "forge:terrasteel",
+  "display_name": "material.forge.terrasteel",
+  "sources": [
+    {
+      "tag": "forge:ingots/terrasteel",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/terrasteel",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/terrasteel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.5,
+  "requires_ignition": true,
+  "tint": "#9CF38C",
+  "upgrade_policy": "addition"
+}

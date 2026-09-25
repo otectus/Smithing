@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "family": "forge:mithril",
+  "display_name": "material.forge.mithril",
+  "sources": [
+    {
+      "tag": "forge:ingots/mithril",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/mithril",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.5,
+  "requires_ignition": true,
+  "tint": "#B4E8EB",
+  "upgrade_policy": "shape"
+}

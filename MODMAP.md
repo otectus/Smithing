@@ -155,7 +155,7 @@ Run `check_mod.py` for a full consistency check (missing models, lang keys, text
 
 ## Current focus
 
-Current release: built-in Spartan Weaponry support, metal shields without their base shield, every metal smithing-table upgrade redirected into the forge, tongs stab animation. Next is in-game playtesting of feel and balance.
+Unreleased 1.0.0, Ultima integration: Pack metals (Cataclysm, dragonsteel, Iron's, Botania) with upgrade policies, consumed-equipment auxiliaries and crafting upgrade chains, loot quality, quality inheritance, the Maker's Mark signing stage, `ItemSmithedEvent`, Jade overlays. Next is in-game playtesting of feel and balance, and the sibling-repo hooks (Runic Skills, Runic Gods, Runic Races) on the new event.
 
 ## Roadmap
 
@@ -175,6 +175,12 @@ Current release: built-in Spartan Weaponry support, metal shields without their 
 - Projectile quality multiplies `AbstractArrow` base damage once, on first level join (persistent-data flag), from the thrown weapon or the firing bow/crossbow.
 - Tongs stab: first person via `IClientItemExtensions#applyForgeHandTransform`, third person via `HumanoidModelMixin` (`require = 0`: cosmetic, must never crash a pack). The shared parent model `models/item/tongs.json` holds the tongs along the arm in third person (hanging at rest), because a normal handheld item points forward and would tip upward as the arm thrusts. The forge minigame swing is started by the client (`ForgeMinigameScreen`), not the server.
 - Escrow stays in the forge block entity through chunk unload (the chunk is saved before `onChunkUnloaded`), and is dropped at the forge on the next load, so it is never refunded twice.
+- Upgrades into a metal follow that material's `upgrade_policy`: `shape` (the base's shape in the new metal, no base needed; netherite, dragonsteel) or `addition` (the addition plus the consumed base; ignitium, cursium, witherite, pyrium, terrasteel). A base without a metal shape always uses `addition`. Consumed bases are auxiliaries with `consumesEquipment`, matched by item only, so escrow and refund code is unchanged.
+- Crafting upgrade chains (`AutoRecipeDetector.generateChains`) run after the smithing-table pass with the same `UpgradeContext`, and only accept a base the forge already makes; other equipment ingredients are reported, equipment reworked without metal is `NOT_METAL` and silent.
+- Loot quality is a global loot modifier (`loot/ForgedLootModifier`) and grades only items with a smithing recipe; mob-held equipment drops bypass loot tables and stay ungraded.
+- The Maker's Mark lives in the quality compound (`SmithName`, `SmithUUID`, `Signed`); title and inscription are vanilla `display.Name`/`Lore`. Only `SigningService.sign` writes a signature, after checking the slot, the smith and Faulty, and sanitising the strings. The screen opens from `OpenMakersMarkPacket` (which carries the stack, because the inventory sync arrives a tick later).
+- `ItemSmithedEvent` is posted before the piece enters the inventory, so listeners can still change the stack. The vanilla `ItemCraftedEvent` is fired with a one-slot container; Runic Skills classifies that as UNKNOWN (no reward) by design, its integration belongs on the new event.
+- Jade support is `compat/jade/SmithingJadePlugin`, discovered by `@WailaPlugin`; server data providers write the block entity state so the overlay does not depend on client sync. Dependency `curse.maven:jade-324717:<jade_curse_file>` (compileOnly).
 
 ## Known issues
 

@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanfire"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "boomerang"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/ice_dragonsteel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:ice_dragonsteel",
+  "metal_units": 9,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "minecraft:planks"
+      },
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "spartanfire:ice_dragonsteel_boomerang"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:boomerang"
+}

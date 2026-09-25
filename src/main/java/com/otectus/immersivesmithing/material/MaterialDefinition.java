@@ -23,7 +23,8 @@ public record MaterialDefinition(
         float meltMultiplier,
         boolean requiresIgnition,
         @Nullable TagKey<Item> requiredFuelTag,
-        int tint) {
+        int tint,
+        UpgradePolicy upgradePolicy) {
 
     public record SourceDefinition(@Nullable TagKey<Item> tag, @Nullable ResourceLocation item, int units) {
         public String describe() {
@@ -72,7 +73,9 @@ public record MaterialDefinition(
                 tint = t.getAsInt();
             }
         }
-        return new MaterialDefinition(family, name, List.copyOf(sources), melt, ignition, fuelTag, tint & 0xFFFFFF);
+        UpgradePolicy policy = json.has("upgrade_policy")
+                ? UpgradePolicy.byId(GsonHelper.getAsString(json, "upgrade_policy")) : UpgradePolicy.SHAPE;
+        return new MaterialDefinition(family, name, List.copyOf(sources), melt, ignition, fuelTag, tint & 0xFFFFFF, policy);
     }
 
     /** Combines two definitions of the same family: sources are merged, scalar fields come from {@code later}. */
@@ -80,6 +83,6 @@ public record MaterialDefinition(
         List<SourceDefinition> merged = new ArrayList<>(sources);
         merged.addAll(later.sources);
         return new MaterialDefinition(family, later.displayName != null ? later.displayName : displayName, List.copyOf(merged),
-                later.meltMultiplier, later.requiresIgnition, later.requiredFuelTag, later.tint);
+                later.meltMultiplier, later.requiresIgnition, later.requiredFuelTag, later.tint, later.upgradePolicy);
     }
 }

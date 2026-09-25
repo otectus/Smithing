@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botania"
+    }
+  ],
+  "family": "forge:manasteel",
+  "display_name": "material.forge.manasteel",
+  "sources": [
+    {
+      "tag": "forge:ingots/manasteel",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/manasteel",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/manasteel",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.2,
+  "requires_ignition": true,
+  "tint": "#84D3F3",
+  "upgrade_policy": "shape"
+}

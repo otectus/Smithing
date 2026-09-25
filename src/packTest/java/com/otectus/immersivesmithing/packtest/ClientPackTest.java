@@ -12,6 +12,12 @@ import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
 import com.otectus.immersivesmithing.client.screen.AnvilMinigameScreen;
 import com.otectus.immersivesmithing.client.screen.ForgeMinigameScreen;
 import com.otectus.immersivesmithing.client.screen.GuideScreen;
+import com.otectus.immersivesmithing.config.ServerConfig;
+import com.otectus.immersivesmithing.registry.ModLootModifiers;
+import com.otectus.immersivesmithing.recipe.SmithingRecipe;
+import com.otectus.immersivesmithing.recipe.AuxiliaryIngredient;
+import com.otectus.immersivesmithing.client.screen.MakersMarkScreen;
+import com.otectus.immersivesmithing.quality.MakersMark;
 import com.otectus.immersivesmithing.config.ClientConfig;
 import com.otectus.immersivesmithing.item.SmithingTier;
 import com.otectus.immersivesmithing.minigame.ForgePattern;
@@ -170,6 +176,10 @@ public final class ClientPackTest {
                 log("world joined after " + worldMs + " ms");
             }
             if (settledAt < 0 && !settle(mc)) return;
+            if (ShowcaseCapture.enabled()) {
+                ShowcaseCapture.tick(mc);
+                return;
+            }
             step(mc, worldTicks - settledAt + 40);
         } catch (Exception e) {
             ImmersiveSmithing.LOGGER.error("PACKTEST agent failed at world tick {}", worldTicks, e);
@@ -180,6 +190,7 @@ public final class ClientPackTest {
 
     @SubscribeEvent
     public static void onRenderTick(TickEvent.RenderTickEvent event) {
+        if (ShowcaseCapture.enabled() && event.phase == TickEvent.Phase.END) ShowcaseCapture.captureFrame(Minecraft.getInstance());
         if (frameMeasurement == null) return;
         if (event.phase == TickEvent.Phase.START) frameMeasurement.beginFrame(System.nanoTime());
         else frameMeasurement.endFrame(System.nanoTime());
@@ -266,6 +277,8 @@ public final class ClientPackTest {
             case 370 -> shot(mc, "packtest_guide");
             case 375 -> mc.setScreen(new InventoryScreen(mc.player));
             case 410 -> shot(mc, "packtest_inventory");
+            case 412 -> mc.setScreen(new MakersMarkScreen(0, signablePiece(mc)));
+            case 418 -> shot(mc, "packtest_makers_mark");
             case 420 -> mc.setScreen(null);
             case 430 -> {
                 setGuiScale(mc, 1);
@@ -337,6 +350,16 @@ public final class ClientPackTest {
             case 750 -> shot(mc, "packtest_anvil_320x240");
             case 755 -> mc.setScreen(new GuideScreen(2));
             case 775 -> shot(mc, "packtest_guide_320x240");
+            case 776 -> exerciseGuideNavigation(mc);
+            case 777 -> {
+                if (mc.screen instanceof GuideScreen guide) {
+                    var contents = guideButton(guide, "screen.immersive_smithing.guide.contents");
+                    if (contents != null) contents.onPress();
+                    guide.children().stream().filter(net.minecraft.client.gui.components.EditBox.class::isInstance)
+                            .map(net.minecraft.client.gui.components.EditBox.class::cast).findFirst().orElseThrow().setValue("grindstone");
+                }
+            }
+            case 779 -> shot(mc, "packtest_guide_search");
             case 780 -> {
                 enableAccessibilityMode();
                 mc.getWindow().setWindowed(originalWindowWidth, originalWindowHeight);
@@ -377,6 +400,14 @@ public final class ClientPackTest {
                 access -> access.registryOrThrow(Registries.WORLD_PRESET).getHolderOrThrow(WorldPresets.FLAT).value().createWorldDimensions());
     }
 
+    /** A freshly quenched, unsigned piece as the trough would hand it over. */
+    private static ItemStack signablePiece(Minecraft mc) {
+        ItemStack piece = new ItemStack(Items.IRON_SWORD);
+        new QualityData(82, 88, false).apply(piece);
+        if (mc.player != null) MakersMark.stamp(piece, mc.player);
+        return piece;
+    }
+
     private static void runChecks(Minecraft mc) {
         SmithingData data = SmithingData.current();
         IntegratedServer server = mc.getSingleplayerServer();
@@ -398,6 +429,31 @@ public final class ClientPackTest {
         if (EXPECT.contains("upgrades")) {
             checks.put("spartan_shields_netherite_upgrade", !data.recipesProducing(item("spartanshields:netherite_basic_shield")).isEmpty());
         }
+        if (EXPECT.contains("cataclysm")) {
+            checks.put("cataclysm_family_ignitium", data.materials().family(new ResourceLocation("cataclysm", "ignitium")).isPresent());
+            checks.put("cataclysm_black_steel_sword", !data.recipesProducing(item("cataclysm:black_steel_sword")).isEmpty());
+            List<SmithingRecipe> ignitium = data.recipesProducing(item("cataclysm:ignitium_helmet"));
+            checks.put("cataclysm_ignitium_helmet_reworks_netherite", !ignitium.isEmpty() && ignitium.get(0).metalUnits() == 9
+                    && ignitium.get(0).auxiliary().stream().anyMatch(AuxiliaryIngredient::consumesEquipment));
+        }
+        if (EXPECT.contains("dragonsteel")) {
+            checks.put("dragonsteel_family", data.materials().family(new ResourceLocation("forge", "fire_dragonsteel")).isPresent());
+            checks.put("dragonsteel_spartanfire_javelin", data.recipe(ImmersiveSmithing.id("compat/spartanfire/fire_dragonsteel_javelin")) != null);
+            checks.put("dragonsteel_iceandfire_sword", !data.recipesProducing(item("iceandfire:dragonsteel_fire_sword")).isEmpty());
+        }
+        if (EXPECT.contains("botania")) {
+            List<SmithingRecipe> terrasteel = data.recipesProducing(item("botania:terrasteel_helmet"));
+            checks.put("botania_terrasteel_helmet_chain", !terrasteel.isEmpty()
+                    && terrasteel.get(0).auxiliary().stream().anyMatch(AuxiliaryIngredient::consumesEquipment));
+        }
+        if (EXPECT.contains("signing")) {
+            checks.put("signing_enabled", ServerConfig.get(ServerConfig.ENABLE_SIGNING));
+        }
+        if (EXPECT.contains("loot")) {
+            checks.put("loot_quality_mode", ServerConfig.get(ServerConfig.LOOT_QUALITY_MODE).name());
+            checks.put("loot_modifier_registered", ModLootModifiers.FORGED_LOOT.isPresent());
+        }
+        checks.put("skipped_equipment", data.report().skippedCount());
         checks.put("mods_loaded", ModList.get().size());
         try {
             data.report().write(Path.of(OUTPUT));
@@ -1088,6 +1144,88 @@ public final class ClientPackTest {
 
     private static void shot(Minecraft mc, String name) {
         Screenshot.grab(mc.gameDirectory, name + ".png", mc.getMainRenderTarget(), msg -> log("screenshot " + name));
+    }
+
+    /** Exercise actual focusable controls at both book layouts, including search and page boundaries. */
+    private static void exerciseGuideNavigation(Minecraft mc) {
+        boolean passed = true;
+        for (int[] size : new int[][]{{320, 240}, {540, 360}}) {
+            for (int chapter = 1; chapter <= com.otectus.immersivesmithing.guide.GuideData.chapterCount(); chapter++) {
+                GuideScreen book = new GuideScreen(chapter);
+                book.init(mc, size[0], size[1]);
+                passed &= guidePreservesText(book, chapter);
+            }
+            GuideScreen guide = new GuideScreen(1);
+            mc.setScreen(guide);
+            guide.init(mc, size[0], size[1]);
+            var previous = guideButton(guide, "screen.immersive_smithing.guide.previous");
+            passed &= previous != null && !previous.active;
+            guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_PAGE_DOWN, 0, 0);
+            previous = guideButton(guide, "screen.immersive_smithing.guide.previous");
+            passed &= previous != null && previous.active;
+            var contents = guideButton(guide, "screen.immersive_smithing.guide.contents");
+            if (contents != null) contents.onPress();
+            var search = guide.children().stream().filter(net.minecraft.client.gui.components.EditBox.class::isInstance)
+                    .map(net.minecraft.client.gui.components.EditBox.class::cast).findFirst().orElseThrow();
+            passed &= search.visible;
+            search.setValue("no-such-smithing-topic");
+            passed &= guide.children().stream().filter(net.minecraft.client.gui.components.Button.class::isInstance)
+                    .map(net.minecraft.client.gui.components.Button.class::cast)
+                    .noneMatch(b -> b.getMessage().getString().startsWith("1."));
+            search.setValue("grindstone");
+            int grindstoneChapter = java.util.Arrays.asList(com.otectus.immersivesmithing.guide.GuideData.CHAPTERS).indexOf("smiths_grindstone") + 1;
+            var chapter = guide.children().stream().filter(net.minecraft.client.gui.components.Button.class::isInstance)
+                    .map(net.minecraft.client.gui.components.Button.class::cast)
+                    .filter(b -> b.getMessage().getString().startsWith(grindstoneChapter + ".")).findFirst().orElseThrow();
+            guide.setFocused(chapter);
+            passed &= guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER, 0, 0);
+            passed &= guideButton(guide, "screen.immersive_smithing.guide.next").visible;
+            guide.keyPressed(org.lwjgl.glfw.GLFW.GLFW_KEY_HOME, 0, 0);
+            passed &= !guideButton(guide, "screen.immersive_smithing.guide.previous").active;
+            for (var child : guide.children()) {
+                if (child instanceof net.minecraft.client.gui.components.AbstractWidget widget && widget.visible) {
+                    passed &= widget.getX() >= 0 && widget.getY() >= 0
+                            && widget.getX() + widget.getWidth() <= size[0] && widget.getY() + widget.getHeight() <= size[1];
+                }
+            }
+        }
+        checks.put("guide_search_keyboard_pagination_both_layouts", passed);
+        mc.setScreen(new GuideScreen(2));
+    }
+
+    /** Read the rendered page model to catch dropped paragraphs and orphaned headings after wrapping. */
+    private static boolean guidePreservesText(GuideScreen guide, int chapter) {
+        try {
+            var pagesField = GuideScreen.class.getDeclaredField("pages");
+            pagesField.setAccessible(true);
+            StringBuilder rendered = new StringBuilder();
+            for (Object page : (List<?>) pagesField.get(guide)) {
+                List<?> lines = (List<?>) page;
+                for (Object line : lines) {
+                    var text = line.getClass().getDeclaredMethod("text");
+                    text.setAccessible(true);
+                    ((net.minecraft.util.FormattedCharSequence) text.invoke(line)).accept((index, style, codePoint) -> {
+                        rendered.appendCodePoint(codePoint);
+                        return true;
+                    });
+                    rendered.append(' ');
+                }
+                var heading = lines.get(lines.size() - 1).getClass().getDeclaredMethod("heading");
+                heading.setAccessible(true);
+                if ((boolean) heading.invoke(lines.get(lines.size() - 1))) return false;
+            }
+            String source = Component.translatable(com.otectus.immersivesmithing.guide.GuideData.textKey(chapter)).getString().replace("## ", "");
+            return source.replaceAll("\\s+", "").equals(rendered.toString().replaceAll("\\s+", ""));
+        } catch (ReflectiveOperationException exception) {
+            throw new IllegalStateException("Guide page inspection failed", exception);
+        }
+    }
+
+    private static net.minecraft.client.gui.components.Button guideButton(GuideScreen guide, String key) {
+        String label = Component.translatable(key).getString();
+        return guide.children().stream().filter(net.minecraft.client.gui.components.Button.class::isInstance)
+                .map(net.minecraft.client.gui.components.Button.class::cast)
+                .filter(b -> b.getMessage().getString().equals(label)).findFirst().orElse(null);
     }
 
     private static void finish(Minecraft mc, boolean pass, String reason) {

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:wooden_pickaxe" }
+  ],
+  "result": { "item": "minecraft:chainmail_boots" }
+}

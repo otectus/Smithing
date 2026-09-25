@@ -466,16 +466,23 @@ public class ForgeMinigameScreen extends Screen {
         SmithingGui.timeBar(g, left + 14, top + 29, panelWidth - 28, 6, remaining);
         Component time = Component.translatable("screen.immersive_smithing.time_remaining", Math.max(0, (allowedMs - now + 999) / 1000));
         g.drawString(font, time, left + panelWidth - 14 - font.width(time), top + 39, SmithingGui.TEXT_DIM, false);
+        g.drawString(font, Component.translatable("screen.immersive_smithing.forge.step"), left + 14, top + 39, SmithingGui.TEXT_WARM, false);
 
+        SmithingGui.well(g, left + 18, top + 54, 56, 50);
         renderWorkpiece(g, left + 46, top + 77, 3F);
         int phaseCount = run.phases().size();
         int shown = Math.min(run.index() + 1, phaseCount);
         int infoX = left + 86;
         g.drawString(font, Component.translatable("screen.immersive_smithing.forge.phase", shown, phaseCount), infoX, top + 54, SmithingGui.TEXT, false);
+        int cell = Math.min(24, (panelWidth - 102) / Math.max(1, phaseCount));
         for (int i = 0; i < phaseCount; i++) {
-            int px = infoX + i * 12;
+            int px = infoX + i * cell;
             int color = i < phaseResults.size() ? SmithingGui.ratingColor(phaseResults.get(i)) : 0xFF4A4038;
-            g.fill(px, top + 68, px + 9, top + 74, color);
+            g.fill(px, top + 68, px + cell - 3, top + 79, SmithingGui.SOOT_DEEP);
+            g.fill(px, top + 79, px + cell - 3, top + 81, color);
+            if (cell >= 10) g.drawCenteredString(font, Integer.toString(i + 1), px + (cell - 3) / 2, top + 69,
+                    i == run.index() ? SmithingGui.TEXT_WARM : SmithingGui.TEXT_DIM);
+            if (i == run.index()) g.renderOutline(px - 1, top + 67, cell - 1, 15, SmithingGui.BRONZE);
         }
         if (!phaseResults.isEmpty()) {
             float sum = 0;
@@ -484,7 +491,7 @@ public class ForgeMinigameScreen extends Screen {
             Component projectedQuality = Component.translatable("screen.immersive_smithing.projected", SmithingQuality.fromScore(projected).displayName());
             List<net.minecraft.util.FormattedCharSequence> projectedLines = font.split(projectedQuality, panelWidth - 100);
             for (int i = 0; i < projectedLines.size(); i++) {
-                g.drawString(font, projectedLines.get(i), infoX, top + 82 + i * 10, SmithingGui.TEXT_DIM, false);
+                g.drawString(font, projectedLines.get(i), infoX, top + 89 + i * 10, SmithingGui.TEXT_DIM, false);
             }
         }
 
@@ -495,6 +502,11 @@ public class ForgeMinigameScreen extends Screen {
         int tx = left + 22;
         int ty = top + 132 - trackH / 2;
         SmithingGui.well(g, tx - 2, ty - 2, trackWidth + 4, trackH + 4);
+        g.fillGradient(tx, ty, tx + trackWidth, ty + trackH, 0xFF303538, 0xFF171A1C);
+        for (int i = 0; i <= 12; i++) {
+            int tickX = tx + i * (trackWidth - 1) / 12;
+            g.fill(tickX, ty + trackH - (i % 3 == 0 ? 5 : 3), tickX + 1, ty + trackH, 0xFF6B706B);
+        }
         if (run.isComplete() || now > allowedMs) {
             g.drawCenteredString(font, Component.translatable(now > allowedMs ? "screen.immersive_smithing.times_up" : "screen.immersive_smithing.finishing"),
                     left + panelWidth / 2, ty + trackH / 2 - 4, SmithingGui.TEXT_DIM);
@@ -507,14 +519,22 @@ public class ForgeMinigameScreen extends Screen {
             if (ClientConfig.get(ClientConfig.HIGH_CONTRAST_MINIGAMES)) g.fill(zoneL - 1, ty - 1, zoneR + 1, ty + trackH + 1, 0xFF000000);
             g.fill(zoneL, ty, zoneR, ty + trackH, SmithingGui.zoneColor());
             g.fill(perfL, ty, Math.max(perfR, perfL + 1), ty + trackH, SmithingGui.perfectColor());
+            // Brackets and a centre notch make the timing zone readable without relying on hue.
+            g.fill(zoneL, ty - 3, zoneR, ty - 2, SmithingGui.TEXT_WARM);
+            g.fill(zoneL, ty - 3, zoneL + 1, ty, SmithingGui.TEXT_WARM);
+            g.fill(zoneR - 1, ty - 3, zoneR, ty, SmithingGui.TEXT_WARM);
+            int centre = tx + Math.round(phase.center() * trackWidth);
+            g.fill(centre - 2, ty + trackH + 3, centre + 3, ty + trackH + 5, SmithingGui.perfectColor());
 
             int local = now - run.phaseStartMs();
             if (local >= 0) {
                 float position = ForgeMinigame.position(phase, local / 1000F);
                 int mx = tx + Math.round(position * trackWidth);
                 int half = Math.max(1, Math.round(1.5F * scale));
-                if (ClientConfig.get(ClientConfig.HIGH_CONTRAST_MINIGAMES)) g.fill(mx - half - 1, ty - 5, mx + half + 1, ty + trackH + 5, 0xFFFFFFFF);
+                g.fill(mx - half - 1, ty - 5, mx + half + 1, ty + trackH + 5,
+                        ClientConfig.get(ClientConfig.HIGH_CONTRAST_MINIGAMES) ? 0xFFFFFFFF : 0xFF090D10);
                 g.fill(mx - half, ty - 4, mx + half, ty + trackH + 4, SmithingGui.markerColor());
+                g.fill(mx - half - 2, ty - 6, mx + half + 2, ty - 4, SmithingGui.markerColor());
                 boolean inZone = Math.abs(position - phase.center()) <= phase.halfWidth();
                 if (inZone && !markerInZone) SmithingGui.playCue();
                 markerInZone = inZone;
@@ -523,9 +543,11 @@ public class ForgeMinigameScreen extends Screen {
             }
         }
 
-        if (lastAccuracy >= 0 && Util.getMillis() - lastFeedbackMs < 900) {
-            g.drawCenteredString(font, SmithingGui.rating(lastAccuracy), left + panelWidth / 2, top + 154, SmithingGui.ratingColor(lastAccuracy));
-        }
+        SmithingGui.well(g, left + 22, top + 164, panelWidth - 44, 23);
+        boolean feedback = lastAccuracy >= 0 && Util.getMillis() - lastFeedbackMs < 900;
+        g.drawCenteredString(font, feedback ? SmithingGui.rating(lastAccuracy)
+                        : Component.translatable("screen.immersive_smithing.forge.target_label"),
+                left + panelWidth / 2, top + 172, feedback ? SmithingGui.ratingColor(lastAccuracy) : SmithingGui.TEXT);
         SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.forge.instructions"),
                 left + panelWidth / 2, top + panelHeight - 27, panelWidth - 32, SmithingGui.TEXT_DIM);
     }

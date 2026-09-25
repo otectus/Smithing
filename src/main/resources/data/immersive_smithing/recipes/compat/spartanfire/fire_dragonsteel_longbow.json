@@ -1,0 +1,49 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanfire"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "longbow"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/fire_dragonsteel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:fire_dragonsteel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "tag": "forge:bones/wither"
+      },
+      "count": 2
+    },
+    {
+      "ingredient": {
+        "item": "spartanfire:witherbone_handle"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "tag": "forge:string"
+      },
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "spartanfire:fire_dragonsteel_longbow"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:longbow"
+}

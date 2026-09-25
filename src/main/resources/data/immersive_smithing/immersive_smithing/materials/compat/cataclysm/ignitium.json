@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "family": "cataclysm:ignitium",
+  "display_name": "material.cataclysm.ignitium",
+  "sources": [
+    {
+      "item": "cataclysm:ignitium_ingot",
+      "units": 9
+    },
+    {
+      "item": "cataclysm:ignitium_block",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#D07D0C",
+  "upgrade_policy": "addition"
+}

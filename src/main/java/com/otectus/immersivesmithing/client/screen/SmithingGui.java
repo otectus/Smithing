@@ -19,7 +19,7 @@ import net.minecraft.sounds.SoundEvent;
 public final class SmithingGui {
     public static final ResourceLocation TEXTURE = ImmersiveSmithing.id("textures/gui/smithing.png");
 
-    public static final int SOOT = 0xFF24272B;
+    public static final int SOOT = 0xFF242A2C;
     public static final int SOOT_DEEP = 0xFF151719;
     public static final int TIMBER = 0xFF49382E;
     public static final int BRONZE = 0xFFA77D4F;
@@ -70,16 +70,17 @@ public final class SmithingGui {
         protected void renderWidget(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
             int x = getX();
             int y = getY();
-            int edge = isHoveredOrFocused() ? BRONZE : TIMBER;
-            int fill = active ? SOOT : 0xFF303236;
+            int edge = active && isHoveredOrFocused() ? TEXT_WARM : BRONZE;
+            int fill = !active ? SOOT_DEEP : isHoveredOrFocused() ? 0xFF3B4142 : SOOT;
             g.fill(x, y, x + getWidth(), y + getHeight(), edge);
             g.fill(x + 1, y + 1, x + getWidth() - 1, y + getHeight() - 1, fill);
-            if (isHoveredOrFocused()) {
+            if (active && isHoveredOrFocused()) {
                 g.fill(x + 2, y + 2, x + getWidth() - 2, y + 3, 0x805D4635);
             }
             net.minecraft.client.gui.Font font = Minecraft.getInstance().font;
             String text = clipped(font, getMessage(), getWidth() - 8);
             g.drawCenteredString(font, text, x + getWidth() / 2, y + (getHeight() - 8) / 2, active ? TEXT : TEXT_DIM);
+            if (active && isFocused()) g.renderOutline(x + 2, y + 2, getWidth() - 4, getHeight() - 4, BRONZE);
         }
     }
 
@@ -102,6 +103,8 @@ public final class SmithingGui {
         int filled = Math.round(w * Math.max(0F, Math.min(1F, remaining)));
         int color = remaining > 0.25F ? 0xFFE0A030 : (ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFFFF9F1C : 0xFFD04030);
         if (filled > 0) g.fill(x, y, x + filled, y + h, color);
+        if (filled > 1 && h > 2) g.fill(x, y, x + filled, y + 1, 0xFFFFD999);
+        for (int i = 1; i < 4; i++) g.fill(x + w * i / 4, y, x + w * i / 4 + 1, y + h, 0x80302A24);
     }
 
     public static int zoneColor() {
@@ -109,10 +112,10 @@ public final class SmithingGui {
         return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFF3D8BFF : 0xFFE07A2C;
     }
 
-    /** Fill of an anvil strike target: cool against the hot silhouette. */
+    /** Fill of an anvil strike target: the same hot orange as the forge zone, with a yellow centre on top. */
     public static int targetColor() {
         if (ClientConfig.get(ClientConfig.HIGH_CONTRAST_MINIGAMES)) return 0xFFFFFFFF;
-        return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFF3D8BFF : 0xFF4FD0E8;
+        return ClientConfig.get(ClientConfig.COLORBLIND_SAFE_TARGETS) ? 0xFF3D8BFF : 0xFFE07A2C;
     }
 
     public static int perfectColor() {

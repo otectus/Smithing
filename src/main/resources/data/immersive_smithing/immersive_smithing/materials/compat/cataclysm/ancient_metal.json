@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "family": "cataclysm:ancient_metal",
+  "display_name": "material.cataclysm.ancient_metal",
+  "sources": [
+    {
+      "item": "cataclysm:ancient_metal_ingot",
+      "units": 9
+    },
+    {
+      "item": "cataclysm:ancient_metal_nugget",
+      "units": 1
+    },
+    {
+      "item": "cataclysm:ancient_metal_block",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.5,
+  "requires_ignition": true,
+  "tint": "#CAA252",
+  "upgrade_policy": "shape"
+}

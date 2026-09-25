@@ -58,6 +58,7 @@ public class AnvilMinigameScreen extends Screen {
     private long shakeUntil;
     private long flashUntil;
     private int resultScore;
+    private int resultElapsed;
     private boolean resultFaulty;
     private boolean closedByServer;
 
@@ -119,6 +120,7 @@ public class AnvilMinigameScreen extends Screen {
         if (packet.sessionId() != session.sessionId()) return;
         resultScore = packet.score();
         resultFaulty = packet.timedOut();
+        resultElapsed = Math.max(0, elapsed());
         stage = Stage.RESULT;
         doneButton.visible = true;
     }
@@ -214,7 +216,12 @@ public class AnvilMinigameScreen extends Screen {
         int ax = areaX();
         int ay = areaY();
         SmithingGui.well(g, ax - 2, ay - 2, AREA + 4, AREA + 4);
-        g.fillGradient(ax, ay, ax + AREA, ay + AREA, 0xFF2A1810, 0xFF140C08);
+        g.fillGradient(ax, ay, ax + AREA, ay + AREA, 0xFF343A3C, 0xFF191D20);
+        // Quiet scored lines suggest a work surface without competing with the targets.
+        for (int i = 1; i < 8; i++) {
+            g.fill(ax + i * 22, ay, ax + i * 22 + 1, ay + AREA, 0x183E484C);
+            g.fill(ax, ay + i * 22, ax + AREA, ay + i * 22 + 1, 0x183E484C);
+        }
         renderSilhouette(g, ax, ay, shakeX, shakeY);
         g.pose().pushPose();
         g.pose().translate(0, 0, OVERLAY_Z);
@@ -228,7 +235,11 @@ public class AnvilMinigameScreen extends Screen {
                 SmithingGui.drawWrappedCentered(g, font, Component.translatable("screen.immersive_smithing.anvil.instructions"),
                         ax + AREA / 2, ay + AREA / 2 + 6, AREA - 20, SmithingGui.TEXT);
             }
-            case PLAYING -> renderTargets(g, ax, ay);
+            case PLAYING -> {
+                g.enableScissor(ax, ay, ax + AREA, ay + AREA);
+                renderTargets(g, ax, ay);
+                g.disableScissor();
+            }
             case RESULT -> renderResult(g, ax, ay);
         }
         renderSidebar(g);
@@ -238,6 +249,9 @@ public class AnvilMinigameScreen extends Screen {
             g.fill(ax, ay, ax + AREA, ay + AREA, (alpha << 24) | 0xFFF0C0);
         }
         g.pose().popPose();
+        if (stage != Stage.RESULT) g.drawCenteredString(font,
+                Component.translatable("screen.immersive_smithing.anvil.timing"), ax + AREA / 2,
+                top + panelHeight - 17, SmithingGui.TEXT_DIM);
         super.render(g, mouseX, mouseY, partialTick);
         if (font.width(title) > panelWidth - 24 && mouseX >= left + 10 && mouseX < left + panelWidth - 10
                 && mouseY >= top + 6 && mouseY < top + 22) {
@@ -270,7 +284,9 @@ public class AnvilMinigameScreen extends Screen {
         }
         run.advanceTo(now);
         float radius = pattern.radius() * AREA;
-        float drawRadius = radius * SmithingGui.markerScale();
+        // The visible hit boundary always matches the server's radius. Accessibility enlarges the
+        // centre marker and approaching ring, without suggesting that misses outside it will count.
+        float drawRadius = radius;
         // Faint preview of the next target helps the smith read the rhythm.
         if (run.index() + 1 < pattern.strikes()) {
             AnvilMinigame.Target next = AnvilMinigame.target(pattern, session.seed(), run.index() + 1, 0);
@@ -289,9 +305,13 @@ public class AnvilMinigameScreen extends Screen {
         SmithingGui.circle(g, cx, cy, drawRadius, false, (Math.round(alpha * 0.8F) << 24) | (SmithingGui.targetColor() & 0xFFFFFF));
         SmithingGui.circle(g, cx, cy, drawRadius * 0.35F, false, (alpha << 24) | (SmithingGui.perfectColor() & 0xFFFFFF));
         // Approach ring: closes onto the target at the ideal moment.
-        float approach = local < ideal ? 1F + 2F * (1F - local / (float) ideal) : 1F - 0.3F * (local - ideal) / (float) Math.max(1, pattern.lifetimeMs() - ideal);
+        float approach = local < ideal ? 1F + 2F * SmithingGui.markerScale() * (1F - local / (float) ideal) : 1F - 0.3F * (local - ideal) / (float) Math.max(1, pattern.lifetimeMs() - ideal);
         SmithingGui.circle(g, cx, cy, drawRadius * approach + 1, true, (alpha << 24));
         SmithingGui.circle(g, cx, cy, drawRadius * approach, true, (alpha << 24) | 0xFFFFFF);
+        int cross = Math.round(2 * SmithingGui.markerScale());
+        int centerX = Math.round(cx), centerY = Math.round(cy);
+        g.fill(centerX - cross, centerY, centerX + cross + 1, centerY + 1, 0xFF172027);
+        g.fill(centerX, centerY - cross, centerX + 1, centerY + cross + 1, 0xFF172027);
         if (local >= ideal && (cuedIndex != run.index() || cuedAttempt != run.attempt())) {
             cuedIndex = run.index();
             cuedAttempt = run.attempt();
@@ -329,27 +349,35 @@ public class AnvilMinigameScreen extends Screen {
     private void renderSidebar(GuiGraphics g) {
         int sx = left + 12 + AREA + 12;
         int sw = panelWidth - (sx - left) - 12;
-        int now = Math.max(0, elapsed());
+        int now = stage == Stage.RESULT ? resultElapsed : Math.max(0, elapsed());
         float remaining = stage == Stage.READY ? 1F : 1F - now / (float) Math.max(1, session.allowedMs());
-        // Vertical timer
-        int barX = sx + sw / 2 - 5;
-        int barTop = top + 43;
-        int barH = 94;
-        g.drawCenteredString(font, Component.translatable("screen.immersive_smithing.anvil.time"), sx + sw / 2, top + 29, SmithingGui.TEXT_DIM);
-        SmithingGui.well(g, barX - 1, barTop - 1, 12, barH + 2);
-        int filled = Math.round(barH * Math.max(0F, Math.min(1F, remaining)));
-        int color = remaining > 0.25F ? 0xFFE0A030 : SmithingGui.missColor();
-        if (filled > 0) g.fill(barX, barTop + barH - filled, barX + 10, barTop + barH, color);
+        g.drawString(font, SmithingGui.clipped(font, Component.translatable("screen.immersive_smithing.anvil.step"), sw),
+                sx, top + 30, SmithingGui.TEXT_WARM, false);
+        SmithingGui.well(g, sx, top + 45, sw, 42);
+        g.drawString(font, Component.translatable("screen.immersive_smithing.anvil.time"), sx + 6, top + 51, SmithingGui.TEXT_DIM, false);
         Component seconds = Component.translatable("screen.immersive_smithing.seconds_short", Math.max(0, (session.allowedMs() - now + 999) / 1000));
-        g.drawCenteredString(font, seconds, sx + sw / 2, barTop + barH + 6, SmithingGui.TEXT_DIM);
-
-        Component strikes = Component.translatable("screen.immersive_smithing.anvil.strikes", Math.min(run.index(), pattern.strikes()), pattern.strikes());
-        g.drawCenteredString(font, strikes, sx + sw / 2, barTop + barH + 19, SmithingGui.TEXT);
-        if (run.samples() > 0 && stage == Stage.PLAYING) {
-            g.drawCenteredString(font, SmithingQuality.fromScore(run.score()).displayName(), sx + sw / 2, barTop + barH + 31, SmithingGui.TEXT_DIM);
+        g.drawString(font, seconds, sx + sw - 6 - font.width(seconds), top + 63, SmithingGui.TEXT, false);
+        SmithingGui.timeBar(g, sx + 6, top + 77, sw - 12, 4, remaining);
+        int completed = stage == Stage.RESULT && !resultFaulty ? pattern.strikes() : Math.min(run.index(), pattern.strikes());
+        Component strikes = Component.translatable("screen.immersive_smithing.anvil.strikes", completed, pattern.strikes());
+        SmithingGui.drawWrappedCentered(g, font, strikes, sx + sw / 2, top + 99, sw - 8, SmithingGui.TEXT);
+        int count = pattern.strikes();
+        for (int i = 0; i < count; i++) {
+            int x = sx + 4 + i * (sw - 8) / count;
+            int end = sx + 4 + (i + 1) * (sw - 8) / count - 1;
+            g.fill(x, top + 115, Math.max(x + 1, end), top + 119,
+                    i < completed ? SmithingGui.TEXT_WARM : SmithingGui.SOOT_DEEP);
         }
-        if (lastQuality >= 0 && Util.getMillis() - lastFeedbackMs < 900) {
-            g.drawCenteredString(font, SmithingGui.rating(lastQuality), sx + sw / 2, barTop + barH + 44, SmithingGui.ratingColor(lastQuality));
+        SmithingGui.well(g, sx, top + 129, sw, 36);
+        g.drawCenteredString(font, Component.translatable("screen.immersive_smithing.anvil.quality_label"), sx + sw / 2, top + 135, SmithingGui.TEXT_DIM);
+        Component quality = stage == Stage.RESULT ? (resultFaulty ? SmithingQuality.FAULTY : SmithingQuality.fromScore(resultScore)).displayName()
+                : run.samples() > 0 ? SmithingQuality.fromScore(run.score()).displayName() : Component.literal("—");
+        SmithingGui.drawWrappedCentered(g, font, quality, sx + sw / 2, top + 148, sw - 8, SmithingGui.TEXT);
+        if (stage != Stage.RESULT) {
+            boolean feedback = lastQuality >= 0 && Util.getMillis() - lastFeedbackMs < 900;
+            SmithingGui.drawWrappedCentered(g, font, feedback ? SmithingGui.rating(lastQuality)
+                    : Component.translatable("screen.immersive_smithing.anvil.aim"), sx + sw / 2, top + 180, sw - 8,
+                    feedback ? SmithingGui.ratingColor(lastQuality) : SmithingGui.TEXT_DIM);
         }
     }
 

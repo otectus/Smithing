@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "family": "cataclysm:witherite",
+  "display_name": "material.cataclysm.witherite",
+  "sources": [
+    {
+      "item": "cataclysm:witherite_ingot",
+      "units": 9
+    },
+    {
+      "item": "cataclysm:witherite_block",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#895D5F",
+  "upgrade_policy": "addition"
+}

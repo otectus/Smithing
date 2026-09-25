@@ -358,15 +358,84 @@
       }
     },
     {
-      "name": "Abrasive wheel",
+      "name": "Round abrasive wheel 0",
       "from": [
         5,
         5,
+        5
+      ],
+      "to": [
+        11,
+        7,
+        11
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#wheel"
+        },
+        "up": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#wheel"
+        },
+        "north": {
+          "uv": [
+            5,
+            9,
+            11,
+            11
+          ],
+          "texture": "#wheel"
+        },
+        "south": {
+          "uv": [
+            5,
+            9,
+            11,
+            11
+          ],
+          "texture": "#wheel"
+        },
+        "west": {
+          "uv": [
+            5,
+            9,
+            11,
+            11
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            5,
+            9,
+            11,
+            11
+          ],
+          "texture": "#side"
+        }
+      }
+    },
+    {
+      "name": "Round abrasive wheel 1",
+      "from": [
+        5,
+        7,
         3
       ],
       "to": [
         11,
-        15,
+        13,
         13
       ],
       "faces": {
@@ -391,9 +460,78 @@
         "north": {
           "uv": [
             5,
-            1,
+            3,
+            11,
+            9
+          ],
+          "texture": "#wheel"
+        },
+        "south": {
+          "uv": [
+            5,
+            3,
+            11,
+            9
+          ],
+          "texture": "#wheel"
+        },
+        "west": {
+          "uv": [
+            3,
+            3,
+            13,
+            9
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            3,
+            3,
+            13,
+            9
+          ],
+          "texture": "#side"
+        }
+      }
+    },
+    {
+      "name": "Round abrasive wheel 2",
+      "from": [
+        5,
+        13,
+        5
+      ],
+      "to": [
+        11,
+        15,
+        11
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            5,
+            5,
             11,
             11
+          ],
+          "texture": "#wheel"
+        },
+        "up": {
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "texture": "#wheel"
+        },
+        "north": {
+          "uv": [
+            5,
+            1,
+            11,
+            3
           ],
           "texture": "#wheel"
         },
@@ -402,25 +540,25 @@
             5,
             1,
             11,
-            11
+            3
           ],
           "texture": "#wheel"
         },
         "west": {
           "uv": [
-            3,
+            5,
             1,
-            13,
-            11
+            11,
+            3
           ],
           "texture": "#side"
         },
         "east": {
           "uv": [
-            3,
+            5,
             1,
-            13,
-            11
+            11,
+            3
           ],
           "texture": "#side"
         }

@@ -11,6 +11,10 @@ import com.otectus.immersivesmithing.command.SmithingCommands;
 import com.otectus.immersivesmithing.config.ServerConfig;
 import com.otectus.immersivesmithing.material.MaterialDefinitionLoader;
 import com.otectus.immersivesmithing.material.RecyclingOverrideLoader;
+import com.otectus.immersivesmithing.minigame.EquipmentClassifier;
+import com.otectus.immersivesmithing.quality.MakersMark;
+import com.otectus.immersivesmithing.quality.QualityData;
+import net.minecraft.world.Container;
 import com.otectus.immersivesmithing.minigame.PatternLoader;
 import com.otectus.immersivesmithing.minigame.SessionManager;
 import com.otectus.immersivesmithing.recipe.SmithingData;
@@ -130,6 +134,29 @@ public final class CommonEvents {
             event.setCanceled(true);
             Feedback.fail(player, "station_in_use");
         }
+    }
+
+    /**
+     * Quality inheritance: a recipe that turns one smithed piece into another (dyeing a helmet, an elemental
+     * upgrade of a sword) keeps the quality and the maker's mark of the piece it consumed. Only when exactly one
+     * input is graded and the result is graded equipment without a grade of its own.
+     */
+    @SubscribeEvent
+    public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+        if (!ServerConfig.get(ServerConfig.INHERIT_QUALITY_ON_CRAFT)) return;
+        ItemStack result = event.getCrafting();
+        if (result.isEmpty() || QualityData.has(result) || !EquipmentClassifier.isCandidate(result)) return;
+        Container inputs = event.getInventory();
+        ItemStack source = ItemStack.EMPTY;
+        for (int i = 0; i < inputs.getContainerSize(); i++) {
+            ItemStack input = inputs.getItem(i);
+            if (input.isEmpty() || !QualityData.has(input)) continue;
+            if (!source.isEmpty()) return; // two graded inputs: no honest answer
+            source = input;
+        }
+        if (source.isEmpty()) return;
+        QualityData.get(source).ifPresent(q -> q.apply(result));
+        MakersMark.copy(source, result);
     }
 
     /** The first smithing advancement hands out the Smithing Guide, once per player. */

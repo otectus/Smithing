@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "family": "forge:pyrium",
+  "display_name": "material.forge.pyrium",
+  "sources": [
+    {
+      "tag": "forge:ingots/pyrium",
+      "units": 9
+    },
+    {
+      "tag": "forge:storage_blocks/pyrium",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 2.0,
+  "requires_ignition": false,
+  "required_fuel_tag": "immersive_smithing:netherite_fuels",
+  "tint": "#CEA83E",
+  "upgrade_policy": "addition"
+}

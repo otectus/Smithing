@@ -62,7 +62,15 @@ The average of both scores gives the item's label:
 If the anvil timer runs out, the item is **Faulty**: half durability and 70% efficacy. The Smith's Grindstone adds
 5 points to one score for experience levels, up to 100, and keeps enchantments; it cannot refine Faulty items.
 Any metal equipment the forge recognises, enchanted or Faulty, can be melted back down, and all of its metal is
-recovered by default. Equipment without smithing data, such as loot, behaves like Standard.
+recovered by default. Equipment found in chests and treasure carries a grade of its own, never above Standard by
+default, so anything Fine or better was made by a smith.
+
+### The Maker's Mark
+
+Every quenched piece records who forged it ("Crafted by" in the tooltip). Right after the quench the smith can give
+the piece a title and up to three lines of inscription, or sneak-use the Smith's Anvil with it later. The mark, the
+title and the inscription survive repairs, enchanting, dyeing and elemental upgrades; only melting the piece down
+removes them. Faulty work is never signed.
 
 ## Metals
 
@@ -76,7 +84,8 @@ quickly, netherite slowly.
 
 Netherite equipment is forged straight from netherite ingots, with no smithing template or diamond equipment.
 Smithing-table upgrades from other mods, such as netherite shields and weapons, are forged the same way, and the
-smithing-table recipe is disabled. Armor trims are never affected.
+smithing-table recipe is disabled. Scarce boss metals can use the `addition` upgrade policy instead: an ignitium
+helmet costs one ingot plus the netherite helmet it reworks. Armor trims are never affected.
 
 ## Other mods
 
@@ -84,9 +93,17 @@ smithing-table recipe is disabled. Armor trims are never affected.
   plus components such as sticks or leather, become smithing recipes and the crafting recipe is disabled. Recipes
   that mix metals or are otherwise unclear are left alone. A metal shield built on a wooden base shield needs only
   the metal.
+- **Upgrade chains.** A crafting recipe that reworks a piece the forge makes with more metal (Botania's terrasteel
+  armour from manasteel armour) becomes a smithing recipe too, with the base piece consumed.
 - **Spartan Weaponry** is supported out of the box: every metal weapon of all 24 types, including throwing weapons,
   longbows and heavy crossbows, has its own recipe and anvil pattern. A thrown weapon keeps its quality in flight,
-  and arrows and bolts take the quality of the bow or crossbow that fires them.
+  and arrows and bolts take the quality of the bow or crossbow that fires them. Spartan Fire's dragonsteel weapons
+  are covered the same way.
+- **Pack metals.** Cataclysm (black steel, ancient metal, witherite, cursium, ignitium), Ice and Fire dragonsteel,
+  Iron's mithril and pyrium, Botania's manasteel, terrasteel and elementium and MCA's rose gold have names, tints,
+  melt rules and upgrade policies. Fire Sticks, Lit It Up and Hardcore Torches fire starters light the forge.
+- **Progression mods** can listen to `ItemSmithedEvent` (and, by default, the vanilla crafted event) to reward
+  smithing; **Jade** shows what a forge, anvil or trough holds and what the grindstone would charge.
 - **JEI** (optional) shows every smithing recipe, detected ones included, in a Smithing category, and hides the
   crafting recipes that smithing replaced.
 - The automated tests also run with Spartan Weaponry, Spartan Shields and Immersive Armors installed.
@@ -109,7 +126,8 @@ quality, never Faulty by default.
 
 `immersive_smithing-server.toml` (per world, synced to clients) covers recipe replacement and automatic detection,
 forge capacity and fuel, minigame times, quality multipliers, recycling, the trough and grindstone, villager
-trades, automation faces and the Spartan Weaponry integration. Run `/reload` after changing recipe options.
+trades, automation faces, loot quality, the Maker's Mark (signing) and the integrations (Spartan Weaponry, the
+vanilla craft event, quality inheritance). Run `/reload` after changing recipe options.
 
 `immersive_smithing-client.toml` covers presentation only: numeric quality scores in tooltips, reduced screen shake
 and flashes, particle amount, high-contrast minigames, larger and colorblind-safe targets, and timing cue sounds.
@@ -132,7 +150,7 @@ Operators (permission level 2):
 
 - Minecraft 1.20.1 with Forge 47 or later, Java 17.
 - Install on both the client and the server.
-- Optional: Just Enough Items.
+- Optional: Just Enough Items, Jade.
 
 ## Building
 

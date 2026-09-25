@@ -9,6 +9,7 @@ import com.otectus.immersivesmithing.registry.ModBlockEntities;
 import com.otectus.immersivesmithing.registry.ModBlocks;
 import com.otectus.immersivesmithing.registry.ModCreativeTabs;
 import com.otectus.immersivesmithing.registry.ModItems;
+import com.otectus.immersivesmithing.registry.ModLootModifiers;
 import com.otectus.immersivesmithing.registry.ModParticles;
 import com.otectus.immersivesmithing.registry.ModRecipeSerializers;
 import com.otectus.immersivesmithing.registry.ModRecipeTypes;
@@ -40,6 +41,7 @@ public class ImmersiveSmithing {
         ModSounds.SOUNDS.register(modBus);
         ModParticles.PARTICLES.register(modBus);
         ModCreativeTabs.TABS.register(modBus);
+        ModLootModifiers.LOOT_MODIFIERS.register(modBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);

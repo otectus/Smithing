@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanfire"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "parrying_dagger"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/lightning_dragonsteel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:lightning_dragonsteel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanfire:witherbone_handle"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanfire:lightning_dragonsteel_parrying_dagger"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:parrying_dagger"
+}

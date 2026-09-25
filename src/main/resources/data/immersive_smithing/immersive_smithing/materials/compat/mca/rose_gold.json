@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/rose_gold"
+      }
+    }
+  ],
+  "family": "forge:rose_gold",
+  "display_name": "material.forge.rose_gold",
+  "sources": [
+    {
+      "tag": "forge:ingots/rose_gold",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/rose_gold",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/rose_gold",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.0,
+  "requires_ignition": true,
+  "tint": "#F2C67C",
+  "upgrade_policy": "shape"
+}

@@ -1,0 +1,10 @@
+{
+  "family": "immersive_smithing_test:emeraldine",
+  "display_name": "Emeraldine",
+  "sources": [
+    { "item": "minecraft:emerald", "units": 9 },
+    { "item": "minecraft:emerald_block", "units": 81 }
+  ],
+  "upgrade_policy": "addition",
+  "tint": "#2FD46B"
+}

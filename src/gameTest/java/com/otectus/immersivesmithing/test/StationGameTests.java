@@ -44,6 +44,35 @@ import static com.otectus.immersivesmithing.test.TestSupport.STATION;
 @PrefixGameTestTemplate(false)
 public final class StationGameTests {
 
+    @GameTest(template = "empty")
+    public static void roundedStationsKeepPickingSurfaces(GameTestHelper h) {
+        var forge = ModBlocks.SMITHS_FORGE.get().defaultBlockState().getShape(h.getLevel(), h.absolutePos(STATION));
+        h.assertTrue(!occupies(forge, 1, 1, 1), "Forge corners should be clear outside its round foundation");
+        h.assertTrue(occupies(forge, 8, 1, 8), "Forge foundation supports the hearth");
+        h.assertTrue(!occupies(forge, 8, 12, 8), "Forge basin remains open for top loading");
+        h.assertTrue(occupies(forge, 8, 13.5, 1), "Forge rim remains pickable");
+        for (var facing : net.minecraft.core.Direction.Plane.HORIZONTAL) {
+            var anvil = ModBlocks.SMITHS_ANVIL.get().defaultBlockState()
+                    .setValue(com.otectus.immersivesmithing.block.SmithsAnvilBlock.FACING, facing)
+                    .getShape(h.getLevel(), h.absolutePos(STATION));
+            double hornX = 8 + facing.getStepX() * 7.5;
+            double hornZ = 8 + facing.getStepZ() * 7.5;
+            h.assertTrue(occupies(anvil, hornX, 14.25, hornZ), "Anvil horn rotates toward " + facing);
+            h.assertTrue(!occupies(anvil, 16 - hornX, 14.25, 16 - hornZ), "Anvil heel ends before the opposite block edge");
+            h.assertTrue(occupies(anvil, 8, 8, 8), "Timber stump supports the anvil");
+        }
+        var wheel = ModBlocks.SMITHS_GRINDSTONE.get().defaultBlockState().getShape(h.getLevel(), h.absolutePos(STATION));
+        h.assertTrue(!occupies(wheel, 8, 14, 4), "Wheel's upper corner is rounded off");
+        h.assertTrue(occupies(wheel, 8, 14, 8), "Wheel's upper working surface is pickable");
+        h.succeed();
+    }
+
+    private static boolean occupies(net.minecraft.world.phys.shapes.VoxelShape shape, double x, double y, double z) {
+        return net.minecraft.world.phys.shapes.Shapes.joinIsNotEmpty(shape,
+                net.minecraft.world.phys.shapes.Shapes.box((x - .01) / 16, (y - .01) / 16, (z - .01) / 16,
+                        (x + .01) / 16, (y + .01) / 16, (z + .01) / 16), net.minecraft.world.phys.shapes.BooleanOp.AND);
+    }
+
     private static SmithsForgeBlockEntity forge(GameTestHelper h) {
         return forgeAt(h, STATION);
     }

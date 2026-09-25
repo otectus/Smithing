@@ -1,6 +1,13 @@
 package com.otectus.immersivesmithing.block;
 
 import com.otectus.immersivesmithing.advancement.ModAdvancements;
+import com.otectus.immersivesmithing.api.event.ItemSmithedEvent;
+import com.otectus.immersivesmithing.config.ServerConfig;
+import com.otectus.immersivesmithing.quality.MakersMark;
+import com.otectus.immersivesmithing.quality.SigningService;
+import net.minecraft.world.SimpleContainer;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeEventFactory;
 import com.otectus.immersivesmithing.blockentity.SmithsTroughBlockEntity;
 import com.otectus.immersivesmithing.item.SmithingTongsItem;
 import com.otectus.immersivesmithing.quality.QualityData;
@@ -174,9 +181,17 @@ public class SmithsTroughBlock extends BaseEntityBlock {
         quality.apply(result);
         // As if crafted: the crafted statistic, plus items that initialise their NBT on craft (Spartan throwing weapons).
         result.onCraftedBy(player.level(), player, result.getCount());
+        MakersMark.stamp(result, player);
+        BlockPos pos = trough.getBlockPos();
+        // Progression mods hear about the piece before it lands in the inventory and may still change it.
+        MinecraftForge.EVENT_BUS.post(new ItemSmithedEvent(player, result, quality, workpiece.recipeId(), workpiece.family(),
+                workpiece.metalUnits(), pos));
+        if (ServerConfig.get(ServerConfig.FIRE_VANILLA_CRAFT_EVENT)) {
+            ForgeEventFactory.firePlayerCraftingEvent(player, result, new SimpleContainer(1));
+        }
         WorkpieceCodec.clearHeld(tongs);
 
-        BlockPos pos = trough.getBlockPos();
+        ItemStack finished = result.copy();
         if (!player.getInventory().add(result) && !result.isEmpty()) {
             Containers.dropItemStack(player.level(), pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, result);
         }
@@ -192,5 +207,10 @@ public class SmithsTroughBlock extends BaseEntityBlock {
         if (label == SmithingQuality.FAULTY) ModAdvancements.award(player, ModAdvancements.THATLL_BUFF_OUT);
         if (label == SmithingQuality.FINE || label == SmithingQuality.MASTERWORK) ModAdvancements.award(player, ModAdvancements.FINE_WORK);
         if (label == SmithingQuality.MASTERWORK) ModAdvancements.award(player, ModAdvancements.MASTER_SMITH);
+
+        if (ServerConfig.get(ServerConfig.OPEN_SIGNING_AFTER_QUENCH)) {
+            int slot = player.getInventory().findSlotMatchingItem(finished);
+            if (slot >= 0) SigningService.open(player, slot);
+        }
     }
 }

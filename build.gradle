@@ -64,6 +64,10 @@ repositories {
         url = 'https://api.modrinth.com/maven'
         content { includeGroup 'maven.modrinth' }
     }
+    maven {
+        url = 'https://www.cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
 }
 
 dependencies {
@@ -71,6 +75,8 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    // Station overlays (compat/jade). Jade discovers the plugin by annotation; nothing references it otherwise.
+    compileOnly fg.deobf("curse.maven:jade-324717:${jade_curse_file}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     // Thrown-weapon quality reads Spartan's projectile type (compat/spartanweaponry, reached only when it is loaded).
     compileOnly fg.deobf("maven.modrinth:spartan-weaponry:${spartan_weaponry_modrinth_id}")

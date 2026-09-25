@@ -78,6 +78,20 @@ public final class ServerConfig {
     public static final ForgeConfigSpec.BooleanValue GRANT_GUIDE_BOOK_AUTOMATICALLY;
 
     public static final ForgeConfigSpec.BooleanValue SPARTAN_WEAPONRY_INTEGRATION;
+    public static final ForgeConfigSpec.BooleanValue FIRE_VANILLA_CRAFT_EVENT;
+    public static final ForgeConfigSpec.BooleanValue INHERIT_QUALITY_ON_CRAFT;
+
+    public enum LootQualityMode { OFF, STANDARD, RANDOM }
+
+    public static final ForgeConfigSpec.EnumValue<LootQualityMode> LOOT_QUALITY_MODE;
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> LOOT_QUALITY_EXCLUDED_TABLES;
+
+    public static final ForgeConfigSpec.BooleanValue ENABLE_SIGNING;
+    public static final ForgeConfigSpec.BooleanValue OPEN_SIGNING_AFTER_QUENCH;
+    public static final ForgeConfigSpec.BooleanValue ALLOW_RESIGNING;
+    public static final ForgeConfigSpec.IntValue MAX_TITLE_LENGTH;
+    public static final ForgeConfigSpec.IntValue MAX_INSCRIPTION_LINES;
+    public static final ForgeConfigSpec.IntValue MAX_INSCRIPTION_LINE_LENGTH;
 
     static {
         ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
@@ -199,6 +213,28 @@ public final class ServerConfig {
         b.comment("Built-in support for other mods. Changes need /reload.").push("integrations");
         SPARTAN_WEAPONRY_INTEGRATION = b.comment("Smith every Spartan Weaponry metal weapon with the built-in recipes. When off, Spartan Weaponry is left to automatic detection like any other mod.")
                 .define("spartanWeaponry", true);
+        FIRE_VANILLA_CRAFT_EVENT = b.comment("Also fire the vanilla ItemCraftedEvent when a piece is quenched, so mods that reward crafting see forged items. ItemSmithedEvent is always posted.")
+                .define("fireVanillaCraftEvent", true);
+        INHERIT_QUALITY_ON_CRAFT = b.comment("When a crafting or smithing-table recipe turns one smithed piece into another (dyeing, an elemental upgrade), the result keeps the quality and the maker's mark.")
+                .define("inheritQualityOnCraft", true);
+        b.pop();
+
+        b.comment("Quality on gear found in the world (chests, mob loot tables, treasure bags). Only items the forge can make are graded.").push("lootQuality");
+        LOOT_QUALITY_MODE = b.comment("OFF: loot stays ungraded. STANDARD: scores stay inside the Standard band, so Fine and Masterwork are always someone's work. RANDOM: the villager distribution, Masterwork included.")
+                .defineEnum("mode", LootQualityMode.STANDARD);
+        LOOT_QUALITY_EXCLUDED_TABLES = b.comment("Loot table ids (namespace:path) or whole namespaces that are never graded.")
+                .defineListAllowEmpty("excludedLootTables", List.of(), o -> o instanceof String);
+        b.pop();
+
+        b.comment("The Maker's Mark: every quenched piece records its smith; the smith may title and inscribe it.").push("signing");
+        ENABLE_SIGNING = b.define("enableSigning", true);
+        OPEN_SIGNING_AFTER_QUENCH = b.comment("Open the signing screen right after a quench. Sneak-use the Smith's Anvil with the piece to sign later.")
+                .define("openAfterQuench", true);
+        ALLOW_RESIGNING = b.comment("Let the smith change a title or inscription they already wrote.")
+                .define("allowResigning", true);
+        MAX_TITLE_LENGTH = b.defineInRange("maxTitleLength", 32, 1, 64);
+        MAX_INSCRIPTION_LINES = b.defineInRange("maxInscriptionLines", 3, 0, 6);
+        MAX_INSCRIPTION_LINE_LENGTH = b.defineInRange("maxInscriptionLineLength", 48, 8, 128);
         b.pop();
 
         SPEC = b.build();
@@ -213,6 +249,10 @@ public final class ServerConfig {
     }
 
     public static double get(ForgeConfigSpec.DoubleValue value) {
+        return SPEC.isLoaded() ? value.get() : value.getDefault();
+    }
+
+    public static <T extends Enum<T>> T get(ForgeConfigSpec.EnumValue<T> value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 

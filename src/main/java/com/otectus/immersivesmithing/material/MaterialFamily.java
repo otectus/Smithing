@@ -21,6 +21,7 @@ public record MaterialFamily(
         @Nullable TagKey<Item> requiredFuelTag,
         int tint,
         boolean auto,
+        UpgradePolicy upgradePolicy,
         List<Source> sources) {
 
     public static final int DEFAULT_TINT = 0xFF8A3D;

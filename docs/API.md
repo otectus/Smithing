@@ -31,7 +31,7 @@ They are synced to clients and shown in JEI.
 |---|---|---|
 | `material` | yes | Material family id. A recipe whose family does not exist is deactivated and reported. |
 | `metal_units` | yes | Positive integer. |
-| `auxiliary` | no | Non-metal ingredients taken from the smith's inventory when forging starts. `count` defaults to 1. |
+| `auxiliary` | no | Non-metal ingredients taken from the smith's inventory when forging starts. `count` defaults to 1. With `"consume_equipment": true` the ingredient is a finished piece the recipe reworks (a netherite helmet becoming an ignitium helmet): it is matched by item, whatever its damage or quality, escrowed like any other auxiliary and replaced by the new piece with the quality of the new forging. |
 | `result` | yes | Standard item-stack JSON; `nbt` is kept on the finished item. |
 | `forge_pattern` | no | Defaults to `immersive_smithing:standard`. |
 | `anvil_pattern` | no | Defaults to the closest pattern family for the result item. |
@@ -56,7 +56,8 @@ An explicit recipe always wins over automatic detection for the same result item
   "melt_time_multiplier": 1.0,
   "requires_ignition": true,
   "required_fuel_tag": "immersive_smithing:netherite_fuels",
-  "tint": "#FF8A3D"
+  "tint": "#FF8A3D",
+  "upgrade_policy": "shape"
 }
 ```
 
@@ -69,6 +70,7 @@ An explicit recipe always wins over automatic detection for the same result item
 | `requires_ignition` | no | Default `true`. When `false`, solid fuel heats the forge without being lit. |
 | `required_fuel_tag` | no | The heat source must be in this item tag. Lava counts as `minecraft:lava_bucket`. |
 | `tint` | no | Colour of the molten metal, `"#RRGGBB"` or an integer. |
+| `upgrade_policy` | no | How upgrades *into* this metal are priced when their base is another piece of equipment. `shape` (default): the base's whole shape in this metal, base not needed (vanilla netherite). `addition`: only the metal the original recipe asked for, and the base piece is consumed as an auxiliary; right for scarce boss metals. |
 
 Files support Forge `conditions`. An item claimed by two families is ignored and reported as ambiguous.
 
@@ -187,15 +189,41 @@ shield costs only its metal, and the base is not required. Everything else is sk
 
 Smithing-table upgrades (`minecraft:smithing_transform`) whose result is candidate equipment without a smithing
 recipe are redirected too, when the addition is a single metal family (for example netherite from any mod). The
-template is never required. The cost is the base item's shape in the addition's metal: the base's own smithing recipe
-if it has one (units scaled by the addition's unit value), otherwise its crafting recipe, where ingredients the base
-accepts as repair material (or `forge:gems`/`forge:ingots`) are the material slots, other components stay auxiliary
-and a base shield is dismissed. The recipe id is `immersive_smithing:auto/<namespace>/<item>`.
+template is never required. Under the addition metal's `shape` policy the cost is the base item's shape in that
+metal: the base's own smithing recipe if it has one (units scaled by the addition's unit value), otherwise its
+crafting recipe, where ingredients the base accepts as repair material (or `forge:gems`/`forge:ingots`) are the
+material slots, other components stay auxiliary and a base shield is dismissed. Under the `addition` policy, or
+when the base has no metal shape of its own (a loot weapon, a cloth robe), the cost is the addition itself and the
+base piece is consumed. The recipe id is `immersive_smithing:auto/<namespace>/<item>`.
+
+**Upgrade chains in crafting.** A crafting recipe with exactly one equipment ingredient of the same class as its
+result (same anvil pattern and armour slot), one metal family among the other ingredients and a base the forge
+already makes is priced like a smithing-table upgrade (Botania's terrasteel armour from manasteel armour). Its other
+components stay auxiliary. A recipe whose equipment ingredient is of another class is skipped and reported; one
+without any metal (a bone sword given dragon blood) is not the forge's business and is not reported.
+
+**Predominance.** A recipe with fewer metal slots than other components and less than one ingot of metal (a helmet
+with a single gold nugget) is skipped as "not predominantly metal" unless the result is tagged
+`immersive_smithing:smithable_equipment`.
 
 ## Built-in mod support
 
 Recipes for other mods live under `data/immersive_smithing/recipes/compat/<modid>/` and start with a
-`forge:mod_loaded` condition, so they are inert without that mod.
+`forge:mod_loaded` condition, so they are inert without that mod. Material definitions for other mods live under
+`immersive_smithing/materials/compat/<modid>/` with the same condition and give the metal a name, tint, melt rule and
+upgrade policy:
+
+| Mod | Families | Notes |
+|---|---|---|
+| Cataclysm | `cataclysm:black_steel`, `cataclysm:ancient_metal`, `cataclysm:witherite`, `cataclysm:cursium`, `cataclysm:ignitium` | Cataclysm ships no `forge:ingots` tags, so these are listed item by item. The three boss metals need lava and use the `addition` policy: an ignitium helmet costs one ingot plus the netherite helmet it reworks. Ignitium and cursium armour is unbreakable, so it is tagged `smithable_equipment` to count as equipment at all. |
+| Ice and Fire | `forge:fire_dragonsteel`, `forge:ice_dragonsteel`, `forge:lightning_dragonsteel` | Lava only. The ids match the tags Spartan Fire adds, so recipes are the same with or without it. |
+| Spartan Fire | recipes under `compat/spartanfire/` | Every dragonsteel weapon of all 24 Spartan types, generated by `tools/generate_spartan_compat.py --spartanfire <jar>`; follows the `integrations.spartanWeaponry` toggle. |
+| Iron's Spells 'n Spellbooks | `forge:mithril`, `forge:pyrium` | Pyrium needs lava and uses `addition`, so the hellrazor and legionnaire flamberge rework their loot base. The cloth wizard sets are tagged `non_smithable_equipment`; the netherite mage set is forged. |
+| Botania | `forge:manasteel`, `forge:terrasteel`, `forge:elementium` | Terrasteel uses `addition`: terrasteel armour costs its three ingots plus the manasteel piece, as in Botania. |
+| Minecraft Comes Alive | `forge:rose_gold` | Name and tint only. |
+
+Fire Sticks, Lit It Up and Hardcore Torches fire starters ignite the forge (`forge_igniters`), and `#forge:coal_coke`
+is a forge fuel. Ars Nouveau robes, Ice and Fire sheep armour and elytra-like items are tagged non-smithable.
 
 Spartan Weaponry: every metal weapon of all 24 types (melee, throwing weapons, longbows, heavy crossbows) in copper,
 gold, iron and netherite, and in tin, bronze, steel, silver, electrum, lead, nickel, invar, constantan, platinum and
@@ -212,17 +240,49 @@ When `replaceMetalEquipmentRecipes` is on and `allowVanillaCraftingAlongsideSmit
 that produce a smithable item from recognised metal are removed at reload, as are smithing-table upgrade recipes
 (`suppressSmithingTableUpgrades`). Armor trim recipes are never touched. Changing these options needs a `/reload`.
 
+## Loot quality
+
+A global loot modifier (`immersive_smithing:forged_loot`) grades equipment that comes out of loot tables (chests,
+mob loot tables, treasure bags) when the forge has a smithing recipe for it and it carries no quality yet. Server
+config `lootQuality.mode`: `OFF`, `STANDARD` (default: both scores between 35 and 69, so Fine and Masterwork are
+always someone's work) or `RANDOM` (the villager distribution). `lootQuality.excludedLootTables` lists table ids or
+whole namespaces that stay ungraded. Equipment a mob drops from its own hands is not loot-table output and stays
+ungraded.
+
+## Quality inheritance
+
+When a crafting or smithing-table recipe consumes exactly one graded piece and produces graded equipment without a
+quality of its own (dyeing, an elemental upgrade of a dragonbone sword), the result keeps the quality, the maker's
+mark, the title and the inscription (`inheritQualityOnCraft`, default on).
+
 ## Item data
 
-Finished items keep quality in the `immersive_smithing` compound of the stack's tag:
+Finished items keep quality and the maker's mark in the `immersive_smithing` compound of the stack's tag:
 
 ```
-immersive_smithing: { Version: 1, Forged: 1b, ForgeScore: 94, AnvilScore: 82, Faulty: 0b, Quality: "fine", DurabilityCarry: 0.4d }
+immersive_smithing: { Version: 1, Forged: 1b, ForgeScore: 94, AnvilScore: 82, Faulty: 0b, Quality: "fine", DurabilityCarry: 0.4d,
+                      SmithName: "Otectus", SmithUUID: [I; ...], Signed: 1b }
 ```
+
+`SmithName` and `SmithUUID` are written at the quench and never change. A signed piece stores its title as the
+vanilla `display.Name` (non-italic, in the quality colour) and its inscription as `display.Lore`, so every tooltip
+mod shows them. Only the smith named in the mark can sign, from the screen that opens after the quench or by
+sneak-using the Smith's Anvil with the finished piece; Faulty work is never signed. The server sanitises titles and
+inscriptions (formatting codes and control characters are stripped, lengths capped by the `signing` config).
 
 A stack without this compound behaves exactly like Standard quality. Tongs and Hot Workpiece items carry
 `immersive_smithing.HeldWorkpiece` with `Version`, `TargetStack`, `RecipeId`, `MaterialFamily`, `MetalUnits`,
 `ForgeScore`, `AnvilScore`, `Faulty`, `State` (`FORGED` or `SHAPED`) and `AnvilPattern`.
+
+## Events
+
+`com.otectus.immersivesmithing.api.event.ItemSmithedEvent` is posted on the Forge bus (server side, not cancellable)
+when a smith quenches a piece, after quality and the maker's mark are written and before the item reaches the
+inventory. It carries the smith, the live result stack (changes stay on the item), the `QualityData`, the smithing
+recipe id, the material family, the units consumed and the trough position. KubeJS scripts can subscribe with
+`ForgeEvents.onEvent('com.otectus.immersivesmithing.api.event.ItemSmithedEvent', ...)`. With
+`integrations.fireVanillaCraftEvent` (default on) the vanilla `PlayerEvent.ItemCraftedEvent` is fired too, with a
+one-slot container, so mods that reward crafting see forged items.
 
 ## Java API
 

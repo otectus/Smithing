@@ -97,7 +97,8 @@ public class SmithingRecipeCategory implements IRecipeCategory<SmithingRecipe> {
             builder.addSlot(RecipeIngredientRole.INPUT, 1 + (i % 3) * 18, 21 + (i / 3) * 18)
                     .addItemStacks(stacks)
                     .setBackground(slot, -1, -1)
-                    .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable("jei.immersive_smithing.component_consumed")
+                    .addTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable(a.consumesEquipment()
+                            ? "jei.immersive_smithing.equipment_consumed" : "jei.immersive_smithing.component_consumed")
                             .withStyle(ChatFormatting.GRAY)));
         }
         builder.addSlot(RecipeIngredientRole.OUTPUT, WIDTH - 19, 19)

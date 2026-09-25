@@ -2,7 +2,10 @@
 """Generates Immersive Smithing recipes for every Spartan Weaponry metal weapon from Spartan's own recipe JSONs.
 
 Run from the project root (the jar defaults to the Gradle cache copy):
-  python3 tools/generate_spartan_compat.py [path/to/spartanweaponry.jar]
+  python3 tools/generate_spartan_compat.py [path/to/spartanweaponry.jar] [--spartanfire path/to/spartanfire.jar]
+
+With --spartanfire, the dragonsteel weapons of Spartan Fire (Ice and Fire's add-on) are generated too, under
+recipes/compat/spartanfire/, guarded by forge:mod_loaded spartanfire and the forge:ingots/<kind>_dragonsteel tag.
 
 Output: src/main/resources/data/immersive_smithing/recipes/compat/spartanweaponry/<metal>_<type>.json. The output is
 deterministic and committed; re-run it when the pinned Spartan Weaponry version changes.
@@ -24,6 +27,8 @@ import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'src/main/resources/data/immersive_smithing/recipes/compat/spartanweaponry'
+FIRE_OUT = ROOT / 'src/main/resources/data/immersive_smithing/recipes/compat/spartanfire'
+DRAGONSTEELS = ['fire', 'ice', 'lightning']  # spartanfire recipe prefix <kind>_dragonsteel -> family forge:<kind>_dragonsteel
 TYPES = ['battle_hammer', 'battleaxe', 'boomerang', 'dagger', 'flanged_mace', 'glaive', 'greatsword', 'halberd',
          'heavy_crossbow', 'javelin', 'katana', 'lance', 'longbow', 'longsword', 'parrying_dagger', 'pike',
          'quarterstaff', 'rapier', 'saber', 'scythe', 'spear', 'throwing_knife', 'tomahawk', 'warhammer']
@@ -55,8 +60,8 @@ def shape(recipe):
     return slots, aux
 
 
-def conditions(recipe):
-    out = [MOD_LOADED]
+def conditions(recipe, mod_loaded=MOD_LOADED):
+    out = [mod_loaded]
     out += [c for c in recipe.get('conditions', []) if c.get('type') == 'spartanweaponry:type_disabled']
     out += [c for c in recipe.get('conditions', []) if c.get('type') == 'forge:not']
     return out
@@ -72,8 +77,33 @@ def smithing(result, family, units, aux, pattern, conds):
     return obj
 
 
+def spartanfire(jar):
+    """Dragonsteel weapons from Spartan Fire's own recipes; every type, including the throwing weapons and bows."""
+    z = zipfile.ZipFile(jar)
+    FIRE_OUT.mkdir(parents=True, exist_ok=True)
+    for old in FIRE_OUT.glob('*.json'):
+        old.unlink()
+    written = 0
+    for wtype in TYPES:
+        for kind in DRAGONSTEELS:
+            src = json.loads(z.read(f'data/spartanfire/recipes/{kind}_dragonsteel_{wtype}.json'))
+            slots, aux = shape(src)
+            conds = conditions(src, {'type': 'forge:mod_loaded', 'modid': 'spartanfire'})
+            conds.append({'type': 'forge:not', 'value': {'type': 'forge:tag_empty', 'tag': f'forge:ingots/{kind}_dragonsteel'}})
+            obj = smithing(src['result']['item'], f'forge:{kind}_dragonsteel', slots * 9, aux, wtype, conds)
+            (FIRE_OUT / f'{kind}_dragonsteel_{wtype}.json').write_text(json.dumps(obj, indent=2) + '\n')
+            written += 1
+    print(f'{written} recipes written to {FIRE_OUT.relative_to(ROOT)} from {os.path.basename(jar)}')
+
+
 def main():
-    jar = sys.argv[1] if len(sys.argv) > 1 else find_jar()
+    args = sys.argv[1:]
+    fire_jar = None
+    if '--spartanfire' in args:
+        i = args.index('--spartanfire')
+        fire_jar = args[i + 1]
+        del args[i:i + 2]
+    jar = args[0] if args else find_jar()
     z = zipfile.ZipFile(jar)
 
     def recipe(name):
@@ -103,6 +133,8 @@ def main():
         (OUT / f'{studded}.json').write_text(json.dumps(obj, indent=2) + '\n')
         written += 1
     print(f'{written} recipes written to {OUT.relative_to(ROOT)} from {os.path.basename(jar)}')
+    if fire_jar:
+        spartanfire(fire_jar)
 
 
 if __name__ == '__main__':

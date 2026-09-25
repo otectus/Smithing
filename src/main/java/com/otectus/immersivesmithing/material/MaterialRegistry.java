@@ -82,7 +82,7 @@ public final class MaterialRegistry {
             }
             Component name = def.displayName() != null ? def.displayName() : MaterialFamily.defaultName(def.family());
             builder.add(new MaterialFamily(def.family(), name, def.meltMultiplier(), def.requiresIgnition(),
-                    def.requiredFuelTag(), def.tint(), false, sources));
+                    def.requiredFuelTag(), def.tint(), false, def.upgradePolicy(), sources));
         }
 
         if (ServerConfig.get(ServerConfig.AUTO_DETECT_MODDED_METALS)) {
@@ -108,7 +108,7 @@ public final class MaterialRegistry {
                 addTag(sources, forgeTag("storage_blocks/raw_" + metal), MaterialUnits.BLOCK);
                 sources.removeIf(s -> builder.claimed(s.item()));
                 builder.add(new MaterialFamily(familyId, MaterialFamily.defaultName(familyId), 1.0F, true, null,
-                        MaterialFamily.DEFAULT_TINT, true, sources));
+                        MaterialFamily.DEFAULT_TINT, true, UpgradePolicy.SHAPE, sources));
             }
         }
         return builder.build();
@@ -184,7 +184,7 @@ public final class MaterialRegistry {
                     continue;
                 }
                 cleaned.put(f.id(), new MaterialFamily(f.id(), f.displayName(), f.meltMultiplier(), f.requiresIgnition(),
-                        f.requiredFuelTag(), f.tint(), f.auto(), sources));
+                        f.requiredFuelTag(), f.tint(), f.auto(), f.upgradePolicy(), sources));
                 report.family(cleaned.get(f.id()));
             }
             return new MaterialRegistry(Map.copyOf(cleaned), Map.copyOf(lookup), Set.copyOf(ambiguous));

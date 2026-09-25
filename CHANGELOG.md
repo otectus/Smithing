@@ -1,8 +1,39 @@
 # Changelog
 
-## 1.0.0 - 2026-09-23
+## 1.0.0 - unreleased
 
 First release as Immersive Smithing, for Minecraft 1.20.1 and Forge 47.
+
+### Modpack integration and the Maker's Mark
+
+- **Maker's Mark.** Every quenched piece records its smith ("Crafted by"). A screen after the quench lets the smith
+  title the piece and add up to three lines of inscription; sneak-use the Smith's Anvil with the piece to sign it
+  later. Titles and inscriptions are stored as the vanilla name and lore, so every tooltip mod shows them, and the
+  server sanitises them. Faulty work cannot be signed. New advancement and guide chapter.
+- **Loot quality.** Equipment from loot tables (chests, mob loot, treasure bags) that the forge could have made is
+  graded, Standard-only by default (`lootQuality.mode`: `OFF`, `STANDARD`, `RANDOM`; `excludedLootTables`).
+- **Quality inheritance.** A crafting or smithing-table recipe that turns one graded piece into another keeps the
+  quality, the mark, the title and the inscription (`inheritQualityOnCraft`).
+
+#### Compatibility
+
+- **Consumed-equipment auxiliaries** (`"consume_equipment": true`) and a per-material `upgrade_policy`: `shape`
+  (today's netherite rule) or `addition` (pay the addition, rework the base piece). Smithing-table upgrades whose
+  base has no metal shape of its own (loot weapons, cloth robes) are no longer skipped: they use `addition`.
+- **Crafting upgrade chains**: a recipe that reworks a piece the forge makes with more metal (Botania terrasteel
+  armour) becomes a smithing recipe with the base consumed.
+- **Predominance rule**: recipes with fewer metal slots than components and under one ingot of metal are skipped.
+  Reworking equipment without any metal is no longer reported as skipped.
+- **Pack metals**: Cataclysm (black steel, ancient metal, witherite, cursium, ignitium), Ice and Fire dragonsteel,
+  Spartan Fire dragonsteel weapons (all 24 types, generated), Iron's mithril and pyrium, Botania's three metals and
+  MCA's rose gold, with names, tints, melt rules and policies. Iron's cloth wizard sets, Ars Nouveau robes, Ice and
+  Fire sheep armour and elytra-like items are tagged non-smithable. Fire Sticks, Lit It Up and Hardcore Torches fire
+  starters ignite the forge; `#forge:coal_coke` is fuel.
+- **`ItemSmithedEvent`** on the Forge bus for progression mods and KubeJS; the vanilla `ItemCraftedEvent` is fired
+  at the quench as well (`integrations.fireVanillaCraftEvent`).
+- **Jade** overlays for the forge, anvil, trough and grindstone.
+- Villagers also sell forged silver (Ice and Fire) and black steel (Cataclysm) gear when those mods are present.
+- The compatibility report starts with a coverage table per mod and marks recipes that rework a base piece.
 
 ### Renamed from Ote's Smithing
 

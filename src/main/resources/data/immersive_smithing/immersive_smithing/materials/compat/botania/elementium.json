@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "botania"
+    }
+  ],
+  "family": "forge:elementium",
+  "display_name": "material.forge.elementium",
+  "sources": [
+    {
+      "tag": "forge:ingots/elementium",
+      "units": 9
+    },
+    {
+      "tag": "forge:nuggets/elementium",
+      "units": 1
+    },
+    {
+      "tag": "forge:storage_blocks/elementium",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.3,
+  "requires_ignition": true,
+  "tint": "#E492AB",
+  "upgrade_policy": "shape"
+}

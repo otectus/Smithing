@@ -10,6 +10,8 @@ import com.otectus.immersivesmithing.network.packet.ForgeActionResultPacket;
 import com.otectus.immersivesmithing.network.packet.ForgeStartPacket;
 import com.otectus.immersivesmithing.network.packet.OpenAnvilScreenPacket;
 import com.otectus.immersivesmithing.network.packet.OpenForgeScreenPacket;
+import com.otectus.immersivesmithing.network.packet.OpenMakersMarkPacket;
+import com.otectus.immersivesmithing.network.packet.SignWorkPacket;
 import com.otectus.immersivesmithing.network.packet.SelectForgeRecipePacket;
 import com.otectus.immersivesmithing.network.packet.SessionResultPacket;
 import com.otectus.immersivesmithing.network.packet.StationEffectPacket;
@@ -50,6 +52,9 @@ public final class ModNetwork {
         CHANNEL.messageBuilder(StationEffectPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
                 .encoder(StationEffectPacket::encode).decoder(StationEffectPacket::decode)
                 .consumerMainThread(StationEffectPacket::handle).add();
+        CHANNEL.messageBuilder(OpenMakersMarkPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(OpenMakersMarkPacket::encode).decoder(OpenMakersMarkPacket::decode)
+                .consumerMainThread(OpenMakersMarkPacket::handle).add();
         // Client -> server
         CHANNEL.messageBuilder(SelectForgeRecipePacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
                 .encoder(SelectForgeRecipePacket::encode).decoder(SelectForgeRecipePacket::decode)
@@ -63,6 +68,9 @@ public final class ModNetwork {
         CHANNEL.messageBuilder(CancelSessionPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
                 .encoder(CancelSessionPacket::encode).decoder(CancelSessionPacket::decode)
                 .consumerNetworkThread(CancelSessionPacket::handle).add();
+        CHANNEL.messageBuilder(SignWorkPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
+                .encoder(SignWorkPacket::encode).decoder(SignWorkPacket::decode)
+                .consumerNetworkThread(SignWorkPacket::handle).add();
     }
 
     private ModNetwork() {}

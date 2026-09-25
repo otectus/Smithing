@@ -122,8 +122,13 @@ public final class DataGameTests {
         h.assertTrue(mixed.status() == AutoRecipeDetector.Status.MIXED_INGREDIENT, "Ingredient mixing metal and wood is skipped");
         var none = AutoRecipeDetector.analyze(id, List.of(stick, Ingredient.of(Items.DIAMOND)), out, materials);
         h.assertTrue(none.status() == AutoRecipeDetector.Status.NOT_METAL, "No metal, nothing generated");
-        var equipment = AutoRecipeDetector.analyze(id, List.of(iron, Ingredient.of(Items.DIAMOND_SWORD)), out, materials);
-        h.assertTrue(equipment.status() == AutoRecipeDetector.Status.EQUIPMENT_INGREDIENT, "Equipment ingredients are skipped");
+        var equipment = AutoRecipeDetector.analyze(id, List.of(iron, Ingredient.of(Items.DIAMOND_PICKAXE)), out, materials);
+        h.assertTrue(equipment.status() == AutoRecipeDetector.Status.EQUIPMENT_INGREDIENT, "Equipment of another class is skipped");
+        var chain = AutoRecipeDetector.analyze(id, List.of(iron, Ingredient.of(Items.DIAMOND_SWORD)), out, materials);
+        h.assertTrue(chain.status() == AutoRecipeDetector.Status.UPGRADE_CHAIN && chain.base() != null && chain.units() == 9,
+                "A piece of the same class plus metal is an upgrade chain");
+        var boneWork = AutoRecipeDetector.analyze(id, List.of(Ingredient.of(Items.BONE), Ingredient.of(Items.DIAMOND_SWORD)), out, materials);
+        h.assertTrue(boneWork.status() == AutoRecipeDetector.Status.NOT_METAL, "Equipment reworked without metal is not reported");
 
         h.assertTrue(EquipmentClassifier.isCandidate(new ItemStack(Items.IRON_PICKAXE)), "Pickaxe is candidate equipment");
         h.assertTrue(!EquipmentClassifier.isCandidate(new ItemStack(Items.CROSSBOW)), "Crossbow is not");

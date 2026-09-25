@@ -7,6 +7,10 @@
     "#minecraft:coals",
     "minecraft:coal_block",
     "minecraft:stick",
-    "minecraft:lava_bucket"
+    "minecraft:lava_bucket",
+    {
+      "id": "#forge:coal_coke",
+      "required": false
+    }
   ]
 }

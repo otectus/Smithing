@@ -25,7 +25,8 @@ public final class StationVisualGameTests {
             BlockHitResult fuel = forge.getShape(h.getLevel(), BlockPos.ZERO).clip(front, back, BlockPos.ZERO);
             h.assertTrue(fuel != null, "Firebox back can be targeted: " + facing);
             double projection = (fuel.getLocation().x - 0.5) * facing.getStepX() + (fuel.getLocation().z - 0.5) * facing.getStepZ();
-            h.assertTrue(Math.abs(projection + 5 / 16D) < 0.0001, "Firebox opening has no invisible front wall: " + facing);
+            // The round forge's visible coal backing starts at model z=11, three units behind centre.
+            h.assertTrue(Math.abs(projection + 3 / 16D) < 0.0001, "Firebox opening has no invisible front wall: " + facing);
 
             var trough = ModBlocks.SMITHS_TROUGH.get().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, facing);
             BlockHitResult basin = trough.getShape(h.getLevel(), BlockPos.ZERO).clip(new Vec3(0.5, 1, 0.5), new Vec3(0.5, 0, 0.5), BlockPos.ZERO);

@@ -37,6 +37,7 @@
   "jitter": 0.03,
   "time_multiplier": 1.0,
   "categories": [
-    "spartanweaponry:spears"
+    "spartanweaponry:spears",
+    "immersive_smithing:spears"
   ]
 }

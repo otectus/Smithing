@@ -10,7 +10,7 @@ import net.minecraft.network.chat.Component;
 public final class GuideData {
     public static final String[] CHAPTERS = {
             "getting_started", "smiths_forge", "fuels_and_ignition", "material_families", "forge_minigame",
-            "smithing_tongs", "smiths_anvil", "anvil_minigame", "smiths_trough", "equipment_quality",
+            "smithing_tongs", "smiths_anvil", "anvil_minigame", "smiths_trough", "makers_mark", "equipment_quality",
             "faulty_equipment", "reforging", "smiths_grindstone", "tool_tiers", "netherite", "modded_equipment",
             "automation", "jei", "troubleshooting"
     };

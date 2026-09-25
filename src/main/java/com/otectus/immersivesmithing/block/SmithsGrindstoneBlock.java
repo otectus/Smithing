@@ -41,10 +41,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SmithsGrindstoneBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final StationShape SHAPE = new StationShape(Shapes.or(
-            Block.box(1, 0, 3, 4, 2, 13), Block.box(12, 0, 3, 15, 2, 13),
-            Block.box(2, 2, 6, 4, 11, 10), Block.box(12, 2, 6, 14, 11, 10),
-            Block.box(1, 9, 7, 15, 11, 9), Block.box(5, 5, 3, 11, 15, 13),
-            Block.box(4, 5, 1, 12, 6, 3), Block.box(14, 7, 7, 15, 10, 9), Block.box(14, 6, 7, 16, 7, 9)));
+            Block.box(1, 0, 3, 4, 2, 13),
+            Block.box(12, 0, 3, 15, 2, 13),
+            Block.box(2, 2, 6, 4, 11, 10),
+            Block.box(12, 2, 6, 14, 11, 10),
+            Block.box(1, 9, 7, 15, 11, 9),
+            Block.box(5, 5, 5, 11, 7, 11),
+            Block.box(5, 7, 3, 11, 13, 13),
+            Block.box(5, 13, 5, 11, 15, 11),
+            Block.box(4, 5, 1, 12, 6, 3),
+            Block.box(14, 7, 7, 15, 10, 9),
+            Block.box(14, 6, 7, 16, 7, 9)));
     private static final long CONFIRM_WINDOW_TICKS = 60;
 
     private record Pending(BlockPos pos, boolean efficacy, int score, long gameTime) {}

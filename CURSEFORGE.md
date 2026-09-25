@@ -50,6 +50,13 @@ only with lava.
   are forged from the metal instead.
 - **JEI** shows every smithing recipe in its own category.
 - **Datapacks and an API** can add or override metals, recipes, recycling values and minigame patterns.
+- **Pack metals ready to forge:** Cataclysm's black steel, ancient metal, witherite, cursium and ignitium, Ice and
+  Fire dragonsteel (Spartan Fire weapons included), Iron's mithril and pyrium, and Botania's manasteel, terrasteel
+  and elementium, each with its own tint, melt rule and upgrade cost. Boss-metal upgrades rework the piece you bring.
+- **Found gear is graded too**, never above Standard by default, so Fine and Masterwork always mean a smith's work.
+- **Every piece knows its smith.** Sign your work with a title and an inscription; the mark survives repairs,
+  enchanting and upgrades.
+- **Hooks for progression mods:** an `ItemSmithedEvent` for skills, gods and KubeJS, and Jade overlays for every station.
 - Tested with Spartan Weaponry, Spartan Shields and Immersive Armors, and in a 350+ mod pack.
 
 ## Made for servers

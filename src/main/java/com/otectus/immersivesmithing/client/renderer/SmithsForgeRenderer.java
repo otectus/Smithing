@@ -81,8 +81,15 @@ public class SmithsForgeRenderer implements BlockEntityRenderer<SmithsForgeBlock
             poolY = (10.25F + 3.25F * fill) / 16F;
             // Warm emission is always legible, even for dark modded metals. Family tint is restrained in hot metal.
             int tint = RenderUtil.mixColor(0xFFFFFF, forge.familyTint(), 0.18F);
-            RenderUtil.horizontalQuad(pose, buffers.getBuffer(RenderType.entitySolid(TextureAtlas.LOCATION_BLOCKS)),
-                    RenderUtil.sprite(MOLTEN), 2 / 16F, 2 / 16F, 14 / 16F, 14 / 16F, poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
+            // Follow the stepped round basin; a square pool would show through its corner stones.
+            var consumer = buffers.getBuffer(RenderType.entitySolid(TextureAtlas.LOCATION_BLOCKS));
+            var molten = RenderUtil.sprite(MOLTEN);
+            RenderUtil.horizontalQuad(pose, consumer, molten, 4 / 16F, 2 / 16F, 12 / 16F, 4 / 16F,
+                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
+            RenderUtil.horizontalQuad(pose, consumer, molten, 2 / 16F, 4 / 16F, 14 / 16F, 12 / 16F,
+                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
+            RenderUtil.horizontalQuad(pose, consumer, molten, 4 / 16F, 12 / 16F, 12 / 16F, 14 / 16F,
+                    poolY, 0xFF000000 | tint, LightTexture.FULL_BRIGHT);
         }
         List<SmithsForgeBlockEntity.Deposit> deposits = forge.deposits();
         if (!deposits.isEmpty()) {

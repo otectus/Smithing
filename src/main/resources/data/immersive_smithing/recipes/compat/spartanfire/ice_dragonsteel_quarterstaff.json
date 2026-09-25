@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "spartanfire"
+    },
+    {
+      "type": "spartanweaponry:type_disabled",
+      "disabled": [
+        "quarterstaff"
+      ]
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/ice_dragonsteel"
+      }
+    }
+  ],
+  "type": "immersive_smithing:smithing",
+  "material": "forge:ice_dragonsteel",
+  "metal_units": 18,
+  "auxiliary": [
+    {
+      "ingredient": {
+        "item": "spartanfire:witherbone_pole"
+      },
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "spartanfire:ice_dragonsteel_quarterstaff"
+  },
+  "forge_pattern": "immersive_smithing:standard",
+  "anvil_pattern": "immersive_smithing:quarterstaff"
+}

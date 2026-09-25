@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "cataclysm"
+    }
+  ],
+  "family": "cataclysm:black_steel",
+  "display_name": "material.cataclysm.black_steel",
+  "sources": [
+    {
+      "item": "cataclysm:black_steel_ingot",
+      "units": 9
+    },
+    {
+      "item": "cataclysm:black_steel_nugget",
+      "units": 1
+    },
+    {
+      "item": "cataclysm:black_steel_block",
+      "units": 81
+    }
+  ],
+  "melt_time_multiplier": 1.5,
+  "requires_ignition": true,
+  "tint": "#5A6070",
+  "upgrade_policy": "shape"
+}
